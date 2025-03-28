@@ -613,7 +613,11 @@ class _ReportplannerCopyWidgetState extends State<ReportplannerCopyWidget> {
                                                               FormListFieldController<
                                                                   String>(null),
                                                           options: _model
-                                                              .pageClientName,
+                                                              .pageClientName
+                                                              .sortedList(
+                                                                  keyOf: (e) =>
+                                                                      e,
+                                                                  desc: false),
                                                           width: 700.0,
                                                           height: 40.0,
                                                           searchHintTextStyle:
