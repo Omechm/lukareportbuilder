@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/sidebarnav_copy_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -74,6 +75,8 @@ class ReportplannerCopyModel extends FlutterFlowModel<ReportplannerCopyWidget> {
   // State field(s) for drpTaskName widget.
   String? drpTaskNameValue;
   FormFieldController<String>? drpTaskNameValueController;
+  // Stores action output result for [Backend Call - API (GetClientsWithoutTask)] action in drpTaskName widget.
+  ApiCallResponse? apiResultdv2;
   // State field(s) for drpClientname widget.
   List<String>? drpClientnameValue;
   FormFieldController<List<String>>? drpClientnameValueController;

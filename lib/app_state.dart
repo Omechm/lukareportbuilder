@@ -96,6 +96,9 @@ class FFAppState extends ChangeNotifier {
               .toList() ??
           _AppGetFieldValues;
     });
+    _safeInit(() {
+      _APIKEY = prefs.getString('ff_APIKEY') ?? _APIKEY;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -460,6 +463,14 @@ class FFAppState extends ChangeNotifier {
     AppGetFieldValues.insert(index, value);
     prefs.setStringList('ff_AppGetFieldValues',
         _AppGetFieldValues.map((x) => x.serialize()).toList());
+  }
+
+  String _APIKEY =
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ2Zm96bmhhZXBnZ2J5eWtrb2VhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjI1NzIyMDUsImV4cCI6MjAzODE0ODIwNX0.gTkzwmWjjrr3s5GxRBIiahlyaj2iqp3_Y0NOUsZceaA';
+  String get APIKEY => _APIKEY;
+  set APIKEY(String value) {
+    _APIKEY = value;
+    prefs.setString('ff_APIKEY', value);
   }
 }
 

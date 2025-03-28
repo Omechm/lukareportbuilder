@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/backend/schema/structs/index.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -443,105 +444,150 @@ class _ReportplannerCopyWidgetState extends State<ReportplannerCopyWidget> {
                                                   mainAxisAlignment:
                                                       MainAxisAlignment.start,
                                                   children: [
-                                                    Expanded(
-                                                      child:
-                                                          FlutterFlowDropDown<
-                                                              String>(
-                                                        controller: _model
-                                                                .drpTaskNameValueController ??=
-                                                            FormFieldController<
-                                                                String>(null),
-                                                        options:
-                                                            _model.pageTask,
-                                                        onChanged: (val) =>
+                                                    if (_model.txtReporttaskNameTextController
+                                                                .text !=
+                                                            '')
+                                                      Expanded(
+                                                        child:
+                                                            FlutterFlowDropDown<
+                                                                String>(
+                                                          controller: _model
+                                                                  .drpTaskNameValueController ??=
+                                                              FormFieldController<
+                                                                  String>(null),
+                                                          options:
+                                                              _model.pageTask,
+                                                          onChanged:
+                                                              (val) async {
                                                             safeSetState(() =>
                                                                 _model.drpTaskNameValue =
-                                                                    val),
-                                                        width: 700.0,
-                                                        height: 40.0,
-                                                        searchHintTextStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Geist Font Family',
-                                                                  fontSize:
-                                                                      13.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  shadows: [
-                                                                    Shadow(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
-                                                                      offset: Offset(
-                                                                          2.0,
-                                                                          2.0),
-                                                                      blurRadius:
-                                                                          2.0,
-                                                                    )
-                                                                  ],
-                                                                  useGoogleFonts:
-                                                                      false,
-                                                                ),
-                                                        searchTextStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Geist Font Family',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
-                                                                ),
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Geist Font Family',
-                                                                  fontSize:
-                                                                      13.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
-                                                                ),
-                                                        hintText:
-                                                            'Select task template',
-                                                        searchHintText: '',
-                                                        icon: Icon(
-                                                          Icons
-                                                              .keyboard_arrow_down_rounded,
-                                                          color: FlutterFlowTheme
+                                                                    val);
+                                                            _model.apiResultdv2 =
+                                                                await GetClientsWithoutTaskCall
+                                                                    .call(
+                                                              supabaseKey:
+                                                                  FFAppState()
+                                                                      .APIKEY,
+                                                              companyName:
+                                                                  FFAppState()
+                                                                      .appAuthUserCompanyName,
+                                                              jwt:
+                                                                  currentJwtToken,
+                                                              taskName: _model
+                                                                  .drpTaskNameValue,
+                                                            );
+
+                                                            _model.pageClientName =
+                                                                [];
+                                                            safeSetState(() {});
+                                                            if ((_model
+                                                                    .apiResultdv2
+                                                                    ?.succeeded ??
+                                                                true)) {
+                                                              _model.pageClientName = ((_model.apiResultdv2?.jsonBody ??
+                                                                              '')
+                                                                          .toList()
+                                                                          .map<DtClientsWithoutTaskStruct?>(DtClientsWithoutTaskStruct
+                                                                              .maybeFromMap)
+                                                                          .toList()
+                                                                      as Iterable<
+                                                                          DtClientsWithoutTaskStruct?>)
+                                                                  .withoutNulls
+                                                                  .map((e) => e
+                                                                      .clientName)
+                                                                  .toList()
+                                                                  .cast<
+                                                                      String>();
+                                                              safeSetState(
+                                                                  () {});
+                                                            }
+
+                                                            safeSetState(() {});
+                                                          },
+                                                          width: 700.0,
+                                                          height: 40.0,
+                                                          searchHintTextStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Geist Font Family',
+                                                                    fontSize:
+                                                                        13.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    shadows: [
+                                                                      Shadow(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                        offset: Offset(
+                                                                            2.0,
+                                                                            2.0),
+                                                                        blurRadius:
+                                                                            2.0,
+                                                                      )
+                                                                    ],
+                                                                    useGoogleFonts:
+                                                                        false,
+                                                                  ),
+                                                          searchTextStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Geist Font Family',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    useGoogleFonts:
+                                                                        false,
+                                                                  ),
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Geist Font Family',
+                                                                    fontSize:
+                                                                        13.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    useGoogleFonts:
+                                                                        false,
+                                                                  ),
+                                                          hintText:
+                                                              'Select task template',
+                                                          searchHintText: '',
+                                                          icon: Icon(
+                                                            Icons
+                                                                .keyboard_arrow_down_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                          fillColor: FlutterFlowTheme
                                                                   .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
+                                                              .secondaryBackground,
+                                                          elevation: 2.0,
+                                                          borderColor: Colors
+                                                              .transparent,
+                                                          borderWidth: 0.0,
+                                                          borderRadius: 8.0,
+                                                          margin:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      12.0,
+                                                                      0.0,
+                                                                      12.0,
+                                                                      0.0),
+                                                          isOverButton: false,
+                                                          isSearchable: true,
+                                                          isMultiSelect: false,
                                                         ),
-                                                        fillColor: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        elevation: 2.0,
-                                                        borderColor:
-                                                            Colors.transparent,
-                                                        borderWidth: 0.0,
-                                                        borderRadius: 8.0,
-                                                        margin:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    12.0,
-                                                                    0.0,
-                                                                    12.0,
-                                                                    0.0),
-                                                        isOverButton: false,
-                                                        isSearchable: true,
-                                                        isMultiSelect: false,
                                                       ),
-                                                    ),
                                                   ],
                                                 ),
                                               ),
@@ -554,141 +600,97 @@ class _ReportplannerCopyWidgetState extends State<ReportplannerCopyWidget> {
                                                       MainAxisAlignment
                                                           .spaceBetween,
                                                   children: [
-                                                    Expanded(
-                                                      child: FutureBuilder<
-                                                          ApiCallResponse>(
-                                                        future:
-                                                            GetClientsWithoutTaskCall
-                                                                .call(
-                                                          supabaseKey:
-                                                              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ2Zm96bmhhZXBnZ2J5eWtrb2VhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjI1NzIyMDUsImV4cCI6MjAzODE0ODIwNX0.gTkzwmWjjrr3s5GxRBIiahlyaj2iqp3_Y0NOUsZceaA',
-                                                          jwt: currentJwtToken,
-                                                          companyName: FFAppState()
-                                                              .appAuthUserCompanyName,
-                                                          taskName: _model
-                                                              .drpTaskNameValue,
-                                                        ),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child: SizedBox(
-                                                                width: 10.0,
-                                                                height: 10.0,
-                                                                child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    Color(
-                                                                        0xFF7C8289),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          }
-                                                          final drpClientnameGetClientsWithoutTaskResponse =
-                                                              snapshot.data!;
-
-                                                          return FlutterFlowDropDown<
-                                                              String>(
-                                                            multiSelectController: _model
-                                                                    .drpClientnameValueController ??=
-                                                                FormListFieldController<
-                                                                        String>(
-                                                                    null),
-                                                            options:
-                                                                (getJsonField(
-                                                              drpClientnameGetClientsWithoutTaskResponse
-                                                                  .jsonBody,
-                                                              r'''$.client_name''',
-                                                              true,
-                                                            ) as List)
-                                                                    .map<String>(
-                                                                        (s) => s
-                                                                            .toString())
-                                                                    .toList(),
-                                                            width: 700.0,
-                                                            height: 40.0,
-                                                            searchHintTextStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Geist Font Family',
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
-                                                                    ),
-                                                            searchTextStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Geist Font Family',
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
-                                                                    ),
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Geist Font Family',
-                                                                      fontSize:
-                                                                          13.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
-                                                                    ),
-                                                            hintText:
-                                                                'Select client name',
-                                                            searchHintText:
-                                                                'Search...',
-                                                            icon: Icon(
-                                                              Icons
-                                                                  .keyboard_arrow_down_rounded,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryText,
-                                                              size: 24.0,
-                                                            ),
-                                                            fillColor: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryBackground,
-                                                            elevation: 2.0,
-                                                            borderColor: Colors
-                                                                .transparent,
-                                                            borderWidth: 0.0,
-                                                            borderRadius: 8.0,
-                                                            margin:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        12.0,
+                                                    if (_model.drpTaskNameValue !=
+                                                            null &&
+                                                        _model.drpTaskNameValue !=
+                                                            '')
+                                                      Expanded(
+                                                        child:
+                                                            FlutterFlowDropDown<
+                                                                String>(
+                                                          multiSelectController: _model
+                                                                  .drpClientnameValueController ??=
+                                                              FormListFieldController<
+                                                                  String>(null),
+                                                          options: _model
+                                                              .pageClientName,
+                                                          width: 700.0,
+                                                          height: 40.0,
+                                                          searchHintTextStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Geist Font Family',
+                                                                    letterSpacing:
                                                                         0.0,
-                                                                        12.0,
-                                                                        0.0),
-                                                            isOverButton: false,
-                                                            isSearchable: true,
-                                                            isMultiSelect: true,
-                                                            onMultiSelectChanged:
-                                                                (val) => safeSetState(
-                                                                    () => _model
-                                                                            .drpClientnameValue =
-                                                                        val),
-                                                          );
-                                                        },
+                                                                    useGoogleFonts:
+                                                                        false,
+                                                                  ),
+                                                          searchTextStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Geist Font Family',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    useGoogleFonts:
+                                                                        false,
+                                                                  ),
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Geist Font Family',
+                                                                    fontSize:
+                                                                        13.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    useGoogleFonts:
+                                                                        false,
+                                                                  ),
+                                                          hintText:
+                                                              'Select client name',
+                                                          searchHintText:
+                                                              'Search...',
+                                                          icon: Icon(
+                                                            Icons
+                                                                .keyboard_arrow_down_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                          fillColor: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          elevation: 2.0,
+                                                          borderColor: Colors
+                                                              .transparent,
+                                                          borderWidth: 0.0,
+                                                          borderRadius: 8.0,
+                                                          margin:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      12.0,
+                                                                      0.0,
+                                                                      12.0,
+                                                                      0.0),
+                                                          isOverButton: false,
+                                                          isSearchable: true,
+                                                          isMultiSelect: true,
+                                                          onMultiSelectChanged:
+                                                              (val) => safeSetState(
+                                                                  () => _model
+                                                                          .drpClientnameValue =
+                                                                      val),
+                                                        ),
                                                       ),
-                                                    ),
                                                   ],
                                                 ),
                                               ),
@@ -709,203 +711,234 @@ class _ReportplannerCopyWidgetState extends State<ReportplannerCopyWidget> {
                                                             MainAxisAlignment
                                                                 .start,
                                                         children: [
-                                                          Expanded(
-                                                            child:
-                                                                FlutterFlowDropDown<
-                                                                    String>(
-                                                              controller: _model
-                                                                      .drpFrequencyValueController ??=
-                                                                  FormFieldController<
-                                                                          String>(
-                                                                      null),
-                                                              options: [
-                                                                'Daily',
-                                                                'Weekly',
-                                                                'Bi - Weekly',
-                                                                'Quarterly',
-                                                                'Yearly'
-                                                              ],
-                                                              onChanged: (val) =>
-                                                                  safeSetState(() =>
-                                                                      _model.drpFrequencyValue =
-                                                                          val),
-                                                              width: 200.0,
-                                                              height: 40.0,
-                                                              textStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Geist Font Family',
-                                                                        fontSize:
-                                                                            13.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
-                                                                      ),
-                                                              hintText:
-                                                                  'Select frequency of report',
-                                                              icon: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_down_rounded,
-                                                                color: FlutterFlowTheme.of(
+                                                          if (_model.drpFrequencyValue !=
+                                                                  null &&
+                                                              _model.drpFrequencyValue !=
+                                                                  '')
+                                                            Expanded(
+                                                              child:
+                                                                  FlutterFlowDropDown<
+                                                                      String>(
+                                                                controller: _model
+                                                                        .drpFrequencyValueController ??=
+                                                                    FormFieldController<
+                                                                            String>(
+                                                                        null),
+                                                                options: [
+                                                                  'Daily',
+                                                                  'Weekly',
+                                                                  'Bi - Weekly',
+                                                                  'Quarterly',
+                                                                  'Yearly'
+                                                                ],
+                                                                onChanged: (val) =>
+                                                                    safeSetState(() =>
+                                                                        _model.drpFrequencyValue =
+                                                                            val),
+                                                                width: 200.0,
+                                                                height: 40.0,
+                                                                textStyle: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondaryText,
-                                                                size: 24.0,
-                                                              ),
-                                                              fillColor: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryBackground,
-                                                              elevation: 2.0,
-                                                              borderColor: Colors
-                                                                  .transparent,
-                                                              borderWidth: 0.0,
-                                                              borderRadius: 8.0,
-                                                              margin:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          12.0,
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Geist Font Family',
+                                                                      fontSize:
+                                                                          13.0,
+                                                                      letterSpacing:
                                                                           0.0,
-                                                                          12.0,
-                                                                          0.0),
-                                                              isOverButton:
-                                                                  false,
-                                                              isSearchable:
-                                                                  false,
-                                                              isMultiSelect:
-                                                                  false,
+                                                                      useGoogleFonts:
+                                                                          false,
+                                                                    ),
+                                                                hintText:
+                                                                    'Select frequency of report',
+                                                                icon: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_down_rounded,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  size: 24.0,
+                                                                ),
+                                                                fillColor: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
+                                                                elevation: 2.0,
+                                                                borderColor: Colors
+                                                                    .transparent,
+                                                                borderWidth:
+                                                                    0.0,
+                                                                borderRadius:
+                                                                    8.0,
+                                                                margin: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        12.0,
+                                                                        0.0,
+                                                                        12.0,
+                                                                        0.0),
+                                                                isOverButton:
+                                                                    false,
+                                                                isSearchable:
+                                                                    false,
+                                                                isMultiSelect:
+                                                                    false,
+                                                              ),
                                                             ),
-                                                          ),
                                                         ],
                                                       ),
                                                     ),
                                                   ],
                                                 ),
                                               ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        12.0, 50.0, 0.0, 0.0),
-                                                child: FFButtonWidget(
-                                                  onPressed: () async {
-                                                    if (_model.formKey
-                                                                .currentState ==
-                                                            null ||
-                                                        !_model.formKey
-                                                            .currentState!
-                                                            .validate()) {
-                                                      return;
-                                                    }
-                                                    if (_model
-                                                            .drpTaskNameValue ==
-                                                        null) {
-                                                      return;
-                                                    }
-                                                    if (_model
-                                                            .drpClientnameValue ==
-                                                        null) {
-                                                      return;
-                                                    }
-                                                    if (_model
-                                                            .drpFrequencyValue ==
-                                                        null) {
-                                                      return;
-                                                    }
-                                                    _model.pageiterator = 0;
-                                                    safeSetState(() {});
-                                                    while (_model
-                                                            .drpClientnameValue
-                                                            ?.length !=
-                                                        _model.pageiterator) {
-                                                      await PlannedTaskTable()
-                                                          .insert({
-                                                        'planned_task_name': _model
-                                                            .txtReporttaskNameTextController
-                                                            .text,
-                                                        'inspection_task_name':
-                                                            _model
-                                                                .drpTaskNameValue,
-                                                        'inspection_task_id':
-                                                            valueOrDefault<
-                                                                String>(
-                                                          _model.outputTask
-                                                              ?.where((e) =>
-                                                                  e.taskName ==
-                                                                  _model
-                                                                      .drpTaskNameValue)
-                                                              .toList()
-                                                              .firstOrNull
-                                                              ?.taskId,
-                                                          'null',
-                                                        ),
-                                                        'planned_task_interval':
-                                                            _model
-                                                                .drpFrequencyValue,
-                                                        'planned_task_client_name': _model
-                                                            .drpClientnameValue
-                                                            ?.elementAtOrNull(
-                                                                _model
-                                                                    .pageiterator),
-                                                        'planned_task_client_id':
-                                                            valueOrDefault<
-                                                                String>(
-                                                          _model.outputClient
-                                                              ?.where((e) =>
-                                                                  e.clientName ==
-                                                                  (_model
-                                                                      .drpClientnameValue
-                                                                      ?.elementAtOrNull(
-                                                                          _model
-                                                                              .pageiterator)))
-                                                              .toList()
-                                                              .firstOrNull
-                                                              ?.clientId,
-                                                          'null',
-                                                        ),
-                                                        'company_name': FFAppState()
-                                                            .appAuthUserCompanyName,
-                                                      });
-                                                      _model.pageiterator =
-                                                          _model.pageiterator +
-                                                              1;
+                                              if ((_model.drpTaskNameValue !=
+                                                          null &&
+                                                      _model.drpTaskNameValue !=
+                                                          '') &&
+                                                  (_model.txtReporttaskNameTextController
+                                                              .text !=
+                                                          '') &&
+                                                  ((_model.drpClientnameValue !=
+                                                              null &&
+                                                          (_model.drpClientnameValue)!
+                                                              .isNotEmpty) !=
+                                                      null) &&
+                                                  (_model.drpFrequencyValue !=
+                                                          null &&
+                                                      _model.drpFrequencyValue !=
+                                                          ''))
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          12.0, 50.0, 0.0, 0.0),
+                                                  child: FFButtonWidget(
+                                                    onPressed: () async {
+                                                      if (_model.formKey
+                                                                  .currentState ==
+                                                              null ||
+                                                          !_model.formKey
+                                                              .currentState!
+                                                              .validate()) {
+                                                        return;
+                                                      }
+                                                      if (_model
+                                                              .drpTaskNameValue ==
+                                                          null) {
+                                                        return;
+                                                      }
+                                                      if (_model
+                                                              .drpClientnameValue ==
+                                                          null) {
+                                                        return;
+                                                      }
+                                                      if (_model
+                                                              .drpFrequencyValue ==
+                                                          null) {
+                                                        return;
+                                                      }
+                                                      _model.pageiterator = 0;
                                                       safeSetState(() {});
-                                                    }
+                                                      while (_model
+                                                              .drpClientnameValue
+                                                              ?.length !=
+                                                          _model.pageiterator) {
+                                                        await PlannedTaskTable()
+                                                            .insert({
+                                                          'planned_task_name':
+                                                              _model
+                                                                  .txtReporttaskNameTextController
+                                                                  .text,
+                                                          'inspection_task_name':
+                                                              _model
+                                                                  .drpTaskNameValue,
+                                                          'inspection_task_id':
+                                                              valueOrDefault<
+                                                                  String>(
+                                                            _model.outputTask
+                                                                ?.where((e) =>
+                                                                    e.taskName ==
+                                                                    _model
+                                                                        .drpTaskNameValue)
+                                                                .toList()
+                                                                .firstOrNull
+                                                                ?.taskId,
+                                                            'null',
+                                                          ),
+                                                          'planned_task_interval':
+                                                              _model
+                                                                  .drpFrequencyValue,
+                                                          'planned_task_client_name': _model
+                                                              .drpClientnameValue
+                                                              ?.elementAtOrNull(
+                                                                  _model
+                                                                      .pageiterator),
+                                                          'planned_task_client_id':
+                                                              valueOrDefault<
+                                                                  String>(
+                                                            _model.outputClient
+                                                                ?.where((e) =>
+                                                                    e.clientName ==
+                                                                    (_model
+                                                                        .drpClientnameValue
+                                                                        ?.elementAtOrNull(
+                                                                            _model.pageiterator)))
+                                                                .toList()
+                                                                .firstOrNull
+                                                                ?.clientId,
+                                                            'null',
+                                                          ),
+                                                          'company_name':
+                                                              FFAppState()
+                                                                  .appAuthUserCompanyName,
+                                                        });
+                                                        _model.pageiterator =
+                                                            _model.pageiterator +
+                                                                1;
+                                                        safeSetState(() {});
+                                                      }
 
-                                                    context.pushNamed(
-                                                        PlannedreporttaskWidget
-                                                            .routeName);
-                                                  },
-                                                  text: 'Save',
-                                                  options: FFButtonOptions(
-                                                    height: 40.0,
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 0.0),
-                                                    iconPadding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
-                                                    color: Color(0xFF033395),
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Geist Font Family',
-                                                          color: Colors.white,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
-                                                        ),
-                                                    elevation: 0.0,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
+                                                      context.pushNamed(
+                                                          PlannedreporttaskWidget
+                                                              .routeName);
+                                                    },
+                                                    text: 'Save',
+                                                    options: FFButtonOptions(
+                                                      height: 40.0,
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
+                                                      iconPadding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      color: Color(0xFF033395),
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Geist Font Family',
+                                                                color: Colors
+                                                                    .white,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts:
+                                                                    false,
+                                                              ),
+                                                      elevation: 0.0,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
                                                   ),
                                                 ),
-                                              ),
                                             ],
                                           ),
                                         ),
