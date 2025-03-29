@@ -1,5 +1,6 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/sidebarnav_widget.dart';
+import '/components/sidebarnav_copy_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
@@ -30,18 +31,23 @@ class ReportplannerModel extends FlutterFlowModel<ReportplannerWidget> {
   void updatePageClientNameAtIndex(int index, Function(String) updateFn) =>
       pageClientName[index] = updateFn(pageClientName[index]);
 
-  List<String> pageClientAddress = [];
-  void addToPageClientAddress(String item) => pageClientAddress.add(item);
-  void removeFromPageClientAddress(String item) =>
-      pageClientAddress.remove(item);
-  void removeAtIndexFromPageClientAddress(int index) =>
-      pageClientAddress.removeAt(index);
-  void insertAtIndexInPageClientAddress(int index, String item) =>
-      pageClientAddress.insert(index, item);
-  void updatePageClientAddressAtIndex(int index, Function(String) updateFn) =>
-      pageClientAddress[index] = updateFn(pageClientAddress[index]);
+  List<String> pageSelectedClientAddress = [];
+  void addToPageSelectedClientAddress(String item) =>
+      pageSelectedClientAddress.add(item);
+  void removeFromPageSelectedClientAddress(String item) =>
+      pageSelectedClientAddress.remove(item);
+  void removeAtIndexFromPageSelectedClientAddress(int index) =>
+      pageSelectedClientAddress.removeAt(index);
+  void insertAtIndexInPageSelectedClientAddress(int index, String item) =>
+      pageSelectedClientAddress.insert(index, item);
+  void updatePageSelectedClientAddressAtIndex(
+          int index, Function(String) updateFn) =>
+      pageSelectedClientAddress[index] =
+          updateFn(pageSelectedClientAddress[index]);
 
   bool pageEditing = false;
+
+  int pageiterator = 0;
 
   ///  State fields for stateful widgets in this page.
 
@@ -50,8 +56,11 @@ class ReportplannerModel extends FlutterFlowModel<ReportplannerWidget> {
   List<ClientsRow>? outputClient;
   // Stores action output result for [Backend Call - Query Rows] action in reportplanner widget.
   List<InspectionTasksRow>? outputTask;
-  // Model for sidebarnav component.
-  late SidebarnavModel sidebarnavModel;
+  // Model for sidebarnavCopy component.
+  late SidebarnavCopyModel sidebarnavCopyModel;
+  // State field(s) for drpFrequency widget.
+  String? drpFrequencyValue;
+  FormFieldController<String>? drpFrequencyValueController;
   // State field(s) for txtReporttaskName widget.
   FocusNode? txtReporttaskNameFocusNode;
   TextEditingController? txtReporttaskNameTextController;
@@ -69,26 +78,22 @@ class ReportplannerModel extends FlutterFlowModel<ReportplannerWidget> {
   // State field(s) for drpTaskName widget.
   String? drpTaskNameValue;
   FormFieldController<String>? drpTaskNameValueController;
+  // Stores action output result for [Backend Call - API (GetClientsWithoutTask)] action in drpTaskName widget.
+  ApiCallResponse? apiResultdv2;
   // State field(s) for drpClientname widget.
-  String? drpClientnameValue;
-  FormFieldController<String>? drpClientnameValueController;
-  // State field(s) for drpAddress widget.
-  String? drpAddressValue;
-  FormFieldController<String>? drpAddressValueController;
-  // State field(s) for drpFrequency widget.
-  String? drpFrequencyValue;
-  FormFieldController<String>? drpFrequencyValueController;
+  List<String>? drpClientnameValue;
+  FormFieldController<List<String>>? drpClientnameValueController;
 
   @override
   void initState(BuildContext context) {
-    sidebarnavModel = createModel(context, () => SidebarnavModel());
+    sidebarnavCopyModel = createModel(context, () => SidebarnavCopyModel());
     txtReporttaskNameTextControllerValidator =
         _txtReporttaskNameTextControllerValidator;
   }
 
   @override
   void dispose() {
-    sidebarnavModel.dispose();
+    sidebarnavCopyModel.dispose();
     txtReporttaskNameFocusNode?.dispose();
     txtReporttaskNameTextController?.dispose();
   }

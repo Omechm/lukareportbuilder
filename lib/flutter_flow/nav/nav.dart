@@ -235,12 +235,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: ReportplannerWidget.routeName,
-          path: ReportplannerWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => ReportplannerWidget(),
-        ),
-        FFRoute(
           name: PlannedreporttaskWidget.routeName,
           path: PlannedreporttaskWidget.routePath,
           requireAuth: true,
@@ -272,10 +266,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: ReportplannerCopyWidget.routeName,
-          path: ReportplannerCopyWidget.routePath,
+          name: ReportplannerWidget.routeName,
+          path: ReportplannerWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => ReportplannerCopyWidget(
+          builder: (context, params) => ReportplannerWidget(
             pageNumber: params.getParam(
               'pageNumber',
               ParamType.int,

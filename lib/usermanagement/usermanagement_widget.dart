@@ -813,6 +813,58 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                   },
                                                 ),
                                               ),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.end,
+                                                children: [
+                                                  Text(
+                                                    'Number of rows: ',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Geist Font Family',
+                                                          fontSize: 12.0,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: false,
+                                                        ),
+                                                  ),
+                                                  Text(
+                                                    ((_model.textController1
+                                                                            .text !=
+                                                                        '') &&
+                                                                (_model
+                                                                    .simpleSearchResults
+                                                                    .isNotEmpty)
+                                                            ? _model
+                                                                .filteredUsersPageState
+                                                                .sortedList(
+                                                                    keyOf: (e) => e
+                                                                        .firstName!,
+                                                                    desc: false)
+                                                            : _model
+                                                                .unfilteredUsersPageState
+                                                                .sortedList(
+                                                                    keyOf: (e) =>
+                                                                        e.firstName!,
+                                                                    desc: false))
+                                                        .length
+                                                        .toString(),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Geist Font Family',
+                                                          fontSize: 12.0,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: false,
+                                                        ),
+                                                  ),
+                                                ],
+                                              ),
                                             ].divide(SizedBox(height: 16.0)),
                                           ),
                                         ),

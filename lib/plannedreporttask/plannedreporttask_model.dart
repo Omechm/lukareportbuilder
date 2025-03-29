@@ -3,6 +3,7 @@ import '/components/loading_comp_widget.dart';
 import '/components/sidebarnav_copy_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
 import 'plannedreporttask_widget.dart' show PlannedreporttaskWidget;
 import 'package:flutter/material.dart';
@@ -56,12 +57,17 @@ class PlannedreporttaskModel extends FlutterFlowModel<PlannedreporttaskWidget> {
           int index, Function(PlannedTaskRow) updateFn) =>
       pagePlannedTask[index] = updateFn(pagePlannedTask[index]);
 
+  int? numberOfRow = 10;
+
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Backend Call - Query Rows] action in plannedreporttask widget.
   List<PlannedTaskRow>? outputPlannedReportTask;
   // Model for sidebarnavCopy component.
   late SidebarnavCopyModel sidebarnavCopyModel;
+  // State field(s) for DrpClientFilterWidget widget.
+  String? drpClientFilterWidgetValue;
+  FormFieldController<String>? drpClientFilterWidgetValueController;
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController =
       FlutterFlowDataTableController<PlannedTaskRow>();

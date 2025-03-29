@@ -3,9 +3,11 @@ import '/components/loading_comp_widget.dart';
 import '/components/no_data_widget.dart';
 import '/components/sidebarnav_copy_widget.dart';
 import '/flutter_flow/flutter_flow_data_table.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -55,6 +57,8 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
       safeSetState(() {});
       FFAppState().appIsLoadingData = false;
       safeSetState(() {});
+      _model.paginatedDataTableController.paginatorController
+          .setRowsPerPage(FFAppConstants.numberOfRowsPerPage);
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -187,8 +191,124 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                     16.0, 0.0, 20.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 20.0, 0.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.end,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 5.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Opacity(
+                                                      opacity:
+                                                          _model.drpClientFilterWidgetValue !=
+                                                                      null &&
+                                                                  _model.drpClientFilterWidgetValue !=
+                                                                      ''
+                                                              ? 1.0
+                                                              : 0.0,
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          safeSetState(() {
+                                                            _model
+                                                                .drpClientFilterWidgetValueController
+                                                                ?.reset();
+                                                          });
+                                                        },
+                                                        child: Icon(
+                                                          Icons.clear_sharp,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          size: 16.0,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              FlutterFlowDropDown<String>(
+                                                controller: _model
+                                                        .drpClientFilterWidgetValueController ??=
+                                                    FormFieldController<String>(
+                                                        null),
+                                                options: _model
+                                                    .outputPlannedReportTask!
+                                                    .map((e) =>
+                                                        e.plannedTaskClientName)
+                                                    .withoutNulls
+                                                    .toList()
+                                                    .unique((e) => e)
+                                                    .sortedList(
+                                                        keyOf: (e) => e,
+                                                        desc: false),
+                                                onChanged: (val) =>
+                                                    safeSetState(() => _model
+                                                            .drpClientFilterWidgetValue =
+                                                        val),
+                                                width: 300.0,
+                                                height: 40.0,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Geist Font Family',
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: false,
+                                                        ),
+                                                hintText: 'Filter by Client',
+                                                icon: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  size: 24.0,
+                                                ),
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                elevation: 2.0,
+                                                borderColor: Colors.transparent,
+                                                borderWidth: 0.0,
+                                                borderRadius: 8.0,
+                                                margin: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 12.0, 0.0),
+                                                hidesUnderline: true,
+                                                isOverButton: false,
+                                                isSearchable: false,
+                                                isMultiSelect: false,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                     InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -251,6 +371,15 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                   builder: (context) {
                                                     final plannedTask = _model
                                                         .pagePlannedTask
+                                                        .where((e) => _model
+                                                                        .drpClientFilterWidgetValue ==
+                                                                    null ||
+                                                                _model.drpClientFilterWidgetValue ==
+                                                                    ''
+                                                            ? true
+                                                            : (e.plannedTaskClientName ==
+                                                                _model
+                                                                    .drpClientFilterWidgetValue))
                                                         .toList();
                                                     if (plannedTask.isEmpty) {
                                                       return NoDataWidget();
@@ -519,11 +648,8 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                       ),
                                                       emptyBuilder: () =>
                                                           NoDataWidget(),
-                                                      paginated: true,
+                                                      paginated: false,
                                                       selectable: false,
-                                                      hidePaginator: false,
-                                                      showFirstLastButtons:
-                                                          true,
                                                       headingRowHeight: 40.0,
                                                       dataRowHeight: 40.0,
                                                       columnSpacing: 20.0,
@@ -557,6 +683,51 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                   },
                                                 ),
                                               ),
+                                            ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.end,
+                                              children: [
+                                                Text(
+                                                  'Number of rows: ',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Geist Font Family',
+                                                        fontSize: 12.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                ),
+                                                Text(
+                                                  _model.pagePlannedTask
+                                                      .where((e) => _model
+                                                                      .drpClientFilterWidgetValue ==
+                                                                  null ||
+                                                              _model.drpClientFilterWidgetValue ==
+                                                                  ''
+                                                          ? true
+                                                          : (e.plannedTaskClientName ==
+                                                              _model
+                                                                  .drpClientFilterWidgetValue))
+                                                      .toList()
+                                                      .length
+                                                      .toString(),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Geist Font Family',
+                                                        fontSize: 12.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                ),
+                                              ],
                                             ),
                                           ].divide(SizedBox(height: 16.0)),
                                         ),

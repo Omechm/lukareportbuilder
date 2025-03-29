@@ -282,7 +282,7 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                       child: FFButtonWidget(
                                                         onPressed: () async {
                                                           context.pushNamed(
-                                                              ReportplannerCopyWidget
+                                                              ReportplannerWidget
                                                                   .routeName);
                                                         },
                                                         text: 'Plan new task',

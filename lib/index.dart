@@ -15,15 +15,13 @@ export '/clientmanagement/clientmanagement_widget.dart'
     show ClientmanagementWidget;
 export '/clientmanagement_editing/clientmanagement_editing_widget.dart'
     show ClientmanagementEditingWidget;
-export '/reportplanner/reportplanner_widget.dart' show ReportplannerWidget;
 export '/plannedreporttask/plannedreporttask_widget.dart'
     show PlannedreporttaskWidget;
 export '/page_for_refresh_data_table/page_for_refresh_data_table_widget.dart'
     show PageForRefreshDataTableWidget;
 export '/twst/twst_widget.dart' show TwstWidget;
 export '/twst_copy/twst_copy_widget.dart' show TwstCopyWidget;
-export '/reportplanner_copy/reportplanner_copy_widget.dart'
-    show ReportplannerCopyWidget;
+export '/reportplanner/reportplanner_widget.dart' show ReportplannerWidget;
 export '/report_summary/report_summary_widget.dart' show ReportSummaryWidget;
 export '/reset_password_page/reset_password_page_widget.dart'
     show ResetPasswordPageWidget;

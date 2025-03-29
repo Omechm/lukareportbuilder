@@ -1,4 +1,4 @@
 
 abstract class FFAppConstants {
-  static const int numberOfRowsPerPage = 20;
+  static const int numberOfRowsPerPage = 50;
 }
