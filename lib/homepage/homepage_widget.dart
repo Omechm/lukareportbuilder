@@ -55,6 +55,8 @@ class _HomepageWidgetState extends State<HomepageWidget>
           currentUserUid,
         ),
       );
+      FFAppState().appAuthUserCompanyName = '';
+      safeSetState(() {});
       FFAppState().appAuthUserCompanyName =
           _model.outputUserInfo!.firstOrNull!.companyName!;
       safeSetState(() {});
@@ -1182,7 +1184,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 20.0, 0.0, 0.0),
                                 child: Text(
-                                  'Report submitted this week',
+                                  'Task submitted this week',
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -1238,7 +1240,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                 label: DefaultTextStyle.merge(
                                                   softWrap: true,
                                                   child: Text(
-                                                    'Report Name',
+                                                    'Task Name',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .labelLarge

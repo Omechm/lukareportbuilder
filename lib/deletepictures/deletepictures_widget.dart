@@ -108,7 +108,7 @@ class _DeletepicturesWidgetState extends State<DeletepicturesWidget> {
                                         .primaryText,
                                   ),
                                 ),
-                                duration: Duration(milliseconds: 4000),
+                                duration: Duration(milliseconds: 10),
                                 backgroundColor:
                                     FlutterFlowTheme.of(context).secondary,
                               ),

@@ -123,7 +123,7 @@ class _ReporttemplatesWidgetState extends State<ReporttemplatesWidget>
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              'Report Templates',
+                                              'Task Templates',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .titleLarge

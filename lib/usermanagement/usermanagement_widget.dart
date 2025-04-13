@@ -43,13 +43,13 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.outputUsers = await UserTable().queryRows(
         queryFn: (q) => q
-            .neqOrNull(
-              'user_id',
-              currentUserUid,
-            )
             .eqOrNull(
               'company_name',
               FFAppState().appAuthUserCompanyName,
+            )
+            .neqOrNull(
+              'user_id',
+              currentUserUid,
             ),
       );
       _model.unfilteredUsersPageState = [];

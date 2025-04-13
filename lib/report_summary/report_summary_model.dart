@@ -108,6 +108,8 @@ class ReportSummaryModel extends FlutterFlowModel<ReportSummaryWidget> {
   int get summaryCurrentIndex =>
       summaryController != null ? summaryController!.index : 0;
 
+  // Stores action output result for [Backend Call - API (GetExecutionPercentage)] action in Icon widget.
+  ApiCallResponse? outputExecutionPercentage;
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController =
       FlutterFlowDataTableController<GetExecutedTasksByDateRangeDTStruct>();

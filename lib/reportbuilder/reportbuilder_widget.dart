@@ -556,7 +556,7 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                   EdgeInsets
                                                                       .all(6.0),
                                                               child: Text(
-                                                                'Report Title',
+                                                                'Task Title',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium

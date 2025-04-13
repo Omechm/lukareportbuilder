@@ -472,6 +472,24 @@ class FFAppState extends ChangeNotifier {
     _APIKEY = value;
     prefs.setString('ff_APIKEY', value);
   }
+
+  String _selectedCity = '';
+  String get selectedCity => _selectedCity;
+  set selectedCity(String value) {
+    _selectedCity = value;
+  }
+
+  String _selectedState = '';
+  String get selectedState => _selectedState;
+  set selectedState(String value) {
+    _selectedState = value;
+  }
+
+  String _selectedCountry = '';
+  String get selectedCountry => _selectedCountry;
+  set selectedCountry(String value) {
+    _selectedCountry = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

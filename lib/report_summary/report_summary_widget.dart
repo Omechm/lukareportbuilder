@@ -251,7 +251,7 @@ class _ReportSummaryWidgetState extends State<ReportSummaryWidget>
                                                       CrossAxisAlignment.start,
                                                   children: [
                                                     Text(
-                                                      'Report Summary',
+                                                      'Task Summary',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1009,7 +1009,7 @@ class _ReportSummaryWidgetState extends State<ReportSummaryWidget>
                                         padding: EdgeInsets.all(6.0),
                                         tabs: [
                                           Tab(
-                                            text: 'Non-Compliance Report',
+                                            text: 'Compliance Report',
                                           ),
                                           Tab(
                                             text: 'Infrastructure Summary',
@@ -1341,48 +1341,48 @@ class _ReportSummaryWidgetState extends State<ReportSummaryWidget>
                                                                           MainAxisSize
                                                                               .max,
                                                                       children: [
-                                                                        Padding(
-                                                                          padding:
-                                                                              EdgeInsets.all(20.0),
-                                                                          child:
-                                                                              FutureBuilder<ApiCallResponse>(
-                                                                            future:
-                                                                                GetAggregatedNoCompliantTasksCall.call(
-                                                                              startDate: dateTimeFormat("yyyy-MM-dd", FFAppState().appDateFrom),
-                                                                              endDate: dateTimeFormat("yyyy-MM-dd", FFAppState().appDateTo),
-                                                                            ),
-                                                                            builder:
-                                                                                (context, snapshot) {
-                                                                              // Customize what your widget looks like when it's loading.
-                                                                              if (!snapshot.hasData) {
-                                                                                return Center(
-                                                                                  child: SizedBox(
-                                                                                    width: 10.0,
-                                                                                    height: 10.0,
-                                                                                    child: CircularProgressIndicator(
-                                                                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                        Color(0xFF7C8289),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ),
-                                                                                );
-                                                                              }
-                                                                              final syncFussChartColumnGetAggregatedNoCompliantTasksResponse = snapshot.data!;
-
-                                                                              return Container(
-                                                                                width: MediaQuery.sizeOf(context).width * 0.5,
-                                                                                height: MediaQuery.sizeOf(context).height * 0.5,
-                                                                                child: custom_widgets.SyncFussChartColumn(
-                                                                                  width: MediaQuery.sizeOf(context).width * 0.5,
-                                                                                  height: MediaQuery.sizeOf(context).height * 0.5,
-                                                                                  yMaxValue: (syncFussChartColumnGetAggregatedNoCompliantTasksResponse.jsonBody.toList().map<NonCompliantLocationCountStruct?>(NonCompliantLocationCountStruct.maybeFromMap).toList() as Iterable<NonCompliantLocationCountStruct?>).withoutNulls.sortedList(keyOf: (e) => e.count, desc: true).firstOrNull?.count.toDouble(),
-                                                                                  yMinValue: 0.0,
-                                                                                  yInterval: 2.0,
-                                                                                  chartData: (syncFussChartColumnGetAggregatedNoCompliantTasksResponse.jsonBody.toList().map<NonCompliantLocationCountStruct?>(NonCompliantLocationCountStruct.maybeFromMap).toList() as Iterable<NonCompliantLocationCountStruct?>).withoutNulls,
+                                                                        Stack(
+                                                                          children: [
+                                                                            Padding(
+                                                                              padding: EdgeInsets.all(20.0),
+                                                                              child: FutureBuilder<ApiCallResponse>(
+                                                                                future: GetAggregatedNoCompliantTasksCall.call(
+                                                                                  startDate: dateTimeFormat("yyyy-MM-dd", FFAppState().appDateFrom),
+                                                                                  endDate: dateTimeFormat("yyyy-MM-dd", FFAppState().appDateTo),
                                                                                 ),
-                                                                              );
-                                                                            },
-                                                                          ),
+                                                                                builder: (context, snapshot) {
+                                                                                  // Customize what your widget looks like when it's loading.
+                                                                                  if (!snapshot.hasData) {
+                                                                                    return Center(
+                                                                                      child: SizedBox(
+                                                                                        width: 10.0,
+                                                                                        height: 10.0,
+                                                                                        child: CircularProgressIndicator(
+                                                                                          valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                            Color(0xFF7C8289),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    );
+                                                                                  }
+                                                                                  final syncFussChartColumnGetAggregatedNoCompliantTasksResponse = snapshot.data!;
+
+                                                                                  return Container(
+                                                                                    width: MediaQuery.sizeOf(context).width * 0.5,
+                                                                                    height: MediaQuery.sizeOf(context).height * 0.5,
+                                                                                    child: custom_widgets.SyncFussChartColumn(
+                                                                                      width: MediaQuery.sizeOf(context).width * 0.5,
+                                                                                      height: MediaQuery.sizeOf(context).height * 0.5,
+                                                                                      yMaxValue: (syncFussChartColumnGetAggregatedNoCompliantTasksResponse.jsonBody.toList().map<NonCompliantLocationCountStruct?>(NonCompliantLocationCountStruct.maybeFromMap).toList() as Iterable<NonCompliantLocationCountStruct?>).withoutNulls.sortedList(keyOf: (e) => e.count, desc: true).firstOrNull?.count.toDouble(),
+                                                                                      yMinValue: 0.0,
+                                                                                      yInterval: 2.0,
+                                                                                      chartData: (syncFussChartColumnGetAggregatedNoCompliantTasksResponse.jsonBody.toList().map<NonCompliantLocationCountStruct?>(NonCompliantLocationCountStruct.maybeFromMap).toList() as Iterable<NonCompliantLocationCountStruct?>).withoutNulls,
+                                                                                    ),
+                                                                                  );
+                                                                                },
+                                                                              ),
+                                                                            ),
+                                                                          ],
                                                                         ),
                                                                       ],
                                                                     ),
@@ -1419,51 +1419,111 @@ class _ReportSummaryWidgetState extends State<ReportSummaryWidget>
                                                                           MainAxisSize
                                                                               .max,
                                                                       children: [
-                                                                        Padding(
-                                                                          padding:
-                                                                              EdgeInsets.all(20.0),
-                                                                          child:
-                                                                              FutureBuilder<ApiCallResponse>(
-                                                                            future:
-                                                                                GetExecutionPercentageCall.call(
-                                                                              supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ2Zm96bmhhZXBnZ2J5eWtrb2VhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjI1NzIyMDUsImV4cCI6MjAzODE0ODIwNX0.gTkzwmWjjrr3s5GxRBIiahlyaj2iqp3_Y0NOUsZceaA',
-                                                                              companyName: FFAppState().appAuthUserCompanyName,
-                                                                              startDate: dateTimeFormat("yyyy-MM-dd", FFAppState().appDateFrom),
-                                                                              endDate: dateTimeFormat("yyyy-MM-dd", FFAppState().appDateTo),
-                                                                              jwt: currentJwtToken,
-                                                                            ),
-                                                                            builder:
-                                                                                (context, snapshot) {
-                                                                              // Customize what your widget looks like when it's loading.
-                                                                              if (!snapshot.hasData) {
-                                                                                return Center(
-                                                                                  child: SizedBox(
-                                                                                    width: 10.0,
-                                                                                    height: 10.0,
-                                                                                    child: CircularProgressIndicator(
-                                                                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                        Color(0xFF7C8289),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ),
-                                                                                );
-                                                                              }
-                                                                              final executionPercentageChartGetExecutionPercentageResponse = snapshot.data!;
-
-                                                                              return Container(
-                                                                                width: MediaQuery.sizeOf(context).width * 0.5,
-                                                                                height: MediaQuery.sizeOf(context).height * 0.5,
-                                                                                child: custom_widgets.ExecutionPercentageChart(
-                                                                                  width: MediaQuery.sizeOf(context).width * 0.5,
-                                                                                  height: MediaQuery.sizeOf(context).height * 0.5,
-                                                                                  yMaxValue: 100.0,
-                                                                                  yMinValue: 0.0,
-                                                                                  yInterval: 10.0,
-                                                                                  chartData: (executionPercentageChartGetExecutionPercentageResponse.jsonBody.toList().map<GetPercentageOfExecutionStruct?>(GetPercentageOfExecutionStruct.maybeFromMap).toList() as Iterable<GetPercentageOfExecutionStruct?>).withoutNulls.sortedList(keyOf: (e) => e.executionpercentage, desc: true),
+                                                                        Stack(
+                                                                          children: [
+                                                                            Padding(
+                                                                              padding: EdgeInsets.all(20.0),
+                                                                              child: FutureBuilder<ApiCallResponse>(
+                                                                                future: GetExecutionPercentageCall.call(
+                                                                                  supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ2Zm96bmhhZXBnZ2J5eWtrb2VhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjI1NzIyMDUsImV4cCI6MjAzODE0ODIwNX0.gTkzwmWjjrr3s5GxRBIiahlyaj2iqp3_Y0NOUsZceaA',
+                                                                                  companyName: FFAppState().appAuthUserCompanyName,
+                                                                                  startDate: dateTimeFormat("yyyy-MM-dd", FFAppState().appDateFrom),
+                                                                                  endDate: dateTimeFormat("yyyy-MM-dd", FFAppState().appDateTo),
+                                                                                  jwt: currentJwtToken,
                                                                                 ),
-                                                                              );
-                                                                            },
-                                                                          ),
+                                                                                builder: (context, snapshot) {
+                                                                                  // Customize what your widget looks like when it's loading.
+                                                                                  if (!snapshot.hasData) {
+                                                                                    return Center(
+                                                                                      child: SizedBox(
+                                                                                        width: 10.0,
+                                                                                        height: 10.0,
+                                                                                        child: CircularProgressIndicator(
+                                                                                          valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                            Color(0xFF7C8289),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    );
+                                                                                  }
+                                                                                  final executionPercentageChartGetExecutionPercentageResponse = snapshot.data!;
+
+                                                                                  return Container(
+                                                                                    width: MediaQuery.sizeOf(context).width * 0.5,
+                                                                                    height: MediaQuery.sizeOf(context).height * 0.5,
+                                                                                    child: custom_widgets.ExecutionPercentageChart(
+                                                                                      width: MediaQuery.sizeOf(context).width * 0.5,
+                                                                                      height: MediaQuery.sizeOf(context).height * 0.5,
+                                                                                      yMaxValue: 100.0,
+                                                                                      yMinValue: 0.0,
+                                                                                      yInterval: 10.0,
+                                                                                      chartData: (executionPercentageChartGetExecutionPercentageResponse.jsonBody.toList().map<GetPercentageOfExecutionStruct?>(GetPercentageOfExecutionStruct.maybeFromMap).toList() as Iterable<GetPercentageOfExecutionStruct?>).withoutNulls.sortedList(keyOf: (e) => e.executionpercentage, desc: true),
+                                                                                    ),
+                                                                                  );
+                                                                                },
+                                                                              ),
+                                                                            ),
+                                                                            Align(
+                                                                              alignment: AlignmentDirectional(1.0, 0.0),
+                                                                              child: Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 20.0, 0.0),
+                                                                                child: InkWell(
+                                                                                  splashColor: Colors.transparent,
+                                                                                  focusColor: Colors.transparent,
+                                                                                  hoverColor: Colors.transparent,
+                                                                                  highlightColor: Colors.transparent,
+                                                                                  onTap: () async {
+                                                                                    ScaffoldMessenger.of(context).clearSnackBars();
+                                                                                    ScaffoldMessenger.of(context).showSnackBar(
+                                                                                      SnackBar(
+                                                                                        content: Text(
+                                                                                          'Download started',
+                                                                                          style: TextStyle(
+                                                                                            color: FlutterFlowTheme.of(context).primaryText,
+                                                                                          ),
+                                                                                        ),
+                                                                                        duration: Duration(milliseconds: 4000),
+                                                                                        backgroundColor: FlutterFlowTheme.of(context).info,
+                                                                                      ),
+                                                                                    );
+                                                                                    _model.outputExecutionPercentage = await GetExecutionPercentageCall.call(
+                                                                                      supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ2Zm96bmhhZXBnZ2J5eWtrb2VhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjI1NzIyMDUsImV4cCI6MjAzODE0ODIwNX0.gTkzwmWjjrr3s5GxRBIiahlyaj2iqp3_Y0NOUsZceaA',
+                                                                                      startDate: dateTimeFormat("yyyy-MM-dd", FFAppState().appDateFrom),
+                                                                                      endDate: dateTimeFormat("yyyy-MM-dd", FFAppState().appDateTo),
+                                                                                      companyName: FFAppState().appAuthUserCompanyName,
+                                                                                      jwt: currentJwtToken,
+                                                                                    );
+
+                                                                                    await actions.downloadCSVFromAPIData(
+                                                                                      ((_model.outputExecutionPercentage?.jsonBody ?? '').toList().map<GetPercentageOfExecutionStruct?>(GetPercentageOfExecutionStruct.maybeFromMap).toList() as Iterable<GetPercentageOfExecutionStruct?>).withoutNulls.toList(),
+                                                                                      'Execution Percentage -${dateTimeFormat("d/M/y", FFAppState().appDateFrom)}     -      ${dateTimeFormat("d/M/y", FFAppState().appDateTo)}',
+                                                                                      'Summary of execution by location between ${dateTimeFormat("d/M/y", FFAppState().appDateFrom)}  and ${dateTimeFormat("d/M/y", FFAppState().appDateTo)}',
+                                                                                    );
+                                                                                    ScaffoldMessenger.of(context).clearSnackBars();
+                                                                                    ScaffoldMessenger.of(context).showSnackBar(
+                                                                                      SnackBar(
+                                                                                        content: Text(
+                                                                                          'File has downloaded',
+                                                                                          style: TextStyle(
+                                                                                            color: FlutterFlowTheme.of(context).primaryText,
+                                                                                          ),
+                                                                                        ),
+                                                                                        duration: Duration(milliseconds: 4000),
+                                                                                        backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                      ),
+                                                                                    );
+
+                                                                                    safeSetState(() {});
+                                                                                  },
+                                                                                  child: Icon(
+                                                                                    Icons.download_rounded,
+                                                                                    color: Color(0xFC105DFB),
+                                                                                    size: 24.0,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
                                                                         ),
                                                                       ],
                                                                     ),

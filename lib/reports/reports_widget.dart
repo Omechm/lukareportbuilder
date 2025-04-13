@@ -166,7 +166,7 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                             .start,
                                                     children: [
                                                       Text(
-                                                        'Submitted Reports',
+                                                        'Submitted Tasks',
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .titleLarge
@@ -779,7 +779,7 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                           .merge(
                                                         softWrap: true,
                                                         child: Text(
-                                                          'Report Name',
+                                                          'Task Name',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelLarge

@@ -161,7 +161,7 @@ class _ReportplannerWidgetState extends State<ReportplannerWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Report planner',
+                                          'Task planner',
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
                                               .override(

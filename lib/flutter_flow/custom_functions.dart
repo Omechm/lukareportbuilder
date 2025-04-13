@@ -103,3 +103,9 @@ DateTime? last2WeeksDate() {
   final formattedDate = formatter.format(twoWeeksAgo);
   return DateTime.parse(formattedDate);
 }
+
+DateTime? getDate2WeeksFromDate(DateTime? startDate) {
+  // Get Date 2 weeks ago from startDate
+  if (startDate == null) return null; // Check for null input
+  return startDate.subtract(Duration(days: 14)); // Subtract 14 days
+}

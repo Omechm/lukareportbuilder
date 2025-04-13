@@ -286,7 +286,7 @@ class _DetailspageWidgetState extends State<DetailspageWidget> {
                                                                       15.0,
                                                                       0.0),
                                                           child: Text(
-                                                            'REPORT NAME',
+                                                            'TASK NAME',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .headlineMedium

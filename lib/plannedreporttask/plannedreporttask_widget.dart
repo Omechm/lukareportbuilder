@@ -151,7 +151,7 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Planned Reports',
+                                            'Planned Tasks',
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineMedium
                                                 .override(
@@ -398,7 +398,7 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                                   .merge(
                                                             softWrap: true,
                                                             child: Text(
-                                                              'Report name',
+                                                              'Task name',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .labelLarge

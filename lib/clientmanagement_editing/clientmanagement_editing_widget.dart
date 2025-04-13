@@ -1045,7 +1045,8 @@ class _ClientmanagementEditingWidgetState
                                                             data: {
                                                               'client_name': _model
                                                                   .textController1
-                                                                  .text,
+                                                                  .text
+                                                                  .toUpperCase(),
                                                               'contact_email':
                                                                   _model
                                                                       .textController2
@@ -1059,6 +1060,9 @@ class _ClientmanagementEditingWidgetState
                                                               'city': _model
                                                                   .textController4
                                                                   .text,
+                                                              'company_name':
+                                                                  FFAppState()
+                                                                      .appAuthUserCompanyName,
                                                             },
                                                             matchingRows:
                                                                 (rows) => rows
@@ -1098,7 +1102,8 @@ class _ClientmanagementEditingWidgetState
                                                               .insert({
                                                             'client_name': _model
                                                                 .textController1
-                                                                .text,
+                                                                .text
+                                                                .toUpperCase(),
                                                             'contact_email': _model
                                                                 .textController2
                                                                 .text,
@@ -1111,6 +1116,9 @@ class _ClientmanagementEditingWidgetState
                                                             'city': _model
                                                                 .textController4
                                                                 .text,
+                                                            'company_name':
+                                                                FFAppState()
+                                                                    .appAuthUserCompanyName,
                                                           });
                                                           ScaffoldMessenger.of(
                                                                   context)
