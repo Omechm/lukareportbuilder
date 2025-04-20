@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/walkthroughs/design_report_template.dart';
+import '/index.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart'
     show TutorialCoachMark;
 import 'package:flutter/material.dart';
@@ -149,7 +150,7 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              'Report Builder',
+                                              'Template Builder',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .titleLarge
@@ -162,7 +163,7 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                       ),
                                             ),
                                             Text(
-                                              'Dynamically build your report, defining report type and business case',
+                                              'Dynamically build your task, defining task type and business case',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -196,8 +197,7 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                         .appIsANewReport = true;
                                                     safeSetState(() {});
                                                   },
-                                                  text:
-                                                      'Create new report Template',
+                                                  text: 'Create New Template',
                                                   options: FFButtonOptions(
                                                     height: 30.0,
                                                     padding:
@@ -250,6 +250,9 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                           .update(
                                                         data: {
                                                           'is_published': true,
+                                                          'company_name':
+                                                              FFAppState()
+                                                                  .appAuthUserCompanyName,
                                                         },
                                                         matchingRows: (rows) =>
                                                             rows.eqOrNull(
@@ -261,6 +264,9 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                           .update(
                                                         data: {
                                                           'is_published': true,
+                                                          'company_name':
+                                                              FFAppState()
+                                                                  .appAuthUserCompanyName,
                                                         },
                                                         matchingRows: (rows) =>
                                                             rows.eqOrNull(
@@ -275,8 +281,10 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                               .appIsTitleSet =
                                                           false;
                                                       safeSetState(() {});
-                                                      _model.newTemplateId = '';
-                                                      _model.templateTitle = '';
+                                                      _model.newTemplateId =
+                                                          null;
+                                                      _model.templateTitle =
+                                                          null;
                                                       _model.pageRebuild = null;
                                                       _model.isTemplatedSaved =
                                                           false;
@@ -290,7 +298,14 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                         _model
                                                             .textFieldnameTextController
                                                             ?.clear();
+                                                        _model
+                                                            .textFieldOptionsTextController
+                                                            ?.clear();
                                                       });
+
+                                                      context.pushNamed(
+                                                          ReporttemplatesWidget
+                                                              .routeName);
                                                     },
                                                     text: 'Click to Publish',
                                                     options: FFButtonOptions(
@@ -779,6 +794,9 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                       _model
                                                                           .textFieldTitleTextController
                                                                           .text,
+                                                                  'company_name':
+                                                                      FFAppState()
+                                                                          .appAuthUserCompanyName,
                                                                 });
                                                                 _model.newTemplateId =
                                                                     _model
@@ -1381,6 +1399,12 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                             .text);
                                                                     safeSetState(
                                                                         () {});
+                                                                    safeSetState(
+                                                                        () {
+                                                                      _model
+                                                                          .textFieldOptionsTextController
+                                                                          ?.clear();
+                                                                    });
                                                                   },
                                                                   text: 'add',
                                                                   options:
@@ -1830,6 +1854,9 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                   'is_required':
                                                                       _model
                                                                           .switchValue,
+                                                                  'company_name':
+                                                                      FFAppState()
+                                                                          .appAuthUserCompanyName,
                                                                 });
                                                                 while (_model
                                                                         .fieldOptionsIterator <
@@ -1851,6 +1878,9 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                     'field_id': _model
                                                                         .inspectionFieldInsertOutput
                                                                         ?.fieldId,
+                                                                    'company_name':
+                                                                        FFAppState()
+                                                                            .appAuthUserCompanyName,
                                                                   });
                                                                   _model.fieldOptionsIterator =
                                                                       _model.fieldOptionsIterator +
@@ -2045,7 +2075,7 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              'Report fields for ${_model.templateTitle} template',
+                                                              'Task fields for ${_model.templateTitle} template',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .titleLarge

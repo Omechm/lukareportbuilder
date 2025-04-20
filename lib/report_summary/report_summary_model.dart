@@ -107,6 +107,8 @@ class ReportSummaryModel extends FlutterFlowModel<ReportSummaryWidget> {
   TabController? summaryController;
   int get summaryCurrentIndex =>
       summaryController != null ? summaryController!.index : 0;
+  int get summaryPreviousIndex =>
+      summaryController != null ? summaryController!.previousIndex : 0;
 
   // Stores action output result for [Backend Call - API (GetExecutionPercentage)] action in Icon widget.
   ApiCallResponse? outputExecutionPercentage;

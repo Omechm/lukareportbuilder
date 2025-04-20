@@ -26,4 +26,7 @@ class ImagesToDeleteRow extends SupabaseDataRow {
 
   String? get url => getField<String>('url');
   set url(String? value) => setField<String>('url', value);
+
+  String get companyName => getField<String>('company_name')!;
+  set companyName(String value) => setField<String>('company_name', value);
 }

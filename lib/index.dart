@@ -36,3 +36,6 @@ export '/non_compliance_more_info/non_compliance_more_info_widget.dart'
 export '/compliance_stat/compliance_stat_widget.dart' show ComplianceStatWidget;
 export '/image_viewer/image_viewer_widget.dart' show ImageViewerWidget;
 export '/deletepictures/deletepictures_widget.dart' show DeletepicturesWidget;
+export '/academy/academy_widget.dart' show AcademyWidget;
+export '/courselessons/courselessons_widget.dart' show CourselessonsWidget;
+export '/documentation/documentation_widget.dart' show DocumentationWidget;

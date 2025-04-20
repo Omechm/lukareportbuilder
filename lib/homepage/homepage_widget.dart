@@ -536,6 +536,8 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                           .override(
                                                                             fontFamily:
                                                                                 'Geist Font Family',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primaryText,
                                                                             fontSize:
                                                                                 15.0,
                                                                             letterSpacing:
@@ -963,7 +965,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                         animateFromLastPercent:
                                                                             true,
                                                                         progressColor:
-                                                                            FlutterFlowTheme.of(context).warning,
+                                                                            FlutterFlowTheme.of(context).tertiary,
                                                                         backgroundColor:
                                                                             Color(0x95DDDDDD),
                                                                         center:

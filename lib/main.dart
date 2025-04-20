@@ -101,9 +101,18 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         brightness: Brightness.light,
         scrollbarTheme: ScrollbarThemeData(
-          thumbVisibility: WidgetStateProperty.all(true),
+          thumbVisibility: WidgetStateProperty.all(false),
           trackVisibility: WidgetStateProperty.all(true),
           interactive: true,
+          thumbColor: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.dragged)) {
+              return Color(1072635);
+            }
+            if (states.contains(WidgetState.hovered)) {
+              return Color(1072635);
+            }
+            return Color(1072635);
+          }),
         ),
       ),
       themeMode: _themeMode,

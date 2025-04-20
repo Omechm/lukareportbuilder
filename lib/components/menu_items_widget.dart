@@ -207,6 +207,27 @@ class _MenuItemsWidgetState extends State<MenuItemsWidget> {
                                             ),
                                           },
                                         );
+                                      } else {
+                                        if (paramMenuItemchildrenItem
+                                                .itemOrder ==
+                                            7) {
+                                          if (Navigator.of(context).canPop()) {
+                                            context.pop();
+                                          }
+                                          context.pushNamed(
+                                            AcademyWidget.routeName,
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
+                                        }
                                       }
                                     }
                                   }

@@ -322,8 +322,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: DeletepicturesWidget.routeName,
           path: DeletepicturesWidget.routePath,
           builder: (context, params) => DeletepicturesWidget(),
+        ),
+        FFRoute(
+          name: AcademyWidget.routeName,
+          path: AcademyWidget.routePath,
+          requireAuth: true,
+          builder: (context, params) => AcademyWidget(),
+        ),
+        FFRoute(
+          name: CourselessonsWidget.routeName,
+          path: CourselessonsWidget.routePath,
+          requireAuth: true,
+          builder: (context, params) => CourselessonsWidget(
+            courseid: params.getParam(
+              'courseid',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: DocumentationWidget.routeName,
+          path: DocumentationWidget.routePath,
+          builder: (context, params) => DocumentationWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {

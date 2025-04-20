@@ -60,9 +60,8 @@ class _CompAccountDeletionWidgetState extends State<CompAccountDeletionWidget> {
           color: FlutterFlowTheme.of(context).secondaryBackground,
         ),
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(300.0, 100.0, 300.0, 300.0),
+          padding: EdgeInsetsDirectional.fromSTEB(30.0, 10.0, 30.0, 30.0),
           child: Container(
-            width: double.infinity,
             height: double.infinity,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -125,7 +124,7 @@ class _CompAccountDeletionWidgetState extends State<CompAccountDeletionWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                     child: Container(
-                      width: double.infinity,
+                      width: 400.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).alternate,
                         borderRadius: BorderRadius.circular(8.0),
@@ -137,76 +136,113 @@ class _CompAccountDeletionWidgetState extends State<CompAccountDeletionWidget> {
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              'Type \'delete this account\' to confirm:',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodySmall
-                                  .override(
-                                    fontFamily: 'Geist Font Family',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: false,
-                                  ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Text(
+                                  'Type ',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodySmall
+                                      .override(
+                                        fontFamily: 'Geist Font Family',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 14.0,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: false,
+                                      ),
+                                ),
+                                Text(
+                                  'delete this account',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodySmall
+                                      .override(
+                                        fontFamily: 'Geist Font Family',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 14.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.bold,
+                                        useGoogleFonts: false,
+                                      ),
+                                ),
+                                Text(
+                                  ' to confirm.',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodySmall
+                                      .override(
+                                        fontFamily: 'Geist Font Family',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 14.0,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: false,
+                                      ),
+                                ),
+                              ],
                             ),
-                            TextFormField(
-                              controller: _model.textController,
-                              focusNode: _model.textFieldFocusNode,
-                              autofocus: false,
-                              textInputAction: TextInputAction.done,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                hintText: 'delete this account',
-                                hintStyle: FlutterFlowTheme.of(context)
+                            Container(
+                              width: 400.0,
+                              child: TextFormField(
+                                controller: _model.textController,
+                                focusNode: _model.textFieldFocusNode,
+                                autofocus: false,
+                                textInputAction: TextInputAction.done,
+                                obscureText: false,
+                                decoration: InputDecoration(
+                                  hintText: 'delete this account',
+                                  hintStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Geist Font Family',
+                                        color: Color(0x8F5A5C60),
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: false,
+                                      ),
+                                  enabledBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: _model.compColor!,
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0x00000000),
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  errorBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0x00000000),
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  focusedErrorBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0x00000000),
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  filled: true,
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                ),
+                                style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Geist Font Family',
-                                      color: Color(0x8F5A5C60),
                                       letterSpacing: 0.0,
                                       useGoogleFonts: false,
                                     ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: _model.compColor!,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Color(0x00000000),
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Color(0x00000000),
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Color(0x00000000),
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                filled: true,
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                minLines: 1,
+                                cursorColor: Color(0xFFE00D0D),
+                                validator: _model.textControllerValidator
+                                    .asValidator(context),
                               ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Geist Font Family',
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: false,
-                                  ),
-                              minLines: 1,
-                              validator: _model.textControllerValidator
-                                  .asValidator(context),
                             ),
                           ].divide(SizedBox(height: 8.0)),
                         ),
@@ -268,7 +304,7 @@ class _CompAccountDeletionWidgetState extends State<CompAccountDeletionWidget> {
                       },
                       text: 'Permanently Delete Account',
                       options: FFButtonOptions(
-                        width: double.infinity,
+                        width: 400.0,
                         height: 44.0,
                         padding: EdgeInsets.all(8.0),
                         iconPadding:
@@ -299,7 +335,7 @@ class _CompAccountDeletionWidgetState extends State<CompAccountDeletionWidget> {
                       },
                       text: 'Cancel',
                       options: FFButtonOptions(
-                        width: double.infinity,
+                        width: 400.0,
                         height: 44.0,
                         padding: EdgeInsets.all(8.0),
                         iconPadding:

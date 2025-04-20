@@ -13,11 +13,13 @@ class GetAggregatedNoCompliantTasksCall {
   static Future<ApiCallResponse> call({
     String? startDate = '2025-02-01',
     String? endDate = '2025-12-31',
+    String? companyName = '',
   }) async {
     final ffApiRequestBody = '''
 {
   "start_date_str": "${escapeStringForJson(startDate)}",
-  "end_date_str": "${escapeStringForJson(endDate)}"
+  "end_date_str": "${escapeStringForJson(endDate)}",
+  "param_company_name": "${escapeStringForJson(companyName)}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'GetAggregatedNoCompliantTasks',
@@ -67,11 +69,13 @@ class GetFieldValuesCall {
   static Future<ApiCallResponse> call({
     String? startDate = '2025-02-15',
     String? endDate = '2025-02-15',
+    String? companyName = '',
   }) async {
     final ffApiRequestBody = '''
 {
   "start_date": "${escapeStringForJson(startDate)}",
-  "end_date": "${escapeStringForJson(endDate)}"
+  "end_date": "${escapeStringForJson(endDate)}",
+  "param_company_name": "${escapeStringForJson(companyName)}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'GetFieldValues',
@@ -148,11 +152,13 @@ class GetExecutedTasksDyDateRangeCall {
   static Future<ApiCallResponse> call({
     String? startDate = '2025-02-17',
     String? endDate = '2025-02-17',
+    String? companyName = 'Sonafem',
   }) async {
     final ffApiRequestBody = '''
 {
   "start_date": "${escapeStringForJson(startDate)}",
-  "end_date": "${escapeStringForJson(endDate)}"
+  "end_date": "${escapeStringForJson(endDate)}",
+  "param_company_name": "${escapeStringForJson(companyName)}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'GetExecutedTasksDyDateRange',

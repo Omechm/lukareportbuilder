@@ -51,4 +51,7 @@ class TemporalUserInputStorageRow extends SupabaseDataRow {
 
   String? get createdBy => getField<String>('created_by');
   set createdBy(String? value) => setField<String>('created_by', value);
+
+  String? get companyName => getField<String>('company_name');
+  set companyName(String? value) => setField<String>('company_name', value);
 }

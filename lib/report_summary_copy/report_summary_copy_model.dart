@@ -64,6 +64,8 @@ class ReportSummaryCopyModel extends FlutterFlowModel<ReportSummaryCopyWidget> {
   TabController? summaryController;
   int get summaryCurrentIndex =>
       summaryController != null ? summaryController!.index : 0;
+  int get summaryPreviousIndex =>
+      summaryController != null ? summaryController!.previousIndex : 0;
 
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController1 =

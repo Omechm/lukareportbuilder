@@ -44,4 +44,7 @@ class NonCompliantTaskExecutionGroupRow extends SupabaseDataRow {
 
   String? get compKey => getField<String>('comp_key');
   set compKey(String? value) => setField<String>('comp_key', value);
+
+  String get companyName => getField<String>('company_name')!;
+  set companyName(String value) => setField<String>('company_name', value);
 }

@@ -102,6 +102,7 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
       length: 3,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
+
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 

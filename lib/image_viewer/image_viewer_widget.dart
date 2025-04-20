@@ -95,6 +95,7 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                               endDate: functions
                                   .formatDateTime(FFAppState().appDateTo)
                                   ?.toString(),
+                              companyName: FFAppState().appAuthUserCompanyName,
                             )))
                       .future,
                   builder: (context, snapshot) {

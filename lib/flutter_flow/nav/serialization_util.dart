@@ -232,8 +232,14 @@ dynamic deserializeParam<T>(
             return VacancyClosureRow(data);
           case ClientsRow:
             return ClientsRow(data);
+          case CountriesRow:
+            return CountriesRow(data);
+          case DocumentationRow:
+            return DocumentationRow(data);
           case InspectionFieldsRow:
             return InspectionFieldsRow(data);
+          case LessonsRow:
+            return LessonsRow(data);
           case MenuItemsRow:
             return MenuItemsRow(data);
           case PlannedTaskRow:
@@ -258,10 +264,14 @@ dynamic deserializeParam<T>(
             return ImagesToDeleteRow(data);
           case UserRow:
             return UserRow(data);
+          case UserProgressRow:
+            return UserProgressRow(data);
           case SessionsRow:
             return SessionsRow(data);
           case RolesRow:
             return RolesRow(data);
+          case CoursesRow:
+            return CoursesRow(data);
           case PsServiceOfferingsRow:
             return PsServiceOfferingsRow(data);
           default:

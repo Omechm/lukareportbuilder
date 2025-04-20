@@ -156,6 +156,7 @@ class _ReportSummaryWidgetState extends State<ReportSummaryWidget>
       length: 2,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
+
     animationsMap.addAll({
       'iconOnPageLoadAnimation': AnimationInfo(
         loop: true,
@@ -1349,6 +1350,7 @@ class _ReportSummaryWidgetState extends State<ReportSummaryWidget>
                                                                                 future: GetAggregatedNoCompliantTasksCall.call(
                                                                                   startDate: dateTimeFormat("yyyy-MM-dd", FFAppState().appDateFrom),
                                                                                   endDate: dateTimeFormat("yyyy-MM-dd", FFAppState().appDateTo),
+                                                                                  companyName: FFAppState().appAuthUserCompanyName,
                                                                                 ),
                                                                                 builder: (context, snapshot) {
                                                                                   // Customize what your widget looks like when it's loading.
@@ -1953,6 +1955,9 @@ class _ReportSummaryWidgetState extends State<ReportSummaryWidget>
                                                                     "yyyy-MM-dd",
                                                                     FFAppState()
                                                                         .appDateTo),
+                                                                companyName:
+                                                                    FFAppState()
+                                                                        .appAuthUserCompanyName,
                                                               )))
                                                         .future,
                                                     builder:

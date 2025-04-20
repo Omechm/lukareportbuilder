@@ -887,7 +887,7 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      300.0, 100.0, 300.0, 300.0),
+                                      30.0, 10.0, 30.0, 30.0),
                                   child: Container(
                                     width: double.infinity,
                                     height: double.infinity,
@@ -909,9 +909,11 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 16.0, 16.0, 16.0),
+                                          16.0, 0.0, 16.0, 16.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Padding(
                                             padding:
@@ -943,15 +945,20 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                       ),
                                             ),
                                           ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 0.0, 12.0, 0.0),
-                                            child: Text(
-                                              'This action is permanent and cannot be undone. All data associated with this account will be permanently deleted.  ${_model.pageUserfullname}',
-                                              textAlign: TextAlign.center,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  'This action is permanent and cannot be undone. All data associated with this account will be permanently deleted. ',
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily:
@@ -963,14 +970,40 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                         letterSpacing: 0.0,
                                                         useGoogleFonts: false,
                                                       ),
-                                            ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 12.0, 0.0),
+                                                child: Text(
+                                                  ' ${_model.pageUserfullname}',
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Geist Font Family',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 12.0, 0.0),
                                             child: Container(
-                                              width: double.infinity,
+                                              width: 500.0,
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -988,11 +1021,14 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
                                                   children: [
-                                                    Text(
-                                                      'Type \'delete this account\' to confirm:',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Text(
+                                                          'Type ',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
                                                               .bodySmall
                                                               .override(
                                                                 fontFamily:
@@ -1005,6 +1041,45 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                 useGoogleFonts:
                                                                     false,
                                                               ),
+                                                        ),
+                                                        Text(
+                                                          'delete this account',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodySmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Geist Font Family',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                useGoogleFonts:
+                                                                    false,
+                                                              ),
+                                                        ),
+                                                        Text(
+                                                          ' to confirm:',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodySmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Geist Font Family',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts:
+                                                                    false,
+                                                              ),
+                                                        ),
+                                                      ],
                                                     ),
                                                     TextFormField(
                                                       controller: _model
@@ -1183,7 +1258,7 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                               text:
                                                   'Permanently Delete Account',
                                               options: FFButtonOptions(
-                                                width: double.infinity,
+                                                width: 500.0,
                                                 height: 44.0,
                                                 padding: EdgeInsets.all(8.0),
                                                 iconPadding:
@@ -1227,7 +1302,7 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                               },
                                               text: 'Cancel',
                                               options: FFButtonOptions(
-                                                width: double.infinity,
+                                                width: 500.0,
                                                 height: 44.0,
                                                 padding: EdgeInsets.all(8.0),
                                                 iconPadding:

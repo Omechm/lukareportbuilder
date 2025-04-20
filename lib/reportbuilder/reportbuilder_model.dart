@@ -2,6 +2,7 @@ import '/backend/supabase/supabase.dart';
 import '/components/sidebarnav_copy_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart'
     show TutorialCoachMark;
 import 'reportbuilder_widget.dart' show ReportbuilderWidget;

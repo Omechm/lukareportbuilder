@@ -110,6 +110,7 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
       length: 2,
       initialIndex: 1,
     )..addListener(() => safeSetState(() {}));
+
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
