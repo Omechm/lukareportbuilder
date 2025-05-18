@@ -217,7 +217,6 @@ class _ReporttemplatesfieldseditingWidgetState
                                                               'Geist Font Family',
                                                           fontSize: 15.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                   Text(
@@ -230,7 +229,6 @@ class _ReporttemplatesfieldseditingWidgetState
                                                               'Geist Font Family',
                                                           fontSize: 8.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ],
@@ -286,8 +284,6 @@ class _ReporttemplatesfieldseditingWidgetState
                                                                         .white,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                           elevation: 0.0,
                                                           borderRadius:
@@ -362,7 +358,6 @@ class _ReporttemplatesfieldseditingWidgetState
                                                 fontFamily: 'Geist Font Family',
                                                 fontSize: 24.0,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         );
                                       },
@@ -415,7 +410,6 @@ class _ReporttemplatesfieldseditingWidgetState
                                                           fontFamily:
                                                               'Geist Font Family',
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                     hintText:
                                                         'Enter new template name',
@@ -427,7 +421,6 @@ class _ReporttemplatesfieldseditingWidgetState
                                                               'Geist Font Family',
                                                           fontSize: 15.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
@@ -489,7 +482,6 @@ class _ReporttemplatesfieldseditingWidgetState
                                                         fontFamily:
                                                             'Geist Font Family',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                   cursorColor:
                                                       FlutterFlowTheme.of(
@@ -638,7 +630,6 @@ class _ReporttemplatesfieldseditingWidgetState
                                                               'Geist Font Family',
                                                           fontSize: 20.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ],

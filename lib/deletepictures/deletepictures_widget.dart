@@ -60,7 +60,6 @@ class _DeletepicturesWidgetState extends State<DeletepicturesWidget> {
                       color: Colors.white,
                       fontSize: 22.0,
                       letterSpacing: 0.0,
-                      useGoogleFonts: false,
                     ),
               ),
               actions: [],
@@ -79,7 +78,11 @@ class _DeletepicturesWidgetState extends State<DeletepicturesWidget> {
                       FFButtonWidget(
                         onPressed: () async {
                           _model.output2weeksOldReports =
-                              await ImagesToDeleteTable().queryRows(
+                              await Reportpictures2weeksoldTable().queryRows(
+                            queryFn: (q) => q,
+                          );
+                          _model.outputUnMatchedImages =
+                              await ReportpicturesUnmatchedTable().queryRows(
                             queryFn: (q) => q,
                           );
                           _model.pageIterator = 0;
@@ -91,13 +94,10 @@ class _DeletepicturesWidgetState extends State<DeletepicturesWidget> {
                                   ?.elementAtOrNull(_model.pageIterator!)
                                   ?.url,
                             );
-                            await ImagesToDeleteTable().delete(
-                              matchingRows: (rows) => rows.eqOrNull(
-                                'id',
-                                _model.output2weeksOldReports
-                                    ?.elementAtOrNull(_model.pageIterator!)
-                                    ?.id,
-                              ),
+                            await actions.deleteImageFromBucket(
+                              _model.outputUnMatchedImages
+                                  ?.elementAtOrNull(_model.pageIterator!)
+                                  ?.url,
                             );
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
@@ -118,6 +118,7 @@ class _DeletepicturesWidgetState extends State<DeletepicturesWidget> {
                           }
                           _model.pageIterator = 0;
                           safeSetState(() {});
+                          ScaffoldMessenger.of(context).clearSnackBars();
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text(
@@ -127,7 +128,7 @@ class _DeletepicturesWidgetState extends State<DeletepicturesWidget> {
                                       FlutterFlowTheme.of(context).primaryText,
                                 ),
                               ),
-                              duration: Duration(milliseconds: 4000),
+                              duration: Duration(milliseconds: 650),
                               backgroundColor:
                                   FlutterFlowTheme.of(context).secondary,
                             ),
@@ -148,7 +149,6 @@ class _DeletepicturesWidgetState extends State<DeletepicturesWidget> {
                                     fontFamily: 'Geist Font Family',
                                     color: Colors.white,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                           elevation: 0.0,
                           borderRadius: BorderRadius.circular(8.0),

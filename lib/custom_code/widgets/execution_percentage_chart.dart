@@ -41,7 +41,7 @@ class _ExecutionPercentageChartState extends State<ExecutionPercentageChart> {
     return Container(
       child: SfCartesianChart(
         title: ChartTitle(text: 'Execution Percentage by Location'),
-        legend: Legend(isVisible: true),
+        legend: Legend(isVisible: true, position: LegendPosition.bottom),
         primaryXAxis: CategoryAxis(),
         primaryYAxis: NumericAxis(
           minimum: widget.yMinValue ?? 0,

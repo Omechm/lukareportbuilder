@@ -112,7 +112,6 @@ class _ResetPasswordPageWidgetState extends State<ResetPasswordPageWidget> {
                                                 fontFamily: 'Geist Font Family',
                                                 fontSize: 25.0,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ],
@@ -130,14 +129,12 @@ class _ResetPasswordPageWidgetState extends State<ResetPasswordPageWidget> {
                                           .override(
                                             fontFamily: 'Geist Font Family',
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Geist Font Family',
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -193,7 +190,6 @@ class _ResetPasswordPageWidgetState extends State<ResetPasswordPageWidget> {
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     minLines: 1,
                                     validator: _model
@@ -213,14 +209,12 @@ class _ResetPasswordPageWidgetState extends State<ResetPasswordPageWidget> {
                                           .override(
                                             fontFamily: 'Geist Font Family',
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Geist Font Family',
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -276,7 +270,6 @@ class _ResetPasswordPageWidgetState extends State<ResetPasswordPageWidget> {
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     minLines: 1,
                                     validator: _model
@@ -299,7 +292,6 @@ class _ResetPasswordPageWidgetState extends State<ResetPasswordPageWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ),
@@ -335,7 +327,6 @@ class _ResetPasswordPageWidgetState extends State<ResetPasswordPageWidget> {
                                             fontFamily: 'Geist Font Family',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                       elevation: 2.0,
                                       borderRadius: BorderRadius.circular(28.0),
@@ -358,7 +349,6 @@ class _ResetPasswordPageWidgetState extends State<ResetPasswordPageWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                         Text(
@@ -372,7 +362,6 @@ class _ResetPasswordPageWidgetState extends State<ResetPasswordPageWidget> {
                                                         .primary,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ].divide(SizedBox(width: 8.0)),

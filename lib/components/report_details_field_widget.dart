@@ -59,7 +59,6 @@ class _ReportDetailsFieldWidgetState extends State<ReportDetailsFieldWidget> {
             style: FlutterFlowTheme.of(context).labelMedium.override(
                   fontFamily: 'Geist Font Family',
                   letterSpacing: 0.0,
-                  useGoogleFonts: false,
                 ),
           ),
           Text(
@@ -70,7 +69,6 @@ class _ReportDetailsFieldWidgetState extends State<ReportDetailsFieldWidget> {
             style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Geist Font Family',
                   letterSpacing: 0.0,
-                  useGoogleFonts: false,
                 ),
           ),
         ],

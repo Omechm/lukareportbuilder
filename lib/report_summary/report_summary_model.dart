@@ -3,8 +3,8 @@ import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/loading_comp_widget.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
-import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
 import 'dart:async';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart'
@@ -84,6 +84,34 @@ class ReportSummaryModel extends FlutterFlowModel<ReportSummaryWidget> {
           int index, Function(NonCompliantLocationCountStruct) updateFn) =>
       pageNonCompAgr[index] = updateFn(pageNonCompAgr[index]);
 
+  bool pageLoadingTabWidget = false;
+
+  List<DtReusedImageScanStruct> pageRecycledImages = [];
+  void addToPageRecycledImages(DtReusedImageScanStruct item) =>
+      pageRecycledImages.add(item);
+  void removeFromPageRecycledImages(DtReusedImageScanStruct item) =>
+      pageRecycledImages.remove(item);
+  void removeAtIndexFromPageRecycledImages(int index) =>
+      pageRecycledImages.removeAt(index);
+  void insertAtIndexInPageRecycledImages(
+          int index, DtReusedImageScanStruct item) =>
+      pageRecycledImages.insert(index, item);
+  void updatePageRecycledImagesAtIndex(
+          int index, Function(DtReusedImageScanStruct) updateFn) =>
+      pageRecycledImages[index] = updateFn(pageRecycledImages[index]);
+
+  List<DTjsonFieldsStruct> pageJSONFields = [];
+  void addToPageJSONFields(DTjsonFieldsStruct item) => pageJSONFields.add(item);
+  void removeFromPageJSONFields(DTjsonFieldsStruct item) =>
+      pageJSONFields.remove(item);
+  void removeAtIndexFromPageJSONFields(int index) =>
+      pageJSONFields.removeAt(index);
+  void insertAtIndexInPageJSONFields(int index, DTjsonFieldsStruct item) =>
+      pageJSONFields.insert(index, item);
+  void updatePageJSONFieldsAtIndex(
+          int index, Function(DTjsonFieldsStruct) updateFn) =>
+      pageJSONFields[index] = updateFn(pageJSONFields[index]);
+
   ///  State fields for stateful widgets in this page.
 
   TutorialCoachMark? dateSelectionController;
@@ -101,8 +129,15 @@ class ReportSummaryModel extends FlutterFlowModel<ReportSummaryWidget> {
   List<UserRow>? outputUsers;
   // Stores action output result for [Backend Call - Query Rows] action in ReportSummary widget.
   List<NonCompliantTaskExecutionGroupRow>? outputNonCompAgr;
-  Completer<List<NonCompliantTaskExecutionRow>>? requestCompleter;
-  Completer<ApiCallResponse>? apiRequestCompleter;
+  Completer<List<NonCompliantTaskExecutionRow>>? requestCompleter1;
+  // State field(s) for CheckboxGroup widget.
+  FormFieldController<List<String>>? checkboxGroupValueController;
+  List<String>? get checkboxGroupValues => checkboxGroupValueController?.value;
+  set checkboxGroupValues(List<String>? v) =>
+      checkboxGroupValueController?.value = v;
+
+  Completer<List<ExecutedTaskWithFieldsJsonRow>>? requestCompleter2;
+  Completer<List<ExecutedTaskWithFieldsJsonRow>>? requestCompleter3;
   // State field(s) for Summary widget.
   TabController? summaryController;
   int get summaryCurrentIndex =>
@@ -112,15 +147,28 @@ class ReportSummaryModel extends FlutterFlowModel<ReportSummaryWidget> {
 
   // Stores action output result for [Backend Call - API (GetExecutionPercentage)] action in Icon widget.
   ApiCallResponse? outputExecutionPercentage;
-  // State field(s) for PaginatedDataTable widget.
-  final paginatedDataTableController =
-      FlutterFlowDataTableController<GetExecutedTasksByDateRangeDTStruct>();
   // Stores action output result for [Custom Action - extractImageDateMetadata] action in Image widget.
-  DateTime? outputCapturedDateCopy;
+  DateTime? outputCapturedDate;
   // Stores action output result for [Custom Action - extractExifMetadata] action in Image widget.
-  String? outputCapturedDataCopy;
+  String? outputCapturedData;
+  // Stores action output result for [Backend Call - Query Rows] action in Image widget.
+  List<UserRow>? outputUser;
+  // Stores action output result for [Custom Action - extractImageDateMetadata] action in Image widget.
+  DateTime? outputCapturedDateSearched;
+  // Stores action output result for [Custom Action - extractExifMetadata] action in Image widget.
+  String? outputCapturedDataDateSearched;
+  // Stores action output result for [Backend Call - Query Rows] action in Image widget.
+  List<UserRow>? outputUserDateSearched;
+  // Stores action output result for [Backend Call - Query Rows] action in Text widget.
+  List<FieldValuesRow>? outputExecutedReportForScan;
+  // Stores action output result for [Custom Action - extractImageDateMetadata] action in Text widget.
+  DateTime? outputExifDate;
+  // Stores action output result for [Backend Call - Query Rows] action in Text widget.
+  List<UserRow>? outputCSO;
   // Model for loadingComp component.
-  late LoadingCompModel loadingCompModel;
+  late LoadingCompModel loadingCompModel1;
+  // Model for loadingComp component.
+  late LoadingCompModel loadingCompModel2;
   // State field(s) for CalendarDateFrom widget.
   DateTimeRange? calendarDateFromSelectedDay;
   // State field(s) for CalendarDateTo widget.
@@ -128,7 +176,8 @@ class ReportSummaryModel extends FlutterFlowModel<ReportSummaryWidget> {
 
   @override
   void initState(BuildContext context) {
-    loadingCompModel = createModel(context, () => LoadingCompModel());
+    loadingCompModel1 = createModel(context, () => LoadingCompModel());
+    loadingCompModel2 = createModel(context, () => LoadingCompModel());
     calendarDateFromSelectedDay = DateTimeRange(
       start: DateTime.now().startOfDay,
       end: DateTime.now().endOfDay,
@@ -143,12 +192,12 @@ class ReportSummaryModel extends FlutterFlowModel<ReportSummaryWidget> {
   void dispose() {
     dateSelectionController?.finish();
     summaryController?.dispose();
-    paginatedDataTableController.dispose();
-    loadingCompModel.dispose();
+    loadingCompModel1.dispose();
+    loadingCompModel2.dispose();
   }
 
   /// Additional helper methods.
-  Future waitForRequestCompleted({
+  Future waitForRequestCompleted1({
     double minWait = 0,
     double maxWait = double.infinity,
   }) async {
@@ -156,14 +205,14 @@ class ReportSummaryModel extends FlutterFlowModel<ReportSummaryWidget> {
     while (true) {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter?.isCompleted ?? false;
+      final requestComplete = requestCompleter1?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }
     }
   }
 
-  Future waitForApiRequestCompleted({
+  Future waitForRequestCompleted2({
     double minWait = 0,
     double maxWait = double.infinity,
   }) async {
@@ -171,7 +220,22 @@ class ReportSummaryModel extends FlutterFlowModel<ReportSummaryWidget> {
     while (true) {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = apiRequestCompleter?.isCompleted ?? false;
+      final requestComplete = requestCompleter2?.isCompleted ?? false;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
+  }
+
+  Future waitForRequestCompleted3({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = requestCompleter3?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }

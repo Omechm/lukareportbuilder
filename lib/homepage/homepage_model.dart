@@ -62,6 +62,7 @@ class HomepageModel extends FlutterFlowModel<HomepageWidget> {
   // State field(s) for PaginatedDataTable widget.
   final paginatedDataTableController =
       FlutterFlowDataTableController<ExecutedReportDtStruct>();
+  Stream<List<UserRow>>? textSupabaseStream;
 
   @override
   void initState(BuildContext context) {

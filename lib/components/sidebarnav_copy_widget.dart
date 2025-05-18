@@ -9,6 +9,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'sidebarnav_copy_model.dart';
 export 'sidebarnav_copy_model.dart';
@@ -87,18 +88,16 @@ class _SidebarnavCopyWidgetState extends State<SidebarnavCopyWidget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
               child: Column(
-                mainAxisSize: MainAxisSize.max,
+                mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(0.0),
-                      child: SvgPicture.asset(
-                        'assets/images/k1ryn_2.svg',
-                        width: 230.0,
-                        height: 50.0,
-                        fit: BoxFit.contain,
-                      ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(0.0),
+                    child: SvgPicture.asset(
+                      'assets/images/k1ryn_2.svg',
+                      width: 155.3,
+                      height: 50.0,
+                      fit: BoxFit.contain,
                     ),
                   ),
                   Row(
@@ -115,10 +114,23 @@ class _SidebarnavCopyWidgetState extends State<SidebarnavCopyWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Roboto',
+                                    font: GoogleFonts.roboto(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     color: Colors.white,
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                         ),
                       ),
@@ -144,7 +156,6 @@ class _SidebarnavCopyWidgetState extends State<SidebarnavCopyWidget> {
                                 .secondaryBackground,
                             fontSize: 15.0,
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ),
@@ -171,7 +182,6 @@ class _SidebarnavCopyWidgetState extends State<SidebarnavCopyWidget> {
                                 .secondaryBackground,
                             fontSize: 10.0,
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ),
@@ -196,7 +206,6 @@ class _SidebarnavCopyWidgetState extends State<SidebarnavCopyWidget> {
                             fontSize: 10.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ),
@@ -249,7 +258,6 @@ class _SidebarnavCopyWidgetState extends State<SidebarnavCopyWidget> {
                                     color: Color(0xFF1BDEF0),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                               elevation: 0.0,
                               borderRadius: BorderRadius.circular(8.0),
@@ -267,7 +275,6 @@ class _SidebarnavCopyWidgetState extends State<SidebarnavCopyWidget> {
                               fontFamily: 'Geist Font Family',
                               color: Colors.white,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ),

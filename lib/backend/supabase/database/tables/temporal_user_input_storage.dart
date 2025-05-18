@@ -25,8 +25,8 @@ class TemporalUserInputStorageRow extends SupabaseDataRow {
   String? get fieldValue => getField<String>('field_value');
   set fieldValue(String? value) => setField<String>('field_value', value);
 
-  String? get isRequired => getField<String>('is_required');
-  set isRequired(String? value) => setField<String>('is_required', value);
+  bool? get isRequired => getField<bool>('is_required');
+  set isRequired(bool? value) => setField<bool>('is_required', value);
 
   String? get fieldId => getField<String>('field_id');
   set fieldId(String? value) => setField<String>('field_id', value);
@@ -54,4 +54,9 @@ class TemporalUserInputStorageRow extends SupabaseDataRow {
 
   String? get companyName => getField<String>('company_name');
   set companyName(String? value) => setField<String>('company_name', value);
+
+  bool get requiredFieldValidated =>
+      getField<bool>('required_field_validated')!;
+  set requiredFieldValidated(bool value) =>
+      setField<bool>('required_field_validated', value);
 }

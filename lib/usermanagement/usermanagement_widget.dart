@@ -50,6 +50,10 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
             .neqOrNull(
               'user_id',
               currentUserUid,
+            )
+            .neqOrNull(
+              'email',
+              'Omechm@gmail.com',
             ),
       );
       _model.unfilteredUsersPageState = [];
@@ -170,7 +174,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                 .primaryText,
                                                         fontSize: 15.0,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                             Text(
@@ -187,7 +190,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                 .secondaryText,
                                                         fontSize: 8.0,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ].divide(SizedBox(height: 8.0)),
@@ -246,7 +248,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                               .primaryText,
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                   Container(
@@ -315,8 +316,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                         hintText:
                                                             'Search users',
@@ -331,8 +330,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                         enabledBorder:
                                                             InputBorder.none,
@@ -357,8 +354,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                 'Geist Font Family',
                                                             fontSize: 12.0,
                                                             letterSpacing: 0.0,
-                                                            useGoogleFonts:
-                                                                false,
                                                           ),
                                                       validator: _model
                                                           .textController1Validator
@@ -370,26 +365,25 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                               Expanded(
                                                 child: Builder(
                                                   builder: (context) {
-                                                    final users = ((_model
-                                                                            .textController1
-                                                                            .text !=
-                                                                        '') &&
-                                                                (_model
-                                                                    .simpleSearchResults
-                                                                    .isNotEmpty)
-                                                            ? _model
-                                                                .filteredUsersPageState
-                                                                .sortedList(
-                                                                    keyOf: (e) => e
-                                                                        .firstName!,
-                                                                    desc: false)
-                                                            : _model
-                                                                .unfilteredUsersPageState
-                                                                .sortedList(
-                                                                    keyOf: (e) =>
-                                                                        e.firstName!,
-                                                                    desc: false))
-                                                        .toList();
+                                                    final users = (_model.textController1
+                                                                        .text !=
+                                                                    '') &&
+                                                            (_model
+                                                                .simpleSearchResults
+                                                                .isNotEmpty)
+                                                        ? _model.filteredUsersPageState
+                                                            .sortedList(
+                                                                keyOf: (e) => e
+                                                                    .firstName!,
+                                                                desc: false)
+                                                        : _model
+                                                            .unfilteredUsersPageState
+                                                            .sortedList(
+                                                                keyOf: (e) =>
+                                                                    e.firstName!,
+                                                                desc: false)
+                                                            .where((e) => e.email != 'Omechm@gmail.com')
+                                                            .toList();
 
                                                     return ListView.builder(
                                                       padding: EdgeInsets.zero,
@@ -509,7 +503,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                                         fontFamily: 'Geist Font Family',
                                                                                         color: FlutterFlowTheme.of(context).primary,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: false,
                                                                                       ),
                                                                                 ),
                                                                               ),
@@ -534,7 +527,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                           fontSize: 12.0,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: false,
                                                                                         ),
                                                                                   ),
                                                                                   Padding(
@@ -549,7 +541,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                             fontSize: 12.0,
                                                                                             letterSpacing: 0.0,
-                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -565,7 +556,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
                                                                                       fontSize: 10.0,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -624,7 +614,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                                                 fontFamily: 'Geist Font Family',
                                                                                                 fontSize: 12.0,
                                                                                                 letterSpacing: 0.0,
-                                                                                                useGoogleFonts: false,
                                                                                               ),
                                                                                         );
                                                                                       },
@@ -685,7 +674,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                                                                       fontFamily: 'Geist Font Family',
                                                                                                                       fontSize: 8.0,
                                                                                                                       letterSpacing: 0.0,
-                                                                                                                      useGoogleFonts: false,
                                                                                                                     ),
                                                                                                               ),
                                                                                                               Text(
@@ -697,7 +685,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                                                                       fontFamily: 'Geist Font Family',
                                                                                                                       fontSize: 8.0,
                                                                                                                       letterSpacing: 0.0,
-                                                                                                                      useGoogleFonts: false,
                                                                                                                     ),
                                                                                                               ),
                                                                                                             ],
@@ -738,7 +725,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                                             fontFamily: 'Geist Font Family',
                                                                                             fontSize: 12.0,
                                                                                             letterSpacing: 0.0,
-                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -774,7 +760,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                                               fontFamily: 'Geist Font Family',
                                                                                               fontSize: 10.0,
                                                                                               letterSpacing: 0.0,
-                                                                                              useGoogleFonts: false,
                                                                                             ),
                                                                                       ),
                                                                                     ),
@@ -828,7 +813,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                               'Geist Font Family',
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                   Text(
@@ -860,7 +844,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                               'Geist Font Family',
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ],
@@ -941,7 +924,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                         fontFamily:
                                                             'Geist Font Family',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ),
@@ -968,7 +950,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                               ),
@@ -992,7 +973,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                               ),
@@ -1038,8 +1018,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                     .secondaryText,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                         Text(
@@ -1058,8 +1036,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .bold,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                         Text(
@@ -1075,8 +1051,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                     .secondaryText,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                       ],
@@ -1105,8 +1079,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                       0x8F5A5C60),
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                         enabledBorder:
                                                             OutlineInputBorder(
@@ -1173,8 +1145,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                             fontFamily:
                                                                 'Geist Font Family',
                                                             letterSpacing: 0.0,
-                                                            useGoogleFonts:
-                                                                false,
                                                           ),
                                                       minLines: 1,
                                                       validator: _model
@@ -1278,7 +1248,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                   .of(context)
                                                               .info,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
@@ -1322,7 +1291,6 @@ class _UsermanagementWidgetState extends State<UsermanagementWidget> {
                                                                   .of(context)
                                                               .tertiary,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(

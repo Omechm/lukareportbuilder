@@ -69,7 +69,6 @@ class _DocumentationWidgetState extends State<DocumentationWidget> {
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Geist Font Family',
                       letterSpacing: 0.0,
-                      useGoogleFonts: false,
                     ),
               ),
               actions: [],
@@ -123,7 +122,6 @@ class _DocumentationWidgetState extends State<DocumentationWidget> {
                                             fontFamily: 'Geist Font Family',
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
-                                            useGoogleFonts: false,
                                           ),
                                     ),
                                     Text(
@@ -135,7 +133,6 @@ class _DocumentationWidgetState extends State<DocumentationWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryText,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                     ),
                                     Divider(
@@ -171,7 +168,6 @@ class _DocumentationWidgetState extends State<DocumentationWidget> {
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                               Text(
@@ -186,7 +182,6 @@ class _DocumentationWidgetState extends State<DocumentationWidget> {
                                                                   .of(context)
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ],
@@ -222,7 +217,6 @@ class _DocumentationWidgetState extends State<DocumentationWidget> {
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                               Text(
@@ -237,7 +231,6 @@ class _DocumentationWidgetState extends State<DocumentationWidget> {
                                                                   .of(context)
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ],
@@ -273,7 +266,6 @@ class _DocumentationWidgetState extends State<DocumentationWidget> {
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                               Text(
@@ -288,7 +280,6 @@ class _DocumentationWidgetState extends State<DocumentationWidget> {
                                                                   .of(context)
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ],
@@ -340,7 +331,6 @@ class _DocumentationWidgetState extends State<DocumentationWidget> {
                                               FlutterFlowTheme.of(context).info,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                   Text(
@@ -352,7 +342,6 @@ class _DocumentationWidgetState extends State<DocumentationWidget> {
                                           color:
                                               FlutterFlowTheme.of(context).info,
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ],
@@ -375,7 +364,6 @@ class _DocumentationWidgetState extends State<DocumentationWidget> {
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                                 borderRadius: BorderRadius.circular(8.0),
                               ),

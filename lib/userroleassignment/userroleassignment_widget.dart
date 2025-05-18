@@ -201,7 +201,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                 .primaryText,
                                                         fontSize: 15.0,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                             Text(
@@ -218,7 +217,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                 .secondaryText,
                                                         fontSize: 8.0,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ].divide(SizedBox(height: 8.0)),
@@ -265,7 +263,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                               Color(0xFF033395),
                                                           fontSize: 15.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ),
@@ -344,31 +341,30 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              false,
                                                                         ),
                                                                   ),
                                                                 ),
                                                               ],
                                                             ),
-                                                            FutureBuilder<
+                                                            StreamBuilder<
                                                                 List<UserRow>>(
-                                                              future: (_model.requestCompleter2 ??= Completer<
-                                                                      List<
-                                                                          UserRow>>()
-                                                                    ..complete(
-                                                                        UserTable()
-                                                                            .querySingleRow(
-                                                                      queryFn:
-                                                                          (q) =>
-                                                                              q.eqOrNull(
-                                                                        'id',
-                                                                        widget
-                                                                            .user
-                                                                            ?.id,
-                                                                      ),
-                                                                    )))
-                                                                  .future,
+                                                              stream: _model.listViewSupabaseStream ??= SupaFlow
+                                                                  .client
+                                                                  .from("user")
+                                                                  .stream(
+                                                                      primaryKey: [
+                                                                        'id'
+                                                                      ])
+                                                                  .eqOrNull(
+                                                                    'id',
+                                                                    widget.user
+                                                                        ?.id,
+                                                                  )
+                                                                  .map((list) => list
+                                                                      .map((item) =>
+                                                                          UserRow(
+                                                                              item))
+                                                                      .toList()),
                                                               builder: (context,
                                                                   snapshot) {
                                                                 // Customize what your widget looks like when it's loading.
@@ -469,7 +465,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                                 fontFamily: 'Geist Font Family',
                                                                                                 color: FlutterFlowTheme.of(context).primary,
                                                                                                 letterSpacing: 0.0,
-                                                                                                useGoogleFonts: false,
                                                                                               ),
                                                                                         ),
                                                                                       ),
@@ -491,7 +486,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                                   fontFamily: 'Geist Font Family',
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: false,
                                                                                                 ),
                                                                                           ),
                                                                                           Padding(
@@ -505,7 +499,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                                     fontFamily: 'Geist Font Family',
                                                                                                     color: FlutterFlowTheme.of(context).primaryText,
                                                                                                     letterSpacing: 0.0,
-                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -520,7 +513,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                               fontFamily: 'Geist Font Family',
                                                                                               color: FlutterFlowTheme.of(context).secondaryText,
                                                                                               letterSpacing: 0.0,
-                                                                                              useGoogleFonts: false,
                                                                                             ),
                                                                                       ),
                                                                                     ],
@@ -545,7 +537,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                     fontFamily: 'Geist Font Family',
                                                                                                     letterSpacing: 0.0,
-                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -580,7 +571,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                       fontFamily: 'Geist Font Family',
                                                                                                       letterSpacing: 0.0,
-                                                                                                      useGoogleFonts: false,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -686,8 +676,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                 15.0,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -754,7 +742,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                                       fontFamily: 'Geist Font Family',
                                                                                                       color: FlutterFlowTheme.of(context).primaryText,
                                                                                                       letterSpacing: 0.0,
-                                                                                                      useGoogleFonts: false,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -795,7 +782,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                                                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                         fontFamily: 'Geist Font Family',
                                                                                                                         letterSpacing: 0.0,
-                                                                                                                        useGoogleFonts: false,
                                                                                                                       ),
                                                                                                                   hintText: 'Select role',
                                                                                                                   icon: Icon(
@@ -863,8 +849,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                                                   });
                                                                                                                 }
 
-                                                                                                                safeSetState(() => _model.requestCompleter2 = null);
-                                                                                                                await _model.waitForRequestCompleted2();
                                                                                                                 safeSetState(() {
                                                                                                                   _model.dropDownValueController?.reset();
                                                                                                                 });
@@ -881,7 +865,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                                                       fontFamily: 'Geist Font Family',
                                                                                                                       color: Colors.white,
                                                                                                                       letterSpacing: 0.0,
-                                                                                                                      useGoogleFonts: false,
                                                                                                                     ),
                                                                                                                 elevation: 0.0,
                                                                                                                 borderRadius: BorderRadius.circular(8.0),
@@ -918,7 +901,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                                     fontFamily: 'Geist Font Family',
                                                                                                     color: FlutterFlowTheme.of(context).primaryText,
                                                                                                     letterSpacing: 0.0,
-                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -958,17 +940,14 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                                                 searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                                                       fontFamily: 'Geist Font Family',
                                                                                                                       letterSpacing: 0.0,
-                                                                                                                      useGoogleFonts: false,
                                                                                                                     ),
                                                                                                                 searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                       fontFamily: 'Geist Font Family',
                                                                                                                       letterSpacing: 0.0,
-                                                                                                                      useGoogleFonts: false,
                                                                                                                     ),
                                                                                                                 textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                       fontFamily: 'Geist Font Family',
                                                                                                                       letterSpacing: 0.0,
-                                                                                                                      useGoogleFonts: false,
                                                                                                                     ),
                                                                                                                 hintText: 'Select client name',
                                                                                                                 searchHintText: 'Search...',
@@ -1023,8 +1002,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                                               });
                                                                                                             }(),
                                                                                                           );
-                                                                                                          safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                          await _model.waitForRequestCompleted1(minWait: 3000);
                                                                                                           safeSetState(() {
                                                                                                             _model.dropDownClientNameValueController?.reset();
                                                                                                           });
@@ -1043,7 +1020,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                                               fontFamily: 'Geist Font Family',
                                                                                                               color: Colors.white,
                                                                                                               letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
                                                                                                             ),
                                                                                                         elevation: 0.0,
                                                                                                         borderRadius: BorderRadius.circular(8.0),
@@ -1118,7 +1094,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                               style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                                     fontFamily: 'Geist Font Family',
                                                                                                     letterSpacing: 0.0,
-                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1129,10 +1104,7 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                               focusColor: Colors.transparent,
                                                                                               hoverColor: Colors.transparent,
                                                                                               highlightColor: Colors.transparent,
-                                                                                              onTap: () async {
-                                                                                                safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                await _model.waitForRequestCompleted1(minWait: 3000);
-                                                                                              },
+                                                                                              onTap: () async {},
                                                                                               child: Icon(
                                                                                                 Icons.refresh_sharp,
                                                                                                 color: FlutterFlowTheme.of(context).primary,
@@ -1149,15 +1121,15 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                               Expanded(
                                                                                 child: Padding(
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
-                                                                                  child: FutureBuilder<List<UserClientAssignmentsRow>>(
-                                                                                    future: (_model.requestCompleter1 ??= Completer<List<UserClientAssignmentsRow>>()
-                                                                                          ..complete(UserClientAssignmentsTable().queryRows(
-                                                                                            queryFn: (q) => q.eqOrNull(
-                                                                                              'user_id',
-                                                                                              widget.user?.userId,
-                                                                                            ),
-                                                                                          )))
-                                                                                        .future,
+                                                                                  child: StreamBuilder<List<UserClientAssignmentsRow>>(
+                                                                                    stream: _model.listViewUserClientSupabaseStream ??= SupaFlow.client
+                                                                                        .from("user_client_assignments")
+                                                                                        .stream(primaryKey: ['id'])
+                                                                                        .eqOrNull(
+                                                                                          'user_id',
+                                                                                          widget.user?.userId,
+                                                                                        )
+                                                                                        .map((list) => list.map((item) => UserClientAssignmentsRow(item)).toList()),
                                                                                     builder: (context, snapshot) {
                                                                                       // Customize what your widget looks like when it's loading.
                                                                                       if (!snapshot.hasData) {
@@ -1227,7 +1199,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                   fontFamily: 'Geist Font Family',
                                                                                                                   letterSpacing: 0.0,
-                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           ),
                                                                                                         ),
@@ -1246,7 +1217,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
                                                                                                                   fontSize: 10.0,
                                                                                                                   letterSpacing: 0.0,
-                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           ),
                                                                                                         ),
@@ -1274,8 +1244,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                                         listViewUserClientUserClientAssignmentsRow.id,
                                                                                                       ),
                                                                                                     );
-                                                                                                    safeSetState(() => _model.requestCompleter1 = null);
-                                                                                                    await _model.waitForRequestCompleted1();
                                                                                                   },
                                                                                                 ),
                                                                                               ),

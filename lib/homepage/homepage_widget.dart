@@ -396,7 +396,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                 fontFamily: 'Geist Font Family',
                                                 fontSize: 15.0,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ],
@@ -452,7 +451,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                               'Geist Font Family',
                                                           fontSize: 15.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                   Padding(
@@ -469,8 +467,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                             fontFamily:
                                                                 'Geist Font Family',
                                                             letterSpacing: 0.0,
-                                                            useGoogleFonts:
-                                                                false,
                                                           ),
                                                     ),
                                                   ),
@@ -542,8 +538,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                                 15.0,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ).animateOnPageLoad(
@@ -566,8 +560,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                                 'Geist Font Family',
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -632,19 +624,18 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                                   ),
                                                                                   textAlign: TextAlign.center,
                                                                                   style: FlutterFlowTheme.of(context).displayLarge.override(
-                                                                                        fontFamily: 'Geist Font Family',
-                                                                                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        fontSize: 30.0,
-                                                                                        letterSpacing: 0.0,
-                                                                                        shadows: [
-                                                                                          Shadow(
-                                                                                            color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                            offset: Offset(2.0, 2.0),
-                                                                                            blurRadius: 2.0,
-                                                                                          )
-                                                                                        ],
-                                                                                        useGoogleFonts: false,
-                                                                                      ),
+                                                                                    fontFamily: 'Geist Font Family',
+                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                    fontSize: 30.0,
+                                                                                    letterSpacing: 0.0,
+                                                                                    shadows: [
+                                                                                      Shadow(
+                                                                                        color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                        offset: Offset(2.0, 2.0),
+                                                                                        blurRadius: 2.0,
+                                                                                      )
+                                                                                    ],
+                                                                                  ),
                                                                                 ),
                                                                               ),
                                                                             ).animateOnPageLoad(animationsMap['containerOnPageLoadAnimation1']!),
@@ -661,7 +652,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                                   fontFamily: 'Geist Font Family',
                                                                                   fontSize: 30.0,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: false,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -695,19 +685,18 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                                   ),
                                                                                   textAlign: TextAlign.center,
                                                                                   style: FlutterFlowTheme.of(context).displayLarge.override(
-                                                                                        fontFamily: 'Geist Font Family',
-                                                                                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        fontSize: 30.0,
-                                                                                        letterSpacing: 0.0,
-                                                                                        shadows: [
-                                                                                          Shadow(
-                                                                                            color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                            offset: Offset(2.0, 2.0),
-                                                                                            blurRadius: 2.0,
-                                                                                          )
-                                                                                        ],
-                                                                                        useGoogleFonts: false,
-                                                                                      ),
+                                                                                    fontFamily: 'Geist Font Family',
+                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                    fontSize: 30.0,
+                                                                                    letterSpacing: 0.0,
+                                                                                    shadows: [
+                                                                                      Shadow(
+                                                                                        color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                        offset: Offset(2.0, 2.0),
+                                                                                        blurRadius: 2.0,
+                                                                                      )
+                                                                                    ],
+                                                                                  ),
                                                                                 ),
                                                                               ),
                                                                             ).animateOnPageLoad(animationsMap['containerOnPageLoadAnimation2']!),
@@ -733,8 +722,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                                 'Geist Font Family',
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -798,8 +785,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                             .white,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                   elevation:
                                                                       0.0,
@@ -911,8 +896,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                           15.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                               Padding(
@@ -935,8 +918,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                             0xAEFFFFFF),
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                               ),
@@ -982,7 +963,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                                 color: FlutterFlowTheme.of(context).alternate,
                                                                                 fontSize: 10.0,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: false,
                                                                               ),
                                                                         ),
                                                                         barRadius:
@@ -1054,8 +1034,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                             15.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                                 Padding(
@@ -1078,8 +1056,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                               'Geist Font Family',
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              false,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -1113,10 +1089,8 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                             Colors.transparent,
                                                                         onTap:
                                                                             () async {
-                                                                          _model.pageExecutedReportIterator =
-                                                                              0;
-                                                                          safeSetState(
-                                                                              () {});
+                                                                          context
+                                                                              .pushNamed(TestReportSummaryWidget.routeName);
                                                                         },
                                                                         child:
                                                                             Icon(
@@ -1149,7 +1123,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                                 fontFamily: 'Geist Font Family',
                                                                                 fontSize: 25.0,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: false,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -1193,7 +1166,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                         fontFamily: 'Geist Font Family',
                                         fontSize: 15.0,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                               ),
@@ -1251,7 +1223,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                               'Geist Font Family',
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ),
@@ -1269,7 +1240,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                               'Geist Font Family',
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ),
@@ -1287,7 +1257,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                               'Geist Font Family',
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ),
@@ -1306,7 +1275,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                               'Geist Font Family',
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ),
@@ -1324,7 +1292,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                               'Geist Font Family',
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ),
@@ -1342,7 +1309,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                               'Geist Font Family',
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ),
@@ -1413,7 +1379,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                               Color(0xFF4038EF),
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ),
@@ -1434,7 +1399,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                               'Geist Font Family',
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ),
@@ -1459,8 +1423,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                 fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                       ),
@@ -1495,8 +1457,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                           10.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                             ),
@@ -1525,8 +1485,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                               fontSize: 10.0,
                                                               letterSpacing:
                                                                   0.0,
-                                                              useGoogleFonts:
-                                                                  false,
                                                             ),
                                                       ),
                                                     ),
@@ -1537,17 +1495,26 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                       MainAxisSize.max,
                                                   children: [
                                                     Expanded(
-                                                      child: FutureBuilder<
+                                                      child: StreamBuilder<
                                                           List<UserRow>>(
-                                                        future: UserTable()
-                                                            .querySingleRow(
-                                                          queryFn: (q) =>
-                                                              q.eqOrNull(
-                                                            'user_id',
-                                                            currentWeekReportTableItem
-                                                                .userId,
-                                                          ),
-                                                        ),
+                                                        stream: _model
+                                                                .textSupabaseStream ??=
+                                                            SupaFlow.client
+                                                                .from("user")
+                                                                .stream(
+                                                                    primaryKey: [
+                                                                      'id'
+                                                                    ])
+                                                                .eqOrNull(
+                                                                  'user_id',
+                                                                  currentWeekReportTableItem
+                                                                      .userId,
+                                                                )
+                                                                .map((list) => list
+                                                                    .map((item) =>
+                                                                        UserRow(
+                                                                            item))
+                                                                    .toList()),
                                                         builder: (context,
                                                             snapshot) {
                                                           // Customize what your widget looks like when it's loading.
@@ -1597,8 +1564,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                           );
                                                         },

@@ -8,6 +8,7 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'sidebarnav_model.dart';
 export 'sidebarnav_model.dart';
@@ -249,10 +250,22 @@ class _SidebarnavWidgetState extends State<SidebarnavWidget>
                   Text(
                     'SONAFEM',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Roboto',
+                          font: GoogleFonts.roboto(
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
+                          ),
                           color: Colors.white,
                           fontSize: 24.0,
                           letterSpacing: 0.0,
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                         ),
                   ),
                 ],
@@ -275,7 +288,6 @@ class _SidebarnavWidgetState extends State<SidebarnavWidget>
                                 .secondaryBackground,
                             fontSize: 20.0,
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ),
@@ -302,7 +314,6 @@ class _SidebarnavWidgetState extends State<SidebarnavWidget>
                                 .secondaryBackground,
                             fontSize: 12.0,
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ),
@@ -378,7 +389,6 @@ class _SidebarnavWidgetState extends State<SidebarnavWidget>
                                     fontFamily: 'Geist Font Family',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
@@ -455,7 +465,6 @@ class _SidebarnavWidgetState extends State<SidebarnavWidget>
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Geist Font Family',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
@@ -532,7 +541,6 @@ class _SidebarnavWidgetState extends State<SidebarnavWidget>
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Geist Font Family',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
@@ -611,7 +619,6 @@ class _SidebarnavWidgetState extends State<SidebarnavWidget>
                                     fontFamily: 'Geist Font Family',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
@@ -689,7 +696,6 @@ class _SidebarnavWidgetState extends State<SidebarnavWidget>
                                     fontFamily: 'Geist Font Family',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
@@ -769,7 +775,6 @@ class _SidebarnavWidgetState extends State<SidebarnavWidget>
                                     fontFamily: 'Geist Font Family',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
@@ -818,7 +823,6 @@ class _SidebarnavWidgetState extends State<SidebarnavWidget>
                                       color: Color(0xFF1BDEF0),
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                                 elevation: 0.0,
                                 borderRadius: BorderRadius.circular(8.0),
@@ -838,7 +842,6 @@ class _SidebarnavWidgetState extends State<SidebarnavWidget>
                             fontFamily: 'Geist Font Family',
                             color: Colors.white,
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ),

@@ -15,6 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'report_summary_copy_model.dart';
 export 'report_summary_copy_model.dart';
 
@@ -188,7 +189,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                   fontFamily:
                                                       'Geist Font Family',
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                         ],
@@ -226,7 +226,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                         fontFamily:
                                                             'Geist Font Family',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ],
@@ -302,8 +301,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                       15.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                       ),
                                                       Text(
@@ -322,8 +319,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                       ),
                                                     ].divide(
@@ -375,8 +370,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     0xFF09245E),
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                       elevation: 0.0,
                                                       borderRadius:
@@ -468,8 +461,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                           10.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                             ),
@@ -536,8 +527,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ].divide(SizedBox(
@@ -589,8 +578,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                           10.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                             ),
@@ -657,8 +644,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ].divide(SizedBox(
@@ -762,7 +747,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                               fontFamily: 'Geist Font Family',
                                               fontSize: 15.0,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                         unselectedLabelStyle:
                                             FlutterFlowTheme.of(context)
@@ -772,7 +756,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                       'Geist Font Family',
                                                   fontSize: 13.0,
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                         indicatorColor:
                                             FlutterFlowTheme.of(context)
@@ -892,8 +875,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -916,8 +897,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -940,8 +919,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -964,8 +941,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -988,8 +963,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -1012,8 +985,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -1036,8 +1007,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -1060,8 +1029,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -1084,8 +1051,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -1108,8 +1073,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -1162,8 +1125,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                               13.0,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              false,
                                                                         ),
                                                                   ),
                                                                   FutureBuilder<
@@ -1239,7 +1200,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                               fontFamily: 'Geist Font Family',
                                                                               fontSize: 13.0,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: false,
                                                                             ),
                                                                       );
                                                                     },
@@ -1317,7 +1277,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                               fontFamily: 'Geist Font Family',
                                                                               fontSize: 13.0,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: false,
                                                                             ),
                                                                       );
                                                                     },
@@ -1344,8 +1303,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                               13.0,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              false,
                                                                         ),
                                                                   ),
                                                                   FutureBuilder<
@@ -1421,7 +1378,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                               fontFamily: 'Geist Font Family',
                                                                               fontSize: 13.0,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: false,
                                                                             ),
                                                                       );
                                                                     },
@@ -1499,7 +1455,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                               fontFamily: 'Geist Font Family',
                                                                               fontSize: 13.0,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: false,
                                                                             ),
                                                                       );
                                                                     },
@@ -1577,7 +1532,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                               fontFamily: 'Geist Font Family',
                                                                               fontSize: 13.0,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: false,
                                                                             ),
                                                                       );
                                                                     },
@@ -1656,7 +1610,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: false,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -1765,7 +1718,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                         fontSize: 13.0,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: false,
                                                                                       ),
                                                                                 );
                                                                               },
@@ -1799,7 +1751,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                 color: FlutterFlowTheme.of(context).primaryText,
                                                                                 fontSize: 13.0,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: false,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -1895,26 +1846,28 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                       enableDrag: false,
                                                                                       context: context,
                                                                                       builder: (context) {
-                                                                                        return GestureDetector(
-                                                                                          onTap: () {
-                                                                                            FocusScope.of(context).unfocus();
-                                                                                            FocusManager.instance.primaryFocus?.unfocus();
-                                                                                          },
-                                                                                          child: Padding(
-                                                                                            padding: MediaQuery.viewInsetsOf(context),
-                                                                                            child: Container(
-                                                                                              height: double.infinity,
-                                                                                              child: CompVacancyClosureWidget(
-                                                                                                currentOpenVacancy: int.parse(valueOrDefault<String>(
-                                                                                                      _model.outputFieldValue?.where((e) => (e.fieldId == buttonInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryVacancyItem.recordId)).toList().firstOrNull?.value,
-                                                                                                      'value',
-                                                                                                    )) -
-                                                                                                    (rowVacancyClosureRow!.numberOfReplacedVacancy!),
-                                                                                                recordId: executedReportSummaryVacancyItem.recordId!,
-                                                                                                currentSubmittedVacancy: int.parse(valueOrDefault<String>(
-                                                                                                  _model.outputFieldValue?.where((e) => (e.fieldId == buttonInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryVacancyItem.recordId)).toList().firstOrNull?.value,
-                                                                                                  'value',
-                                                                                                )),
+                                                                                        return WebViewAware(
+                                                                                          child: GestureDetector(
+                                                                                            onTap: () {
+                                                                                              FocusScope.of(context).unfocus();
+                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                            },
+                                                                                            child: Padding(
+                                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                                              child: Container(
+                                                                                                height: double.infinity,
+                                                                                                child: CompVacancyClosureWidget(
+                                                                                                  currentOpenVacancy: int.parse(valueOrDefault<String>(
+                                                                                                        _model.outputFieldValue?.where((e) => (e.fieldId == buttonInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryVacancyItem.recordId)).toList().firstOrNull?.value,
+                                                                                                        'value',
+                                                                                                      )) -
+                                                                                                      (rowVacancyClosureRow!.numberOfReplacedVacancy!),
+                                                                                                  recordId: executedReportSummaryVacancyItem.recordId!,
+                                                                                                  currentSubmittedVacancy: int.parse(valueOrDefault<String>(
+                                                                                                    _model.outputFieldValue?.where((e) => (e.fieldId == buttonInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryVacancyItem.recordId)).toList().firstOrNull?.value,
+                                                                                                    'value',
+                                                                                                  )),
+                                                                                                ),
                                                                                               ),
                                                                                             ),
                                                                                           ),
@@ -1933,7 +1886,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                           color: Colors.white,
                                                                                           fontSize: 7.0,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: false,
                                                                                         ),
                                                                                     elevation: 0.0,
                                                                                     borderRadius: BorderRadius.circular(8.0),
@@ -2081,8 +2033,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2108,8 +2058,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2135,8 +2083,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2162,8 +2108,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2189,8 +2133,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2216,8 +2158,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2243,8 +2183,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2270,8 +2208,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2297,8 +2233,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2324,8 +2258,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2351,8 +2283,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2378,8 +2308,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2405,8 +2333,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2432,8 +2358,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2459,8 +2383,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2486,8 +2408,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2513,8 +2433,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2558,8 +2476,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                       14.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                           ),
                                                           FutureBuilder<
@@ -2644,8 +2560,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                           14.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               );
                                                             },
@@ -2732,8 +2646,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                           14.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               );
                                                             },
@@ -2821,8 +2733,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                               14.0,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              false,
                                                                         ),
                                                                   );
                                                                 },
@@ -2911,8 +2821,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                           14.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               );
                                                             },
@@ -2999,8 +2907,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                           14.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               );
                                                             },
@@ -3087,8 +2993,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                           14.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               );
                                                             },
@@ -3175,8 +3079,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                           14.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               );
                                                             },
@@ -3269,24 +3171,25 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap:
-                                                                                () {
-                                                                              FocusScope.of(context).unfocus();
-                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                            },
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: PictureDetailsWidget(
-                                                                                imgirl: valueOrDefault<String>(
-                                                                                  _model.outputFieldValue?.where((e) => (e.fieldId == imageInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryInfracstructureItem.recordId)).toList().firstOrNull?.value,
-                                                                                  'value',
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: PictureDetailsWidget(
+                                                                                  imgirl: valueOrDefault<String>(
+                                                                                    _model.outputFieldValue?.where((e) => (e.fieldId == imageInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryInfracstructureItem.recordId)).toList().firstOrNull?.value,
+                                                                                    'value',
+                                                                                  ),
+                                                                                  title: imageInspectionFieldsRow?.fieldName,
+                                                                                  capturedBy: '${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.firstName} ${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.lastName}',
+                                                                                  location: executedReportSummaryInfracstructureItem.clientName,
+                                                                                  capturedDate: executedReportSummaryInfracstructureItem.executedDate,
                                                                                 ),
-                                                                                title: imageInspectionFieldsRow?.fieldName,
-                                                                                capturedBy: '${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.firstName} ${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.lastName}',
-                                                                                location: executedReportSummaryInfracstructureItem.clientName,
-                                                                                capturedDate: executedReportSummaryInfracstructureItem.executedDate,
                                                                               ),
                                                                             ),
                                                                           );
@@ -3413,24 +3316,25 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap:
-                                                                                () {
-                                                                              FocusScope.of(context).unfocus();
-                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                            },
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: PictureDetailsWidget(
-                                                                                imgirl: valueOrDefault<String>(
-                                                                                  _model.outputFieldValue?.where((e) => (e.fieldId == imageInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryInfracstructureItem.recordId)).toList().firstOrNull?.value,
-                                                                                  'value',
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: PictureDetailsWidget(
+                                                                                  imgirl: valueOrDefault<String>(
+                                                                                    _model.outputFieldValue?.where((e) => (e.fieldId == imageInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryInfracstructureItem.recordId)).toList().firstOrNull?.value,
+                                                                                    'value',
+                                                                                  ),
+                                                                                  title: imageInspectionFieldsRow?.fieldName,
+                                                                                  capturedBy: '${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.firstName} ${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.lastName}',
+                                                                                  location: executedReportSummaryInfracstructureItem.clientName,
+                                                                                  capturedDate: executedReportSummaryInfracstructureItem.executedDate,
                                                                                 ),
-                                                                                title: imageInspectionFieldsRow?.fieldName,
-                                                                                capturedBy: '${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.firstName} ${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.lastName}',
-                                                                                location: executedReportSummaryInfracstructureItem.clientName,
-                                                                                capturedDate: executedReportSummaryInfracstructureItem.executedDate,
                                                                               ),
                                                                             ),
                                                                           );
@@ -3557,24 +3461,25 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap:
-                                                                                () {
-                                                                              FocusScope.of(context).unfocus();
-                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                            },
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: PictureDetailsWidget(
-                                                                                imgirl: valueOrDefault<String>(
-                                                                                  _model.outputFieldValue?.where((e) => (e.fieldId == imageInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryInfracstructureItem.recordId)).toList().firstOrNull?.value,
-                                                                                  'value',
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: PictureDetailsWidget(
+                                                                                  imgirl: valueOrDefault<String>(
+                                                                                    _model.outputFieldValue?.where((e) => (e.fieldId == imageInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryInfracstructureItem.recordId)).toList().firstOrNull?.value,
+                                                                                    'value',
+                                                                                  ),
+                                                                                  title: imageInspectionFieldsRow?.fieldName,
+                                                                                  capturedBy: '${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.firstName} ${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.lastName}',
+                                                                                  location: executedReportSummaryInfracstructureItem.clientName,
+                                                                                  capturedDate: executedReportSummaryInfracstructureItem.executedDate,
                                                                                 ),
-                                                                                title: imageInspectionFieldsRow?.fieldName,
-                                                                                capturedBy: '${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.firstName} ${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.lastName}',
-                                                                                location: executedReportSummaryInfracstructureItem.clientName,
-                                                                                capturedDate: executedReportSummaryInfracstructureItem.executedDate,
                                                                               ),
                                                                             ),
                                                                           );
@@ -3701,24 +3606,25 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap:
-                                                                                () {
-                                                                              FocusScope.of(context).unfocus();
-                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                            },
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: PictureDetailsWidget(
-                                                                                imgirl: valueOrDefault<String>(
-                                                                                  _model.outputFieldValue?.where((e) => (e.fieldId == imageInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryInfracstructureItem.recordId)).toList().firstOrNull?.value,
-                                                                                  'value',
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: PictureDetailsWidget(
+                                                                                  imgirl: valueOrDefault<String>(
+                                                                                    _model.outputFieldValue?.where((e) => (e.fieldId == imageInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryInfracstructureItem.recordId)).toList().firstOrNull?.value,
+                                                                                    'value',
+                                                                                  ),
+                                                                                  title: imageInspectionFieldsRow?.fieldName,
+                                                                                  capturedBy: '${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.firstName} ${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.lastName}',
+                                                                                  location: executedReportSummaryInfracstructureItem.clientName,
+                                                                                  capturedDate: executedReportSummaryInfracstructureItem.executedDate,
                                                                                 ),
-                                                                                title: imageInspectionFieldsRow?.fieldName,
-                                                                                capturedBy: '${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.firstName} ${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.lastName}',
-                                                                                location: executedReportSummaryInfracstructureItem.clientName,
-                                                                                capturedDate: executedReportSummaryInfracstructureItem.executedDate,
                                                                               ),
                                                                             ),
                                                                           );
@@ -3845,24 +3751,25 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap:
-                                                                                () {
-                                                                              FocusScope.of(context).unfocus();
-                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                            },
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: PictureDetailsWidget(
-                                                                                imgirl: valueOrDefault<String>(
-                                                                                  _model.outputFieldValue?.where((e) => (e.fieldId == imageInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryInfracstructureItem.recordId)).toList().firstOrNull?.value,
-                                                                                  'value',
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: PictureDetailsWidget(
+                                                                                  imgirl: valueOrDefault<String>(
+                                                                                    _model.outputFieldValue?.where((e) => (e.fieldId == imageInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryInfracstructureItem.recordId)).toList().firstOrNull?.value,
+                                                                                    'value',
+                                                                                  ),
+                                                                                  title: imageInspectionFieldsRow?.fieldName,
+                                                                                  capturedBy: '${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.firstName} ${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.lastName}',
+                                                                                  location: executedReportSummaryInfracstructureItem.clientName,
+                                                                                  capturedDate: executedReportSummaryInfracstructureItem.executedDate,
                                                                                 ),
-                                                                                title: imageInspectionFieldsRow?.fieldName,
-                                                                                capturedBy: '${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.firstName} ${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.lastName}',
-                                                                                location: executedReportSummaryInfracstructureItem.clientName,
-                                                                                capturedDate: executedReportSummaryInfracstructureItem.executedDate,
                                                                               ),
                                                                             ),
                                                                           );
@@ -3989,24 +3896,25 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap:
-                                                                                () {
-                                                                              FocusScope.of(context).unfocus();
-                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                            },
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: PictureDetailsWidget(
-                                                                                imgirl: valueOrDefault<String>(
-                                                                                  _model.outputFieldValue?.where((e) => (e.fieldId == imageInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryInfracstructureItem.recordId)).toList().firstOrNull?.value,
-                                                                                  'value',
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: PictureDetailsWidget(
+                                                                                  imgirl: valueOrDefault<String>(
+                                                                                    _model.outputFieldValue?.where((e) => (e.fieldId == imageInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryInfracstructureItem.recordId)).toList().firstOrNull?.value,
+                                                                                    'value',
+                                                                                  ),
+                                                                                  title: imageInspectionFieldsRow?.fieldName,
+                                                                                  capturedBy: '${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.firstName} ${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.lastName}',
+                                                                                  location: executedReportSummaryInfracstructureItem.clientName,
+                                                                                  capturedDate: executedReportSummaryInfracstructureItem.executedDate,
                                                                                 ),
-                                                                                title: imageInspectionFieldsRow?.fieldName,
-                                                                                capturedBy: '${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.firstName} ${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.lastName}',
-                                                                                location: executedReportSummaryInfracstructureItem.clientName,
-                                                                                capturedDate: executedReportSummaryInfracstructureItem.executedDate,
                                                                               ),
                                                                             ),
                                                                           );
@@ -4135,24 +4043,25 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap:
-                                                                                () {
-                                                                              FocusScope.of(context).unfocus();
-                                                                              FocusManager.instance.primaryFocus?.unfocus();
-                                                                            },
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: PictureDetailsWidget(
-                                                                                imgirl: valueOrDefault<String>(
-                                                                                  _model.outputFieldValue?.where((e) => (e.fieldId == imageInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryInfracstructureItem.recordId)).toList().firstOrNull?.value,
-                                                                                  'value',
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: PictureDetailsWidget(
+                                                                                  imgirl: valueOrDefault<String>(
+                                                                                    _model.outputFieldValue?.where((e) => (e.fieldId == imageInspectionFieldsRow?.fieldId) && (e.recordId == executedReportSummaryInfracstructureItem.recordId)).toList().firstOrNull?.value,
+                                                                                    'value',
+                                                                                  ),
+                                                                                  title: imageInspectionFieldsRow?.fieldName,
+                                                                                  capturedBy: '${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.firstName} ${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.lastName}',
+                                                                                  location: executedReportSummaryInfracstructureItem.clientName,
+                                                                                  capturedDate: executedReportSummaryInfracstructureItem.executedDate,
                                                                                 ),
-                                                                                title: imageInspectionFieldsRow?.fieldName,
-                                                                                capturedBy: '${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.firstName} ${_model.outputUsers?.where((e) => e.userId == executedReportSummaryInfracstructureItem.userId).toList().firstOrNull?.lastName}',
-                                                                                location: executedReportSummaryInfracstructureItem.clientName,
-                                                                                capturedDate: executedReportSummaryInfracstructureItem.executedDate,
                                                                               ),
                                                                             ),
                                                                           );
@@ -4225,8 +4134,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                               14.0,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              false,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -4317,8 +4224,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                                                                 14.0,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     );
                                                                   },
@@ -4431,21 +4336,18 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     dayOfWeekStyle: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     dateStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     selectedDateStyle:
                                         FlutterFlowTheme.of(context)
@@ -4453,7 +4355,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                             .override(
                                               fontFamily: 'Geist Font Family',
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                     inactiveDateStyle:
                                         FlutterFlowTheme.of(context)
@@ -4461,7 +4362,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                             .override(
                                               fontFamily: 'Geist Font Family',
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                   ),
                                 ),
@@ -4496,7 +4396,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                             fontFamily: 'Geist Font Family',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                       elevation: 0.0,
                                       borderRadius: BorderRadius.circular(8.0),
@@ -4555,21 +4454,18 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     dayOfWeekStyle: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     dateStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     selectedDateStyle:
                                         FlutterFlowTheme.of(context)
@@ -4577,7 +4473,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                             .override(
                                               fontFamily: 'Geist Font Family',
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                     inactiveDateStyle:
                                         FlutterFlowTheme.of(context)
@@ -4585,7 +4480,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                             .override(
                                               fontFamily: 'Geist Font Family',
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                   ),
                                 ),
@@ -4620,7 +4514,6 @@ class _ReportSummaryCopyWidgetState extends State<ReportSummaryCopyWidget>
                                             fontFamily: 'Geist Font Family',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                       elevation: 0.0,
                                       borderRadius: BorderRadius.circular(8.0),

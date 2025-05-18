@@ -81,7 +81,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                   color: Colors.white,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
-                                  useGoogleFonts: false,
                                 ),
                           ),
                           Text(
@@ -91,7 +90,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                       fontFamily: 'Geist Font Family',
                                       color: Color(0xFFE0E0E0),
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                           ),
                         ],
@@ -141,7 +139,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                           .override(
                                             fontFamily: 'Geist Font Family',
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                     ),
                                     Row(
@@ -167,7 +164,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                                     context)
                                                                 .primary,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                             Text(
@@ -183,7 +179,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ],
@@ -231,7 +226,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                                     context)
                                                                 .primaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                               ),
@@ -276,7 +270,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                               .override(
                                                 fontFamily: 'Geist Font Family',
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                         Text(
@@ -289,7 +282,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .success,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                         Text(
@@ -302,7 +294,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .success,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ].divide(SizedBox(height: 8.0)),
@@ -337,7 +328,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                               .override(
                                                 fontFamily: 'Geist Font Family',
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                         Text(
@@ -350,7 +340,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .warning,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                         Text(
@@ -363,7 +352,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ].divide(SizedBox(height: 8.0)),
@@ -399,7 +387,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                           .override(
                                             fontFamily: 'Geist Font Family',
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                     ),
                                     Column(
@@ -419,7 +406,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                         fontFamily:
                                                             'Geist Font Family',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                             Text(
@@ -435,7 +421,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                                     context)
                                                                 .success,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ],
@@ -472,7 +457,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                         fontFamily:
                                                             'Geist Font Family',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                             Text(
@@ -488,7 +472,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                                     context)
                                                                 .warning,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ],
@@ -525,7 +508,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                         fontFamily:
                                                             'Geist Font Family',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                             Text(
@@ -541,7 +523,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                                     context)
                                                                 .success,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ],
@@ -597,7 +578,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                           .override(
                                             fontFamily: 'Geist Font Family',
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                     ),
                                     Column(
@@ -622,7 +602,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                         fontFamily:
                                                             'Geist Font Family',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                                 Text(
@@ -638,7 +617,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                                     context)
                                                                 .success,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                               ],
@@ -671,7 +649,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                         fontFamily:
                                                             'Geist Font Family',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                                 Text(
@@ -687,7 +664,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                                     context)
                                                                 .warning,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                               ],
@@ -720,7 +696,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                         fontFamily:
                                                             'Geist Font Family',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                                 Text(
@@ -736,7 +711,6 @@ class _ComplianceStatWidgetState extends State<ComplianceStatWidget> {
                                                                     context)
                                                                 .success,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                               ],

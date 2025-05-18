@@ -122,7 +122,6 @@ class _NewClientInfoWidgetState extends State<NewClientInfoWidget> {
               style: FlutterFlowTheme.of(context).headlineSmall.override(
                     fontFamily: 'Geist Font Family',
                     letterSpacing: 0.0,
-                    useGoogleFonts: false,
                   ),
             ),
             Form(
@@ -143,7 +142,6 @@ class _NewClientInfoWidgetState extends State<NewClientInfoWidget> {
                           FlutterFlowTheme.of(context).bodyLarge.override(
                                 fontFamily: 'Geist Font Family',
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
                               ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
@@ -180,7 +178,6 @@ class _NewClientInfoWidgetState extends State<NewClientInfoWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Geist Font Family',
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
                     minLines: 1,
                     validator:
@@ -198,7 +195,6 @@ class _NewClientInfoWidgetState extends State<NewClientInfoWidget> {
                           FlutterFlowTheme.of(context).bodyLarge.override(
                                 fontFamily: 'Geist Font Family',
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
                               ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
@@ -235,7 +231,6 @@ class _NewClientInfoWidgetState extends State<NewClientInfoWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Geist Font Family',
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
                     minLines: 1,
                     keyboardType: TextInputType.emailAddress,
@@ -254,7 +249,6 @@ class _NewClientInfoWidgetState extends State<NewClientInfoWidget> {
                           FlutterFlowTheme.of(context).bodyLarge.override(
                                 fontFamily: 'Geist Font Family',
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
                               ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
@@ -291,7 +285,6 @@ class _NewClientInfoWidgetState extends State<NewClientInfoWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Geist Font Family',
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
                     minLines: 1,
                     validator:
@@ -309,7 +302,6 @@ class _NewClientInfoWidgetState extends State<NewClientInfoWidget> {
                           FlutterFlowTheme.of(context).bodyLarge.override(
                                 fontFamily: 'Geist Font Family',
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
                               ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
@@ -346,7 +338,6 @@ class _NewClientInfoWidgetState extends State<NewClientInfoWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Geist Font Family',
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
                     minLines: 1,
                     validator:
@@ -364,7 +355,6 @@ class _NewClientInfoWidgetState extends State<NewClientInfoWidget> {
                           FlutterFlowTheme.of(context).bodyLarge.override(
                                 fontFamily: 'Geist Font Family',
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
                               ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
@@ -401,7 +391,6 @@ class _NewClientInfoWidgetState extends State<NewClientInfoWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Geist Font Family',
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
                     minLines: 1,
                     validator:
@@ -513,7 +502,6 @@ class _NewClientInfoWidgetState extends State<NewClientInfoWidget> {
                           fontFamily: 'Geist Font Family',
                           color: FlutterFlowTheme.of(context).info,
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
                     elevation: 0.0,
                     borderSide: BorderSide(

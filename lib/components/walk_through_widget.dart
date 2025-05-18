@@ -95,7 +95,6 @@ class _WalkThroughWidgetState extends State<WalkThroughWidget> {
                                 .override(
                                   fontFamily: 'Geist Font Family',
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                           ),
                         ],
@@ -108,7 +107,6 @@ class _WalkThroughWidgetState extends State<WalkThroughWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Geist Font Family',
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ].divide(SizedBox(height: 12.0)),

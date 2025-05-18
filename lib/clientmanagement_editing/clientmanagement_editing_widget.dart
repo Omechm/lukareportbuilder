@@ -176,7 +176,6 @@ class _ClientmanagementEditingWidgetState
                                                         .primaryText,
                                                 fontSize: 15.0,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                         Text(
@@ -190,7 +189,6 @@ class _ClientmanagementEditingWidgetState
                                                         .secondaryText,
                                                 fontSize: 8.0,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ].divide(SizedBox(height: 8.0)),
@@ -224,7 +222,6 @@ class _ClientmanagementEditingWidgetState
                                                 .primary,
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                     ),
                                   ),
@@ -272,7 +269,6 @@ class _ClientmanagementEditingWidgetState
                                                                     context)
                                                                 .primaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ],
@@ -329,8 +325,6 @@ class _ClientmanagementEditingWidgetState
                                                                             'Geist Font Family',
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                   alignLabelWithHint:
                                                                       true,
@@ -344,8 +338,6 @@ class _ClientmanagementEditingWidgetState
                                                                             'Geist Font Family',
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                   enabledBorder:
                                                                       OutlineInputBorder(
@@ -413,8 +405,6 @@ class _ClientmanagementEditingWidgetState
                                                                           'Geist Font Family',
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                                 cursorColor:
                                                                     FlutterFlowTheme.of(
@@ -476,8 +466,6 @@ class _ClientmanagementEditingWidgetState
                                                                             'Geist Font Family',
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                   alignLabelWithHint:
                                                                       true,
@@ -491,8 +479,6 @@ class _ClientmanagementEditingWidgetState
                                                                             'Geist Font Family',
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                   enabledBorder:
                                                                       OutlineInputBorder(
@@ -560,8 +546,6 @@ class _ClientmanagementEditingWidgetState
                                                                           'Geist Font Family',
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                                 cursorColor:
                                                                     FlutterFlowTheme.of(
@@ -623,8 +607,6 @@ class _ClientmanagementEditingWidgetState
                                                                             'Geist Font Family',
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                   alignLabelWithHint:
                                                                       true,
@@ -638,8 +620,6 @@ class _ClientmanagementEditingWidgetState
                                                                             'Geist Font Family',
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                   enabledBorder:
                                                                       OutlineInputBorder(
@@ -707,8 +687,6 @@ class _ClientmanagementEditingWidgetState
                                                                           'Geist Font Family',
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                                 cursorColor:
                                                                     FlutterFlowTheme.of(
@@ -770,8 +748,6 @@ class _ClientmanagementEditingWidgetState
                                                                             'Geist Font Family',
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                   alignLabelWithHint:
                                                                       true,
@@ -785,8 +761,6 @@ class _ClientmanagementEditingWidgetState
                                                                             'Geist Font Family',
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                   enabledBorder:
                                                                       OutlineInputBorder(
@@ -854,8 +828,6 @@ class _ClientmanagementEditingWidgetState
                                                                           'Geist Font Family',
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                                 cursorColor:
                                                                     FlutterFlowTheme.of(
@@ -917,8 +889,6 @@ class _ClientmanagementEditingWidgetState
                                                                             'Geist Font Family',
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                   alignLabelWithHint:
                                                                       true,
@@ -932,8 +902,6 @@ class _ClientmanagementEditingWidgetState
                                                                             'Geist Font Family',
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                   enabledBorder:
                                                                       OutlineInputBorder(
@@ -1001,8 +969,6 @@ class _ClientmanagementEditingWidgetState
                                                                           'Geist Font Family',
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                                 cursorColor:
                                                                     FlutterFlowTheme.of(
@@ -1178,8 +1144,6 @@ class _ClientmanagementEditingWidgetState
                                                                       .white,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                         elevation: 0.0,
                                                         borderRadius:
@@ -1246,8 +1210,6 @@ class _ClientmanagementEditingWidgetState
                                                                       .primary,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                         elevation: 0.0,
                                                         borderSide: BorderSide(

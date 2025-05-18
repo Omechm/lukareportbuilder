@@ -279,8 +279,6 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .bold,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                             ),
@@ -367,7 +365,6 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                                                                                   color: Colors.white,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w600,
-                                                                                  useGoogleFonts: false,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -380,7 +377,6 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                                                                               fontFamily: 'Geist Font Family',
                                                                               color: FlutterFlowTheme.of(context).alternate,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: false,
                                                                             ),
                                                                       ),
                                                                       Column(
@@ -399,7 +395,6 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                                                                                       fontFamily: 'Geist Font Family',
                                                                                       color: Color(0xFFE0E0E0),
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
                                                                                     ),
                                                                               ),
                                                                               Text(
@@ -408,7 +403,6 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                                                                                       fontFamily: 'Geist Font Family',
                                                                                       color: Color(0xFFE0E0E0),
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -423,7 +417,6 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                                                                                       fontFamily: 'Geist Font Family',
                                                                                       color: Color(0xFFE0E0E0),
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
                                                                                     ),
                                                                               ),
                                                                               Text(
@@ -432,7 +425,6 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                                                                                       fontFamily: 'Geist Font Family',
                                                                                       color: Color(0xFFE0E0E0),
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -447,7 +439,6 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                                                                                       fontFamily: 'Geist Font Family',
                                                                                       color: Color(0xFFE0E0E0),
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
                                                                                     ),
                                                                               ),
                                                                               Text(
@@ -456,7 +447,6 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                                                                                       fontFamily: 'Geist Font Family',
                                                                                       color: Color(0xFFE0E0E0),
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -526,7 +516,6 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                                 Row(
@@ -675,7 +664,6 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                                                 fontFamily: 'Geist Font Family',
                                                 fontSize: 14.0,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ),
@@ -721,7 +709,6 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                                       fontFamily: 'Geist Font Family',
                                       fontSize: 7.0,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                                 hintText: 'select refresh intervals',
                                 icon: Icon(
@@ -779,7 +766,6 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                                                       'Geist Font Family',
                                                   fontSize: 7.0,
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                         ),
@@ -848,8 +834,6 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                                                                 fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                     ),
                                                   ),
@@ -967,7 +951,6 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                                                             'Geist Font Family',
                                                         fontSize: 7.0,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ),
@@ -1042,8 +1025,6 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                                                                       10.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                       ),
                                                     ),
@@ -1160,7 +1141,6 @@ class _ImageViewerWidgetState extends State<ImageViewerWidget> {
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                               elevation: 0.0,
                               borderRadius: BorderRadius.circular(8.0),

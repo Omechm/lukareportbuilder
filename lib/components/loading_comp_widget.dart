@@ -75,7 +75,17 @@ class _LoadingCompWidgetState extends State<LoadingCompWidget>
               width: 60.0,
               height: 60.0,
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).primary,
+                color: Color(0xFF105DFB),
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 4.0,
+                    color: Color(0x33000000),
+                    offset: Offset(
+                      0.0,
+                      2.0,
+                    ),
+                  )
+                ],
                 shape: BoxShape.circle,
               ),
               child: Padding(
@@ -85,7 +95,7 @@ class _LoadingCompWidgetState extends State<LoadingCompWidget>
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
-                      Icons.sync,
+                      Icons.swap_vert_circle_outlined,
                       color: FlutterFlowTheme.of(context).info,
                       size: 32.0,
                     ).animateOnPageLoad(
@@ -99,17 +109,15 @@ class _LoadingCompWidgetState extends State<LoadingCompWidget>
               style: FlutterFlowTheme.of(context).titleMedium.override(
                     fontFamily: 'Geist Font Family',
                     letterSpacing: 0.0,
-                    useGoogleFonts: false,
                   ),
             ),
             Text(
-              'Please wait while we fetch your information',
+              'Please wait ..',
               textAlign: TextAlign.center,
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Geist Font Family',
                     color: FlutterFlowTheme.of(context).secondaryText,
                     letterSpacing: 0.0,
-                    useGoogleFonts: false,
                   ),
             ),
           ].divide(SizedBox(height: 16.0)),

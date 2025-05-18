@@ -344,9 +344,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: DocumentationWidget.routeName,
           path: DocumentationWidget.routePath,
           builder: (context, params) => DocumentationWidget(),
+        ),
+        FFRoute(
+          name: TestReportSummaryWidget.routeName,
+          path: TestReportSummaryWidget.routePath,
+          builder: (context, params) => TestReportSummaryWidget(),
+        ),
+        FFRoute(
+          name: ReportSummaryCopy2Widget.routeName,
+          path: ReportSummaryCopy2Widget.routePath,
+          requireAuth: true,
+          builder: (context, params) => ReportSummaryCopy2Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
-      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {

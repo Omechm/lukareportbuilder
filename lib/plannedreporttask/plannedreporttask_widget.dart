@@ -162,7 +162,6 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                       .primaryText,
                                                   fontSize: 15.0,
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                           Text(
@@ -177,7 +176,6 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                       .secondaryText,
                                                   fontSize: 8.0,
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                         ].divide(SizedBox(height: 8.0)),
@@ -278,7 +276,6 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                           fontFamily:
                                                               'Geist Font Family',
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                 hintText: 'Filter by Client',
                                                 icon: Icon(
@@ -329,7 +326,6 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                       .primary,
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                       ),
                                     ),
@@ -412,8 +408,6 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                                         14.0,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -438,8 +432,6 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                                         14.0,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -464,8 +456,6 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                                         14.0,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -490,8 +480,6 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                                         14.0,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -541,8 +529,6 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                                       12.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                           ),
                                                           Text(
@@ -562,8 +548,6 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                                       12.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                           ),
                                                           Text(
@@ -583,8 +567,6 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                                       12.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                           ),
                                                           Text(
@@ -604,8 +586,6 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                                       12.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                           ),
                                                           FlutterFlowIconButton(
@@ -699,7 +679,6 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                             'Geist Font Family',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                                 Text(
@@ -724,7 +703,6 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                             'Geist Font Family',
                                                         fontSize: 12.0,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                               ],

@@ -11,7 +11,9 @@ class DeletepicturesModel extends FlutterFlowModel<DeletepicturesWidget> {
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<ImagesToDeleteRow>? output2weeksOldReports;
+  List<Reportpictures2weeksoldRow>? output2weeksOldReports;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<ReportpicturesUnmatchedRow>? outputUnMatchedImages;
 
   @override
   void initState(BuildContext context) {}

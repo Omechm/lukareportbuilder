@@ -155,7 +155,6 @@ class _ClientmanagementWidgetState extends State<ClientmanagementWidget> {
                                                         .primaryText,
                                                 fontSize: 15.0,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                         Text(
@@ -169,7 +168,6 @@ class _ClientmanagementWidgetState extends State<ClientmanagementWidget> {
                                                         .secondaryText,
                                                 fontSize: 8.0,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ].divide(SizedBox(height: 8.0)),
@@ -208,7 +206,6 @@ class _ClientmanagementWidgetState extends State<ClientmanagementWidget> {
                                             fontFamily: 'Geist Font Family',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                       elevation: 2.0,
                                       borderRadius: BorderRadius.circular(10.0),
@@ -266,7 +263,6 @@ class _ClientmanagementWidgetState extends State<ClientmanagementWidget> {
                                             .override(
                                               fontFamily: 'Geist Font Family',
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                         hintText: 'Search clients',
                                         hintStyle: FlutterFlowTheme.of(context)
@@ -274,7 +270,6 @@ class _ClientmanagementWidgetState extends State<ClientmanagementWidget> {
                                             .override(
                                               fontFamily: 'Geist Font Family',
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                         enabledBorder: InputBorder.none,
                                         focusedBorder: InputBorder.none,
@@ -291,7 +286,6 @@ class _ClientmanagementWidgetState extends State<ClientmanagementWidget> {
                                           .override(
                                             fontFamily: 'Geist Font Family',
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                       validator: _model.textControllerValidator
                                           .asValidator(context),
@@ -347,7 +341,6 @@ class _ClientmanagementWidgetState extends State<ClientmanagementWidget> {
                                                                     context)
                                                                 .primaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                               ],
@@ -505,7 +498,6 @@ class _ClientmanagementWidgetState extends State<ClientmanagementWidget> {
                                                                                       fontFamily: 'Geist Font Family',
                                                                                       color: FlutterFlowTheme.of(context).primaryText,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -519,7 +511,6 @@ class _ClientmanagementWidgetState extends State<ClientmanagementWidget> {
                                                                                   fontFamily: 'Geist Font Family',
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: false,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -620,7 +611,6 @@ class _ClientmanagementWidgetState extends State<ClientmanagementWidget> {
                                                           fontFamily:
                                                               'Geist Font Family',
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ),
@@ -643,7 +633,6 @@ class _ClientmanagementWidgetState extends State<ClientmanagementWidget> {
                                                                   .of(context)
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ),

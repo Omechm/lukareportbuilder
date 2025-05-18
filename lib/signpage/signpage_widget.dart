@@ -161,7 +161,6 @@ class _SignpageWidgetState extends State<SignpageWidget>
                                                       fontFamily:
                                                           'Geist Font Family',
                                                       letterSpacing: 0.0,
-                                                      useGoogleFonts: false,
                                                     ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
@@ -170,7 +169,6 @@ class _SignpageWidgetState extends State<SignpageWidget>
                                                       fontFamily:
                                                           'Geist Font Family',
                                                       letterSpacing: 0.0,
-                                                      useGoogleFonts: false,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -216,7 +214,6 @@ class _SignpageWidgetState extends State<SignpageWidget>
                                               .override(
                                                 fontFamily: 'Geist Font Family',
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                           minLines: 1,
                                           keyboardType:
@@ -241,7 +238,6 @@ class _SignpageWidgetState extends State<SignpageWidget>
                                                       fontFamily:
                                                           'Geist Font Family',
                                                       letterSpacing: 0.0,
-                                                      useGoogleFonts: false,
                                                     ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
@@ -250,7 +246,6 @@ class _SignpageWidgetState extends State<SignpageWidget>
                                                       fontFamily:
                                                           'Geist Font Family',
                                                       letterSpacing: 0.0,
-                                                      useGoogleFonts: false,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -309,7 +304,6 @@ class _SignpageWidgetState extends State<SignpageWidget>
                                               .override(
                                                 fontFamily: 'Geist Font Family',
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                           minLines: 1,
                                           validator: _model
@@ -348,7 +342,6 @@ class _SignpageWidgetState extends State<SignpageWidget>
                                                                   .of(context)
                                                               .primary,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ),
@@ -395,7 +388,6 @@ class _SignpageWidgetState extends State<SignpageWidget>
                                                           'Geist Font Family',
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
-                                                      useGoogleFonts: false,
                                                     ),
                                             elevation: 2.0,
                                             borderRadius:
@@ -421,7 +413,6 @@ class _SignpageWidgetState extends State<SignpageWidget>
                                                                   .of(context)
                                                               .secondaryText,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                               Text(
@@ -438,7 +429,6 @@ class _SignpageWidgetState extends State<SignpageWidget>
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ].divide(SizedBox(width: 8.0)),
@@ -558,7 +548,6 @@ class _SignpageWidgetState extends State<SignpageWidget>
                                                       .secondaryBackground,
                                               fontSize: 40.0,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                       ).animateOnPageLoad(animationsMap[
                                           'textOnPageLoadAnimation']!),

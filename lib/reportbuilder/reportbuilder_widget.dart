@@ -159,7 +159,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                             'Geist Font Family',
                                                         fontSize: 15.0,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                             Text(
@@ -172,7 +171,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                             'Geist Font Family',
                                                         fontSize: 8.0,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ],
@@ -218,7 +216,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                           color: Colors.white,
                                                           fontSize: 8.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                     elevation: 3.0,
                                                     borderSide: BorderSide(
@@ -337,8 +334,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                 fontSize: 8.0,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                       elevation: 3.0,
                                                       borderSide: BorderSide(
@@ -389,7 +384,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                               'Geist Font Family',
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                     elevation: 0.0,
                                                     borderRadius:
@@ -449,7 +443,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                               'Geist Font Family',
                                                           fontSize: 25.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ),
@@ -498,7 +491,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                             'Geist Font Family',
                                                         fontSize: 8.0,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                               ),
@@ -582,8 +574,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                           14.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                             ),
@@ -626,8 +616,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                               'Geist Font Family',
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              false,
                                                                         ),
                                                                     hintStyle: FlutterFlowTheme.of(
                                                                             context)
@@ -637,8 +625,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                               'Geist Font Family',
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              false,
                                                                         ),
                                                                     enabledBorder:
                                                                         UnderlineInputBorder(
@@ -704,8 +690,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                             'Geist Font Family',
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                   validator: _model
                                                                       .textFieldTitleTextControllerValidator
@@ -849,8 +833,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                     'Geist Font Family',
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                       ],
@@ -886,8 +868,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                       14.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                           ),
                                                         ),
@@ -928,8 +908,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                           'Geist Font Family',
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                                 hintStyle: FlutterFlowTheme.of(
                                                                         context)
@@ -939,8 +917,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                           'Geist Font Family',
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                                 enabledBorder:
                                                                     UnderlineInputBorder(
@@ -1011,8 +987,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                         'Geist Font Family',
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                               validator: _model
                                                                   .textFieldnameTextControllerValidator
@@ -1058,8 +1032,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                       14.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                           ),
                                                         ),
@@ -1141,8 +1113,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                           14.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                                 hintText:
                                                                     'Please select...',
@@ -1222,8 +1192,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                       14.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                           ),
                                                         ),
@@ -1290,8 +1258,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                                 'Geist Font Family',
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                       hintText:
                                                                           'Type your options',
@@ -1303,8 +1269,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                                 'Geist Font Family',
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                       enabledBorder:
                                                                           OutlineInputBorder(
@@ -1368,8 +1332,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                               'Geist Font Family',
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              false,
                                                                         ),
                                                                     cursorColor:
                                                                         FlutterFlowTheme.of(context)
@@ -1435,8 +1397,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                               Colors.white,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              false,
                                                                         ),
                                                                     elevation:
                                                                         0.0,
@@ -1515,7 +1475,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Geist Font Family',
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: false,
                                                                                 ),
                                                                           ),
                                                                           InkWell(
@@ -1585,8 +1544,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                       14.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                           ),
                                                         ),
@@ -1994,8 +1951,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                           .white,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                             elevation: 3.0,
                                                             borderSide:
@@ -2089,8 +2044,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                         15.0,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ],
@@ -2213,7 +2166,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                                               fontSize: 10.0,
                                                                                               letterSpacing: 0.0,
                                                                                               fontWeight: FontWeight.bold,
-                                                                                              useGoogleFonts: false,
                                                                                             ),
                                                                                       ),
                                                                                     ),
@@ -2226,7 +2178,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                             fontSize: 10.0,
                                                                                             letterSpacing: 0.0,
-                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -2243,7 +2194,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                                             fontFamily: 'Geist Font Family',
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                             letterSpacing: 0.0,
-                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -2386,8 +2336,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                             .white,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                   elevation:
                                                                       3.0,

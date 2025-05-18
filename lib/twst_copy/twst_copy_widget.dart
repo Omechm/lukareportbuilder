@@ -192,7 +192,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                 .primaryText,
                                             fontSize: 15.0,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                     ),
                                     Text(
@@ -205,7 +204,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                 .secondaryText,
                                             fontSize: 8.0,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                     ),
                                   ].divide(SizedBox(height: 8.0)),
@@ -228,7 +226,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     unselectedLabelStyle:
                                         FlutterFlowTheme.of(context)
@@ -236,7 +233,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                             .override(
                                               fontFamily: 'Geist Font Family',
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                     labelColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -437,7 +433,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                         fontFamily: 'Geist Font Family',
                                                                                         color: FlutterFlowTheme.of(context).primary,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: false,
                                                                                       ),
                                                                                 ),
                                                                               ),
@@ -461,7 +456,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                           fontFamily: 'Geist Font Family',
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: false,
                                                                                         ),
                                                                                   ),
                                                                                   Padding(
@@ -475,7 +469,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                             fontFamily: 'Geist Font Family',
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                             letterSpacing: 0.0,
-                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -490,7 +483,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                       fontFamily: 'Geist Font Family',
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -513,7 +505,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                               fontFamily: 'Geist Font Family',
                                                                               fontSize: 12.0,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: false,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -660,7 +651,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                       fontSize: 15.0,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
                                                                                     ),
                                                                               ),
                                                                               padding: EdgeInsets.zero,
@@ -679,7 +669,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Geist Font Family',
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: false,
                                                                                         ),
                                                                                   ),
                                                                                   Text(
@@ -687,7 +676,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Geist Font Family',
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: false,
                                                                                         ),
                                                                                   ),
                                                                                   FutureBuilder<List<UserClientAssignmentsRow>>(
@@ -722,7 +710,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: 'Geist Font Family',
                                                                                               letterSpacing: 0.0,
-                                                                                              useGoogleFonts: false,
                                                                                             ),
                                                                                       );
                                                                                     },
@@ -902,7 +889,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                         fontFamily: 'Geist Font Family',
                                                                                         color: FlutterFlowTheme.of(context).primary,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: false,
                                                                                       ),
                                                                                 ),
                                                                               ),
@@ -926,7 +912,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                           fontFamily: 'Geist Font Family',
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: false,
                                                                                         ),
                                                                                   ),
                                                                                   Padding(
@@ -940,7 +925,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                             fontFamily: 'Geist Font Family',
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                             letterSpacing: 0.0,
-                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -955,7 +939,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                       fontFamily: 'Geist Font Family',
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -978,7 +961,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                               fontFamily: 'Geist Font Family',
                                                                               fontSize: 12.0,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: false,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1133,7 +1115,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                       fontSize: 15.0,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
                                                                                     ),
                                                                               ),
                                                                               padding: EdgeInsets.zero,
@@ -1152,7 +1133,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Geist Font Family',
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: false,
                                                                                         ),
                                                                                   ),
                                                                                   Text(
@@ -1160,7 +1140,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Geist Font Family',
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: false,
                                                                                         ),
                                                                                   ),
                                                                                   FutureBuilder<List<UserClientAssignmentsRow>>(
@@ -1200,7 +1179,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: 'Geist Font Family',
                                                                                               letterSpacing: 0.0,
-                                                                                              useGoogleFonts: false,
                                                                                             ),
                                                                                       );
                                                                                     },
@@ -1318,8 +1296,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                 'Geist Font Family',
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -1398,7 +1374,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                             .override(
                                                                               fontFamily: 'Geist Font Family',
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: false,
                                                                             ),
                                                                       );
                                                                     },
@@ -1496,7 +1471,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Geist Font Family',
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: false,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1539,7 +1513,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Geist Font Family',
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: false,
                                                                                       ),
                                                                                 );
                                                                               },
@@ -1617,7 +1590,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: 'Geist Font Family',
                                                                                               letterSpacing: 0.0,
-                                                                                              useGoogleFonts: false,
                                                                                             ),
                                                                                       ),
                                                                                     ),
@@ -1661,7 +1633,6 @@ class _TwstCopyWidgetState extends State<TwstCopyWidget>
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'Geist Font Family',
                                                                                                 letterSpacing: 0.0,
-                                                                                                useGoogleFonts: false,
                                                                                               ),
                                                                                         );
                                                                                       },

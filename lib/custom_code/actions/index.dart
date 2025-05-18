@@ -1,5 +1,6 @@
 export 'get_current_week_number.dart' show getCurrentWeekNumber;
 export 'get_current_date.dart' show getCurrentDate;
+export 'download_c_s_v_from_scan_image.dart' show downloadCSVFromScanImage;
 export 'plannedtasksupervisoruserid.dart' show plannedtasksupervisoruserid;
 export 'extract_image_date_metadata.dart' show extractImageDateMetadata;
 export 'get_current_week_number_i_s_o.dart' show getCurrentWeekNumberISO;

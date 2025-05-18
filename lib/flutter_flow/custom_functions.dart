@@ -109,3 +109,21 @@ DateTime? getDate2WeeksFromDate(DateTime? startDate) {
   if (startDate == null) return null; // Check for null input
   return startDate.subtract(Duration(days: 14)); // Subtract 14 days
 }
+
+String? convertYouTubeShortUrl(String url) {
+  final uri = Uri.parse(url);
+  String videoId = '';
+
+  if (uri.host == 'youtu.be' && uri.pathSegments.isNotEmpty) {
+    videoId = uri.pathSegments[0];
+  } else if (uri.host.contains('youtube.com') &&
+      uri.queryParameters.containsKey('v')) {
+    videoId = uri.queryParameters['v']!;
+  }
+
+  if (videoId.isNotEmpty) {
+    return 'https://www.youtube.com/embed/$videoId?controls=1&autoplay=1&mute=0&rel=0&modestbranding=1';
+  }
+
+  return url;
+}

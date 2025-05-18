@@ -40,7 +40,7 @@ class _SyncFussChartColumnState extends State<SyncFussChartColumn> {
       child: SfCartesianChart(
           title:
               ChartTitle(text: 'Deployment of All non compliance by location'),
-          legend: Legend(isVisible: true),
+          legend: Legend(isVisible: true, position: LegendPosition.bottom),
           primaryXAxis: CategoryAxis(),
           primaryYAxis: NumericAxis(
               minimum: widget.yMinValue ?? 0,

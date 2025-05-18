@@ -58,7 +58,6 @@ class _MorningBreifingMeetingSummaryWidgetState
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Geist Font Family',
                       letterSpacing: 0.0,
-                      useGoogleFonts: false,
                     ),
               ),
               actions: [
@@ -121,7 +120,6 @@ class _MorningBreifingMeetingSummaryWidgetState
                                               .override(
                                                 fontFamily: 'Geist Font Family',
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                         Text(
@@ -134,7 +132,6 @@ class _MorningBreifingMeetingSummaryWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ],
@@ -177,7 +174,6 @@ class _MorningBreifingMeetingSummaryWidgetState
                                                           fontFamily:
                                                               'Geist Font Family',
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ].divide(SizedBox(width: 8.0)),
@@ -216,7 +212,6 @@ class _MorningBreifingMeetingSummaryWidgetState
                                                           fontFamily:
                                                               'Geist Font Family',
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ].divide(SizedBox(width: 8.0)),
@@ -275,7 +270,6 @@ class _MorningBreifingMeetingSummaryWidgetState
                                                         fontFamily:
                                                             'Geist Font Family',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                             Text(
@@ -291,7 +285,6 @@ class _MorningBreifingMeetingSummaryWidgetState
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ],
@@ -322,7 +315,6 @@ class _MorningBreifingMeetingSummaryWidgetState
                                                                   .of(context)
                                                               .primary,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ),
@@ -360,7 +352,6 @@ class _MorningBreifingMeetingSummaryWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ].divide(SizedBox(width: 8.0)),
@@ -408,7 +399,6 @@ class _MorningBreifingMeetingSummaryWidgetState
                                                         fontFamily:
                                                             'Geist Font Family',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                             Text(
@@ -424,7 +414,6 @@ class _MorningBreifingMeetingSummaryWidgetState
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ],
@@ -455,7 +444,6 @@ class _MorningBreifingMeetingSummaryWidgetState
                                                                   .of(context)
                                                               .primary,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ),
@@ -493,7 +481,6 @@ class _MorningBreifingMeetingSummaryWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ].divide(SizedBox(width: 8.0)),
@@ -541,7 +528,6 @@ class _MorningBreifingMeetingSummaryWidgetState
                                                         fontFamily:
                                                             'Geist Font Family',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                             Text(
@@ -557,7 +543,6 @@ class _MorningBreifingMeetingSummaryWidgetState
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ],
@@ -588,7 +573,6 @@ class _MorningBreifingMeetingSummaryWidgetState
                                                                   .of(context)
                                                               .primary,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ),
@@ -626,7 +610,6 @@ class _MorningBreifingMeetingSummaryWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ].divide(SizedBox(width: 8.0)),

@@ -69,7 +69,6 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
                               fontFamily: 'Geist Font Family',
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
-                              useGoogleFonts: false,
                             ),
                       ),
                       Text(
@@ -80,7 +79,6 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
                               fontFamily: 'Geist Font Family',
                               color: FlutterFlowTheme.of(context).secondaryText,
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                       ),
                     ],
@@ -123,7 +121,6 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                             ),
                           ].divide(SizedBox(width: 8.0)),
@@ -159,7 +156,6 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                             ),
                           ].divide(SizedBox(width: 8.0)),
@@ -185,7 +181,6 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
                         fontFamily: 'Geist Font Family',
                         color: FlutterFlowTheme.of(context).info,
                         letterSpacing: 0.0,
-                        useGoogleFonts: false,
                       ),
                   elevation: 0.0,
                   borderRadius: BorderRadius.circular(8.0),

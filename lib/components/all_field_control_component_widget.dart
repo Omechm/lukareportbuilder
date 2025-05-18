@@ -153,7 +153,6 @@ class _AllFieldControlComponentWidgetState
                                       fontFamily: 'Geist Font Family',
                                       color: Color(0xFFE10606),
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                               ),
                             ),
@@ -170,7 +169,6 @@ class _AllFieldControlComponentWidgetState
                                   .override(
                                     fontFamily: 'Geist Font Family',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                             ),
                           ),

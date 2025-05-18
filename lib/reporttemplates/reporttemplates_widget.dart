@@ -133,7 +133,6 @@ class _ReporttemplatesWidgetState extends State<ReporttemplatesWidget>
                                                             'Geist Font Family',
                                                         fontSize: 15.0,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                             Text(
@@ -146,7 +145,6 @@ class _ReporttemplatesWidgetState extends State<ReporttemplatesWidget>
                                                             'Geist Font Family',
                                                         fontSize: 8.0,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ],
@@ -175,7 +173,6 @@ class _ReporttemplatesWidgetState extends State<ReporttemplatesWidget>
                                           .override(
                                             fontFamily: 'Geist Font Family',
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                       unselectedLabelStyle: TextStyle(),
                                       labelColor: FlutterFlowTheme.of(context)
@@ -391,7 +388,6 @@ class _ReporttemplatesWidgetState extends State<ReporttemplatesWidget>
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Geist Font Family',
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: false,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -500,8 +496,6 @@ class _ReporttemplatesWidgetState extends State<ReporttemplatesWidget>
                                                                                 'Geist Font Family',
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -676,8 +670,6 @@ class _ReporttemplatesWidgetState extends State<ReporttemplatesWidget>
                                                                                 'Geist Font Family',
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -766,8 +758,6 @@ class _ReporttemplatesWidgetState extends State<ReporttemplatesWidget>
                                                                                 'Geist Font Family',
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),

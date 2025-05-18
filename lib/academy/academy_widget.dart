@@ -62,7 +62,6 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                       fontFamily: 'Geist Font Family',
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.bold,
-                      useGoogleFonts: false,
                     ),
               ),
               actions: [
@@ -105,7 +104,6 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                     fontFamily: 'Geist Font Family',
                                     color: FlutterFlowTheme.of(context).primary,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                           elevation: 1.0,
                           borderRadius: BorderRadius.circular(8.0),
@@ -237,7 +235,6 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                               Text(
@@ -252,7 +249,6 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                                                   .of(context)
                                                               .info,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                               FFButtonWidget(
@@ -297,7 +293,6 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                                                     context)
                                                                 .primaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
@@ -311,14 +306,18 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                             ].divide(SizedBox(height: 8.0)),
                                           ),
                                         ),
-                                        Image.network(
-                                          valueOrDefault<String>(
-                                            rowLessonsRow?.thumbnail,
-                                            'Course title',
+                                        ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                          child: Image.network(
+                                            valueOrDefault<String>(
+                                              rowLessonsRow?.thumbnail,
+                                              'Course title',
+                                            ),
+                                            width: 100.0,
+                                            height: 100.0,
+                                            fit: BoxFit.contain,
                                           ),
-                                          width: 100.0,
-                                          height: 100.0,
-                                          fit: BoxFit.contain,
                                         ),
                                       ],
                                     );
@@ -336,7 +335,6 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                   fontFamily: 'Geist Font Family',
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
-                                  useGoogleFonts: false,
                                 ),
                       ),
                       Container(
@@ -544,8 +542,6 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                         Row(
@@ -614,8 +610,6 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                                                             9.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 );
                                                               },
@@ -628,11 +622,16 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                                           future:
                                                               UserProgressTable()
                                                                   .queryRows(
-                                                            queryFn: (q) =>
-                                                                q.eqOrNull(
-                                                              'course_id',
-                                                              rowCoursesRow.id,
-                                                            ),
+                                                            queryFn: (q) => q
+                                                                .eqOrNull(
+                                                                  'course_id',
+                                                                  rowCoursesRow
+                                                                      .id,
+                                                                )
+                                                                .eqOrNull(
+                                                                  'user_id',
+                                                                  currentUserUid,
+                                                                ),
                                                           ),
                                                           builder: (context,
                                                               snapshot) {
@@ -692,7 +691,6 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                                                               color: FlutterFlowTheme.of(context).primaryBackground,
                                                                               fontSize: 10.0,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: false,
                                                                             ),
                                                                       ),
                                                                     ].divide(SizedBox(
@@ -746,8 +744,6 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                                                                 8.0,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                     barRadius: Radius
@@ -787,7 +783,6 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                   fontFamily: 'Geist Font Family',
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
-                                  useGoogleFonts: false,
                                 ),
                       ),
                       Container(
@@ -812,10 +807,13 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                         ),
                         child: Padding(
                           padding: EdgeInsets.all(16.0),
-                          child: FutureBuilder<List<DocumentationRow>>(
-                            future: DocumentationTable().queryRows(
-                              queryFn: (q) => q,
-                            ),
+                          child: StreamBuilder<List<DocumentationRow>>(
+                            stream: _model.columnSupabaseStream ??= SupaFlow
+                                .client
+                                .from("documentation")
+                                .stream(primaryKey: ['id']).map((list) => list
+                                    .map((item) => DocumentationRow(item))
+                                    .toList()),
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
@@ -856,7 +854,6 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                                       .primary,
                                               fontSize: 13.0,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                       ),
                                       subtitle: Text(
@@ -866,7 +863,6 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                             .override(
                                               fontFamily: 'Geist Font Family',
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                       ),
                                       tileColor: FlutterFlowTheme.of(context)

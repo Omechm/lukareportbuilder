@@ -66,4 +66,7 @@ class FieldValuesRow extends SupabaseDataRow {
 
   String? get fieldName => getField<String>('field_name');
   set fieldName(String? value) => setField<String>('field_name', value);
+
+  bool get isImageValid => getField<bool>('is_image_valid')!;
+  set isImageValid(bool value) => setField<bool>('is_image_valid', value);
 }

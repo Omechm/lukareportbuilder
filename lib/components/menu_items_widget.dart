@@ -260,7 +260,6 @@ class _MenuItemsWidgetState extends State<MenuItemsWidget> {
                                         fontSize: 10.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.normal,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                               ),

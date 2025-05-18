@@ -75,29 +75,24 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                 titleStyle: FlutterFlowTheme.of(context).titleLarge.override(
                       fontFamily: 'Geist Font Family',
                       letterSpacing: 0.0,
-                      useGoogleFonts: false,
                     ),
                 dayOfWeekStyle: FlutterFlowTheme.of(context).bodyLarge.override(
                       fontFamily: 'Geist Font Family',
                       letterSpacing: 0.0,
-                      useGoogleFonts: false,
                     ),
                 dateStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Geist Font Family',
                       letterSpacing: 0.0,
-                      useGoogleFonts: false,
                     ),
                 selectedDateStyle:
                     FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Geist Font Family',
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
                 inactiveDateStyle:
                     FlutterFlowTheme.of(context).labelMedium.override(
                           fontFamily: 'Geist Font Family',
                           letterSpacing: 0.0,
-                          useGoogleFonts: false,
                         ),
               ),
             ),
@@ -121,7 +116,6 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                         fontFamily: 'Geist Font Family',
                         color: Colors.white,
                         letterSpacing: 0.0,
-                        useGoogleFonts: false,
                       ),
                   elevation: 0.0,
                   borderRadius: BorderRadius.circular(8.0),

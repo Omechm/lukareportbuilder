@@ -176,8 +176,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                               fontSize: 15.0,
                                                               letterSpacing:
                                                                   0.0,
-                                                              useGoogleFonts:
-                                                                  false,
                                                             ),
                                                       ),
                                                       Text(
@@ -192,8 +190,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                                   fontSize: 8.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                       ),
                                                     ],
@@ -254,8 +250,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                                         .secondaryText,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                           elevation: 0.0,
                                                           borderSide:
@@ -317,8 +311,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                                         .white,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                           elevation: 0.0,
                                                           borderRadius:
@@ -367,7 +359,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                           fontFamily:
                                                               'Geist Font Family',
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                 hintText:
                                                     'Search by report name',
@@ -378,7 +369,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                           fontFamily:
                                                               'Geist Font Family',
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
@@ -453,7 +443,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                         fontFamily:
                                                             'Geist Font Family',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                               cursorColor:
                                                   FlutterFlowTheme.of(context)
@@ -484,7 +473,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
-                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                               Padding(
@@ -543,8 +531,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                                     .secondaryText,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                       ),
@@ -648,7 +634,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                             'Geist Font Family',
                                                         color: Colors.white,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                               elevation: 0.0,
                                               borderRadius:
@@ -686,7 +671,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                             Color(0xFF033395),
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ),
@@ -792,8 +776,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                                 fontSize: 14.0,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                       ),
@@ -816,8 +798,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                                 fontSize: 14.0,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                       ),
@@ -840,8 +820,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                                 fontSize: 14.0,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                       ),
@@ -864,8 +842,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                                 fontSize: 14.0,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                       ),
@@ -888,8 +864,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                                 fontSize: 14.0,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                       ),
@@ -912,8 +886,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                                 fontSize: 14.0,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                       ),
@@ -947,8 +919,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                               fontSize: 12.0,
                                                               letterSpacing:
                                                                   0.0,
-                                                              useGoogleFonts:
-                                                                  false,
                                                             ),
                                                       ),
                                                       Text(
@@ -966,8 +936,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                               fontSize: 12.0,
                                                               letterSpacing:
                                                                   0.0,
-                                                              useGoogleFonts:
-                                                                  false,
                                                             ),
                                                       ),
                                                       Text(
@@ -985,8 +953,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                               fontSize: 12.0,
                                                               letterSpacing:
                                                                   0.0,
-                                                              useGoogleFonts:
-                                                                  false,
                                                             ),
                                                       ),
                                                       Text(
@@ -1004,8 +970,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                               fontSize: 12.0,
                                                               letterSpacing:
                                                                   0.0,
-                                                              useGoogleFonts:
-                                                                  false,
                                                             ),
                                                       ),
                                                       Text(
@@ -1025,8 +989,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                                               fontSize: 12.0,
                                                               letterSpacing:
                                                                   0.0,
-                                                              useGoogleFonts:
-                                                                  false,
                                                             ),
                                                       ),
                                                       Container(
@@ -1189,21 +1151,18 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                       .override(
                                         fontFamily: 'Geist Font Family',
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                   dayOfWeekStyle: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(
                                         fontFamily: 'Geist Font Family',
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                   dateStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Geist Font Family',
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                   selectedDateStyle:
                                       FlutterFlowTheme.of(context)
@@ -1211,7 +1170,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                           .override(
                                             fontFamily: 'Geist Font Family',
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                   inactiveDateStyle:
                                       FlutterFlowTheme.of(context)
@@ -1219,7 +1177,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                           .override(
                                             fontFamily: 'Geist Font Family',
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                 ),
                               ),
@@ -1250,7 +1207,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                             fontFamily: 'Geist Font Family',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                       elevation: 0.0,
                                       borderRadius: BorderRadius.circular(8.0),
@@ -1309,21 +1265,18 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                       .override(
                                         fontFamily: 'Geist Font Family',
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                   dayOfWeekStyle: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(
                                         fontFamily: 'Geist Font Family',
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                   dateStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Geist Font Family',
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                   selectedDateStyle:
                                       FlutterFlowTheme.of(context)
@@ -1331,7 +1284,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                           .override(
                                             fontFamily: 'Geist Font Family',
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                   inactiveDateStyle:
                                       FlutterFlowTheme.of(context)
@@ -1339,7 +1291,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                           .override(
                                             fontFamily: 'Geist Font Family',
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                 ),
                               ),
@@ -1370,7 +1321,6 @@ class _ReportsWidgetState extends State<ReportsWidget> {
                                             fontFamily: 'Geist Font Family',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                       elevation: 0.0,
                                       borderRadius: BorderRadius.circular(8.0),

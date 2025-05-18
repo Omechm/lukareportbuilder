@@ -133,7 +133,6 @@ class _ResetPasswordRequestWidgetState extends State<ResetPasswordRequestWidget>
                                                             'Geist Font Family',
                                                         fontSize: 30.0,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ],
@@ -152,14 +151,12 @@ class _ResetPasswordRequestWidgetState extends State<ResetPasswordRequestWidget>
                                             .override(
                                               fontFamily: 'Geist Font Family',
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Geist Font Family',
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -204,7 +201,6 @@ class _ResetPasswordRequestWidgetState extends State<ResetPasswordRequestWidget>
                                           .override(
                                             fontFamily: 'Geist Font Family',
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                       minLines: 1,
                                       keyboardType: TextInputType.emailAddress,
@@ -236,7 +232,6 @@ class _ResetPasswordRequestWidgetState extends State<ResetPasswordRequestWidget>
                                                           context)
                                                       .primary,
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                         ),
@@ -280,7 +275,6 @@ class _ResetPasswordRequestWidgetState extends State<ResetPasswordRequestWidget>
                                               fontFamily: 'Geist Font Family',
                                               color: Colors.white,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                         elevation: 2.0,
                                         borderRadius:
@@ -305,7 +299,6 @@ class _ResetPasswordRequestWidgetState extends State<ResetPasswordRequestWidget>
                                                           context)
                                                       .secondaryText,
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                           Text(
@@ -320,7 +313,6 @@ class _ResetPasswordRequestWidgetState extends State<ResetPasswordRequestWidget>
                                                       .primary,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                         ].divide(SizedBox(width: 8.0)),
@@ -423,7 +415,6 @@ class _ResetPasswordRequestWidgetState extends State<ResetPasswordRequestWidget>
                                               .secondaryBackground,
                                           fontSize: 40.0,
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                   ).animateOnPageLoad(animationsMap[
                                       'textOnPageLoadAnimation']!),

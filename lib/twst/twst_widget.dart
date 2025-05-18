@@ -117,7 +117,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                 .primaryText,
                                             fontSize: 15.0,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                     ),
                                     Text(
@@ -130,7 +129,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                 .secondaryText,
                                             fontSize: 8.0,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                     ),
                                   ].divide(SizedBox(height: 8.0)),
@@ -158,7 +156,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     unselectedLabelStyle:
                                         FlutterFlowTheme.of(context)
@@ -166,7 +163,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                             .override(
                                               fontFamily: 'Geist Font Family',
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: false,
                                             ),
                                     indicatorColor:
                                         FlutterFlowTheme.of(context).primary,
@@ -261,8 +257,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                     Text(
@@ -277,8 +271,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -312,8 +304,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                                 FlutterFlowTheme.of(context).error,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -345,8 +335,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                     Text(
@@ -361,8 +349,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -387,8 +373,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                     Text(
@@ -403,8 +387,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -422,8 +404,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                         'Geist Font Family',
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                             Container(
@@ -460,8 +440,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             .secondaryText,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                                 Text(
@@ -476,8 +454,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             .secondaryText,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                               ],
@@ -550,8 +526,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                     Text(
@@ -566,8 +540,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -601,8 +573,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                                 Color(0xFFFF6F00),
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -634,8 +604,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                     Text(
@@ -650,8 +618,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -676,8 +642,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                     Text(
@@ -692,8 +656,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -711,8 +673,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                         'Geist Font Family',
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                             Container(
@@ -749,8 +709,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             .secondaryText,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                                 Text(
@@ -765,8 +723,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             .secondaryText,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                               ],
@@ -854,8 +810,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                                 Text(
@@ -870,8 +824,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             .secondaryText,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                               ],
@@ -905,8 +857,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             .error,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                               ),
@@ -937,8 +887,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             .secondaryText,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                                 Text(
@@ -953,8 +901,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                               ],
@@ -979,8 +925,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             .secondaryText,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                                 Text(
@@ -995,8 +939,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                               ],
@@ -1014,8 +956,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                     'Geist Font Family',
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                         Container(
@@ -1052,8 +992,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                         .secondaryText,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                             Text(
@@ -1069,8 +1007,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                         .secondaryText,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ],
@@ -1141,8 +1077,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                                 Text(
@@ -1157,8 +1091,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             .secondaryText,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                               ],
@@ -1192,8 +1124,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             0xFFFF6F00),
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                               ),
@@ -1224,8 +1154,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             .secondaryText,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                                 Text(
@@ -1240,8 +1168,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                               ],
@@ -1266,8 +1192,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             .secondaryText,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                                 Text(
@@ -1282,8 +1206,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                               ],
@@ -1301,8 +1223,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                     'Geist Font Family',
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                         Container(
@@ -1339,8 +1259,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                         .secondaryText,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                             Text(
@@ -1356,8 +1274,6 @@ class _TwstWidgetState extends State<TwstWidget> with TickerProviderStateMixin {
                                                                         .secondaryText,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ],

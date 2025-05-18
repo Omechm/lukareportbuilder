@@ -171,7 +171,6 @@ class _ReportplannerWidgetState extends State<ReportplannerWidget> {
                                                         .primaryText,
                                                 fontSize: 15.0,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                         Text(
@@ -185,7 +184,6 @@ class _ReportplannerWidgetState extends State<ReportplannerWidget> {
                                                         .secondaryText,
                                                 fontSize: 8.0,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ].divide(SizedBox(height: 8.0)),
@@ -220,7 +218,6 @@ class _ReportplannerWidgetState extends State<ReportplannerWidget> {
                                                 .primary,
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: false,
                                           ),
                                     ),
                                   ),
@@ -268,7 +265,6 @@ class _ReportplannerWidgetState extends State<ReportplannerWidget> {
                                                                     context)
                                                                 .primaryText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ],
@@ -332,8 +328,6 @@ class _ReportplannerWidgetState extends State<ReportplannerWidget> {
                                                                             13.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                               hintText:
                                                                   'Select frequency of report',
@@ -419,8 +413,6 @@ class _ReportplannerWidgetState extends State<ReportplannerWidget> {
                                                                             13.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                   alignLabelWithHint:
                                                                       true,
@@ -436,8 +428,6 @@ class _ReportplannerWidgetState extends State<ReportplannerWidget> {
                                                                             13.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                   enabledBorder:
                                                                       OutlineInputBorder(
@@ -507,8 +497,6 @@ class _ReportplannerWidgetState extends State<ReportplannerWidget> {
                                                                           13.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                                 cursorColor:
                                                                     FlutterFlowTheme.of(
@@ -611,26 +599,21 @@ class _ReportplannerWidgetState extends State<ReportplannerWidget> {
                                                                       context)
                                                                   .labelMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Geist Font Family',
-                                                                    fontSize:
-                                                                        13.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    shadows: [
-                                                                      Shadow(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryText,
-                                                                        offset: Offset(
-                                                                            2.0,
-                                                                            2.0),
-                                                                        blurRadius:
-                                                                            2.0,
-                                                                      )
-                                                                    ],
-                                                                    useGoogleFonts:
-                                                                        false,
-                                                                  ),
+                                                            fontFamily:
+                                                                'Geist Font Family',
+                                                            fontSize: 13.0,
+                                                            letterSpacing: 0.0,
+                                                            shadows: [
+                                                              Shadow(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                offset: Offset(
+                                                                    2.0, 2.0),
+                                                                blurRadius: 2.0,
+                                                              )
+                                                            ],
+                                                          ),
                                                           searchTextStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -640,8 +623,6 @@ class _ReportplannerWidgetState extends State<ReportplannerWidget> {
                                                                         'Geist Font Family',
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                           textStyle:
                                                               FlutterFlowTheme.of(
@@ -654,8 +635,6 @@ class _ReportplannerWidgetState extends State<ReportplannerWidget> {
                                                                         13.0,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                           hintText:
                                                               'Select task template',
@@ -729,8 +708,6 @@ class _ReportplannerWidgetState extends State<ReportplannerWidget> {
                                                                         'Geist Font Family',
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                           searchTextStyle:
                                                               FlutterFlowTheme.of(
@@ -741,8 +718,6 @@ class _ReportplannerWidgetState extends State<ReportplannerWidget> {
                                                                         'Geist Font Family',
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                           textStyle:
                                                               FlutterFlowTheme.of(
@@ -755,8 +730,6 @@ class _ReportplannerWidgetState extends State<ReportplannerWidget> {
                                                                         13.0,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                           hintText:
                                                               'Select client name',
@@ -932,8 +905,6 @@ class _ReportplannerWidgetState extends State<ReportplannerWidget> {
                                                                     .white,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                       elevation: 0.0,
                                                       borderRadius:

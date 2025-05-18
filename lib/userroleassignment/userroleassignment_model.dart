@@ -89,6 +89,7 @@ class UserroleassignmentModel
   List<PlannedTaskRow>? outputPlannedTaskLocation;
   // Model for sidebarnavCopy component.
   late SidebarnavCopyModel sidebarnavCopyModel;
+  Stream<List<UserRow>>? listViewSupabaseStream;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
@@ -98,13 +99,12 @@ class UserroleassignmentModel
   List<UserRolesRow>? outputUserRole;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
   List<UserRolesRow>? outputUpdateUserInfo;
-  Completer<List<UserRow>>? requestCompleter2;
   // State field(s) for DropDownClientName widget.
   String? dropDownClientNameValue;
   FormFieldController<String>? dropDownClientNameValueController;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<ClientsRow>? outputPlannedTaskClientAddress;
-  Completer<List<UserClientAssignmentsRow>>? requestCompleter1;
+  Stream<List<UserClientAssignmentsRow>>? listViewUserClientSupabaseStream;
   // Model for loadingComp component.
   late LoadingCompModel loadingCompModel;
 
@@ -118,36 +118,5 @@ class UserroleassignmentModel
   void dispose() {
     sidebarnavCopyModel.dispose();
     loadingCompModel.dispose();
-  }
-
-  /// Additional helper methods.
-  Future waitForRequestCompleted2({
-    double minWait = 0,
-    double maxWait = double.infinity,
-  }) async {
-    final stopwatch = Stopwatch()..start();
-    while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
-      final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter2?.isCompleted ?? false;
-      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
-        break;
-      }
-    }
-  }
-
-  Future waitForRequestCompleted1({
-    double minWait = 0,
-    double maxWait = double.infinity,
-  }) async {
-    final stopwatch = Stopwatch()..start();
-    while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
-      final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter1?.isCompleted ?? false;
-      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
-        break;
-      }
-    }
   }
 }

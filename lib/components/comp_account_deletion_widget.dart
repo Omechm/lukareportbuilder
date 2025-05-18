@@ -102,7 +102,6 @@ class _CompAccountDeletionWidgetState extends State<CompAccountDeletionWidget> {
                           FlutterFlowTheme.of(context).headlineSmall.override(
                                 fontFamily: 'Geist Font Family',
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
                               ),
                     ),
                   ),
@@ -116,7 +115,6 @@ class _CompAccountDeletionWidgetState extends State<CompAccountDeletionWidget> {
                             fontFamily: 'Geist Font Family',
                             color: FlutterFlowTheme.of(context).secondaryText,
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ),
@@ -149,7 +147,6 @@ class _CompAccountDeletionWidgetState extends State<CompAccountDeletionWidget> {
                                             .secondaryText,
                                         fontSize: 14.0,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                                 Text(
@@ -163,7 +160,6 @@ class _CompAccountDeletionWidgetState extends State<CompAccountDeletionWidget> {
                                         fontSize: 14.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                                 Text(
@@ -176,7 +172,6 @@ class _CompAccountDeletionWidgetState extends State<CompAccountDeletionWidget> {
                                             .secondaryText,
                                         fontSize: 14.0,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                               ],
@@ -197,7 +192,6 @@ class _CompAccountDeletionWidgetState extends State<CompAccountDeletionWidget> {
                                         fontFamily: 'Geist Font Family',
                                         color: Color(0x8F5A5C60),
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
@@ -236,7 +230,6 @@ class _CompAccountDeletionWidgetState extends State<CompAccountDeletionWidget> {
                                     .override(
                                       fontFamily: 'Geist Font Family',
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                                 minLines: 1,
                                 cursorColor: Color(0xFFE00D0D),
@@ -315,7 +308,6 @@ class _CompAccountDeletionWidgetState extends State<CompAccountDeletionWidget> {
                                   fontFamily: 'Geist Font Family',
                                   color: FlutterFlowTheme.of(context).info,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                         elevation: 0.0,
                         borderSide: BorderSide(
@@ -346,7 +338,6 @@ class _CompAccountDeletionWidgetState extends State<CompAccountDeletionWidget> {
                                   fontFamily: 'Geist Font Family',
                                   color: FlutterFlowTheme.of(context).tertiary,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                         elevation: 0.0,
                         borderSide: BorderSide(

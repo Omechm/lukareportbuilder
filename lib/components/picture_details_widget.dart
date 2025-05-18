@@ -92,22 +92,23 @@ class _PictureDetailsWidgetState extends State<PictureDetailsWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Geist Font Family',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ),
                     ],
                   ),
                 ),
-                Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(12.0),
-                    child: Image.network(
-                      widget.imgirl!,
-                      width: MediaQuery.sizeOf(context).width * 0.7,
-                      height: MediaQuery.sizeOf(context).height * 0.5,
-                      fit: BoxFit.contain,
+                Expanded(
+                  child: Align(
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(12.0),
+                      child: Image.network(
+                        widget.imgirl!,
+                        width: MediaQuery.sizeOf(context).width * 0.7,
+                        height: MediaQuery.sizeOf(context).height * 0.5,
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                 ),
@@ -124,7 +125,6 @@ class _PictureDetailsWidgetState extends State<PictureDetailsWidget> {
                           FlutterFlowTheme.of(context).headlineSmall.override(
                                 fontFamily: 'Geist Font Family',
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
                               ),
                     ),
                     Text(
@@ -133,7 +133,6 @@ class _PictureDetailsWidgetState extends State<PictureDetailsWidget> {
                             fontFamily: 'Geist Font Family',
                             color: FlutterFlowTheme.of(context).secondaryText,
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ].divide(SizedBox(height: 8.0)),
@@ -152,7 +151,6 @@ class _PictureDetailsWidgetState extends State<PictureDetailsWidget> {
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Geist Font Family',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                         Text(
@@ -164,7 +162,6 @@ class _PictureDetailsWidgetState extends State<PictureDetailsWidget> {
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Geist Font Family',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
@@ -185,7 +182,6 @@ class _PictureDetailsWidgetState extends State<PictureDetailsWidget> {
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Geist Font Family',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                         Row(
@@ -201,7 +197,6 @@ class _PictureDetailsWidgetState extends State<PictureDetailsWidget> {
                                   .override(
                                     fontFamily: 'Geist Font Family',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                             ),
                           ],
@@ -243,7 +238,6 @@ class _PictureDetailsWidgetState extends State<PictureDetailsWidget> {
                                   fontFamily: 'Geist Font Family',
                                   color: FlutterFlowTheme.of(context).info,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                         elevation: 0.0,
                         borderRadius: BorderRadius.circular(25.0),
@@ -251,38 +245,56 @@ class _PictureDetailsWidgetState extends State<PictureDetailsWidget> {
                     ),
                   ],
                 ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Other data from the camera device',
-                          style:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Geist Font Family',
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: false,
-                                  ),
-                        ),
-                        Text(
-                          valueOrDefault<String>(
-                            widget.capturedData,
-                            'null',
-                          ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Geist Font Family',
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: false,
-                                  ),
-                        ),
-                      ],
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      borderRadius: BorderRadius.circular(5.0),
                     ),
-                  ].divide(SizedBox(width: 12.0)),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.all(16.0),
+                              child: Text(
+                                'Other data from the camera device',
+                                style: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: 'Geist Font Family',
+                                      color: Color(0xFF18EA3C),
+                                      fontSize: 14.0,
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(16.0),
+                              child: Text(
+                                valueOrDefault<String>(
+                                  widget.capturedData,
+                                  'null',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Geist Font Family',
+                                      color: Color(0xFF18EA3C),
+                                      fontSize: 11.0,
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ].divide(SizedBox(width: 12.0)),
+                    ),
+                  ),
                 ),
               ].divide(SizedBox(height: 16.0)),
             ),

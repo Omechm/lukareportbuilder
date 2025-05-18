@@ -109,7 +109,6 @@ class _CompVacancyClosureWidgetState extends State<CompVacancyClosureWidget> {
                                               .override(
                                                 fontFamily: 'Geist Font Family',
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ),
@@ -147,25 +146,22 @@ class _CompVacancyClosureWidgetState extends State<CompVacancyClosureWidget> {
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             isDense: true,
-                                            labelStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .labelMedium
-                                                .override(
-                                                  fontFamily:
-                                                      'Geist Font Family',
-                                                  letterSpacing: 0.0,
-                                                  shadows: [
-                                                    Shadow(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      offset: Offset(2.0, 2.0),
-                                                      blurRadius: 2.0,
-                                                    )
-                                                  ],
-                                                  useGoogleFonts: false,
-                                                ),
+                                            labelStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .override(
+                                              fontFamily: 'Geist Font Family',
+                                              letterSpacing: 0.0,
+                                              shadows: [
+                                                Shadow(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  offset: Offset(2.0, 2.0),
+                                                  blurRadius: 2.0,
+                                                )
+                                              ],
+                                            ),
                                             hintText: 'Number',
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
@@ -174,7 +170,6 @@ class _CompVacancyClosureWidgetState extends State<CompVacancyClosureWidget> {
                                                       fontFamily:
                                                           'Geist Font Family',
                                                       letterSpacing: 0.0,
-                                                      useGoogleFonts: false,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -223,7 +218,6 @@ class _CompVacancyClosureWidgetState extends State<CompVacancyClosureWidget> {
                                               .override(
                                                 fontFamily: 'Geist Font Family',
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                           keyboardType: TextInputType.number,
                                           cursorColor:
@@ -252,7 +246,6 @@ class _CompVacancyClosureWidgetState extends State<CompVacancyClosureWidget> {
                                                         .secondaryText,
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                         Text(
@@ -266,7 +259,6 @@ class _CompVacancyClosureWidgetState extends State<CompVacancyClosureWidget> {
                                                         .secondaryText,
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ],
@@ -332,7 +324,6 @@ class _CompVacancyClosureWidgetState extends State<CompVacancyClosureWidget> {
                                                               'Geist Font Family',
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: false,
                                                         ),
                                                 elevation: 0.0,
                                                 borderRadius:

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class CourselessonsModel extends FlutterFlowModel<CourselessonsWidget> {
   ///  Local state fields for this page.
 
-  String? videourl = '';
+  String? videourl;
 
   ///  State fields for stateful widgets in this page.
 

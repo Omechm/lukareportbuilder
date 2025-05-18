@@ -224,14 +224,20 @@ dynamic deserializeParam<T>(
             return UnexecutedTasksRow(data);
           case FieldValuesRow:
             return FieldValuesRow(data);
+          case ReportpicturesUnmatchedRow:
+            return ReportpicturesUnmatchedRow(data);
           case TemporalUserInputStorageRow:
             return TemporalUserInputStorageRow(data);
+          case Reportpictures2weeksoldRow:
+            return Reportpictures2weeksoldRow(data);
           case ClientServiceOfferingRow:
             return ClientServiceOfferingRow(data);
           case VacancyClosureRow:
             return VacancyClosureRow(data);
           case ClientsRow:
             return ClientsRow(data);
+          case ExecutedTaskMergedViewRow:
+            return ExecutedTaskMergedViewRow(data);
           case CountriesRow:
             return CountriesRow(data);
           case DocumentationRow:
@@ -260,6 +266,8 @@ dynamic deserializeParam<T>(
             return NonCompliantTaskExecutionRow(data);
           case ExecutedTaskNameRow:
             return ExecutedTaskNameRow(data);
+          case ExecutedTaskWithFieldsJsonRow:
+            return ExecutedTaskWithFieldsJsonRow(data);
           case ImagesToDeleteRow:
             return ImagesToDeleteRow(data);
           case UserRow:

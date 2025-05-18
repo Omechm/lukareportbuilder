@@ -94,7 +94,6 @@ class _CompInspFieldUpdateWidgetState extends State<CompInspFieldUpdateWidget> {
                             fontFamily: 'Geist Font Family',
                             fontSize: 14.0,
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ),
@@ -117,13 +116,11 @@ class _CompInspFieldUpdateWidgetState extends State<CompInspFieldUpdateWidget> {
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Geist Font Family',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                           hintStyle:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Geist Font Family',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
@@ -158,7 +155,6 @@ class _CompInspFieldUpdateWidgetState extends State<CompInspFieldUpdateWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Geist Font Family',
                               letterSpacing: 0.0,
-                              useGoogleFonts: false,
                             ),
                         validator: _model.textFieldnameTextControllerValidator
                             .asValidator(context),
@@ -179,7 +175,6 @@ class _CompInspFieldUpdateWidgetState extends State<CompInspFieldUpdateWidget> {
                             fontFamily: 'Geist Font Family',
                             fontSize: 14.0,
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ),
@@ -207,7 +202,6 @@ class _CompInspFieldUpdateWidgetState extends State<CompInspFieldUpdateWidget> {
                                 fontFamily: 'Geist Font Family',
                                 fontSize: 14.0,
                                 letterSpacing: 0.0,
-                                useGoogleFonts: false,
                               ),
                       hintText: 'Please select...',
                       icon: Icon(
@@ -243,7 +237,6 @@ class _CompInspFieldUpdateWidgetState extends State<CompInspFieldUpdateWidget> {
                             fontFamily: 'Geist Font Family',
                             fontSize: 14.0,
                             letterSpacing: 0.0,
-                            useGoogleFonts: false,
                           ),
                     ),
                   ),
@@ -278,7 +271,6 @@ class _CompInspFieldUpdateWidgetState extends State<CompInspFieldUpdateWidget> {
                                     fontFamily: 'Geist Font Family',
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                         ),
                       ),
@@ -307,7 +299,6 @@ class _CompInspFieldUpdateWidgetState extends State<CompInspFieldUpdateWidget> {
                                     .override(
                                       fontFamily: 'Geist Font Family',
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                                 hintText: 'TextField',
                                 hintStyle: FlutterFlowTheme.of(context)
@@ -315,7 +306,6 @@ class _CompInspFieldUpdateWidgetState extends State<CompInspFieldUpdateWidget> {
                                     .override(
                                       fontFamily: 'Geist Font Family',
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
@@ -354,7 +344,6 @@ class _CompInspFieldUpdateWidgetState extends State<CompInspFieldUpdateWidget> {
                                   .override(
                                     fontFamily: 'Geist Font Family',
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: false,
                                   ),
                               cursorColor:
                                   FlutterFlowTheme.of(context).primaryText,
@@ -391,7 +380,6 @@ class _CompInspFieldUpdateWidgetState extends State<CompInspFieldUpdateWidget> {
                                       fontFamily: 'Geist Font Family',
                                       color: Colors.white,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: false,
                                     ),
                                 elevation: 0.0,
                                 borderRadius: BorderRadius.circular(8.0),
@@ -474,7 +462,6 @@ class _CompInspFieldUpdateWidgetState extends State<CompInspFieldUpdateWidget> {
                                                   fontFamily:
                                                       'Geist Font Family',
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                           InkWell(
@@ -553,7 +540,6 @@ class _CompInspFieldUpdateWidgetState extends State<CompInspFieldUpdateWidget> {
                                   fontFamily: 'Geist Font Family',
                                   color: Colors.white,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: false,
                                 ),
                         elevation: 3.0,
                         borderSide: BorderSide(

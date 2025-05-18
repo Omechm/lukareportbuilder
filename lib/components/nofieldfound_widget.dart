@@ -65,7 +65,6 @@ class _NofieldfoundWidgetState extends State<NofieldfoundWidget> {
                     color: FlutterFlowTheme.of(context).secondaryText,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,
-                    useGoogleFonts: false,
                   ),
             ),
           ].divide(SizedBox(height: 12.0)),

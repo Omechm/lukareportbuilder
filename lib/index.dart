@@ -39,3 +39,7 @@ export '/deletepictures/deletepictures_widget.dart' show DeletepicturesWidget;
 export '/academy/academy_widget.dart' show AcademyWidget;
 export '/courselessons/courselessons_widget.dart' show CourselessonsWidget;
 export '/documentation/documentation_widget.dart' show DocumentationWidget;
+export '/test_report_summary/test_report_summary_widget.dart'
+    show TestReportSummaryWidget;
+export '/report_summary_copy2/report_summary_copy2_widget.dart'
+    show ReportSummaryCopy2Widget;

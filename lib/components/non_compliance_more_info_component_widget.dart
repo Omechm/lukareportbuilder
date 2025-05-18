@@ -113,7 +113,6 @@ class _NonComplianceMoreInfoComponentWidgetState
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                 ),
                                 TextFormField(
@@ -129,14 +128,12 @@ class _NonComplianceMoreInfoComponentWidgetState
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
@@ -176,7 +173,6 @@ class _NonComplianceMoreInfoComponentWidgetState
                                       .override(
                                         fontFamily: 'Geist Font Family',
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                   minLines: 1,
                                   validator: _model.textController1Validator
@@ -195,14 +191,12 @@ class _NonComplianceMoreInfoComponentWidgetState
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
@@ -242,7 +236,6 @@ class _NonComplianceMoreInfoComponentWidgetState
                                       .override(
                                         fontFamily: 'Geist Font Family',
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                   minLines: 1,
                                   keyboardType: TextInputType.phone,
@@ -262,14 +255,12 @@ class _NonComplianceMoreInfoComponentWidgetState
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
@@ -309,7 +300,6 @@ class _NonComplianceMoreInfoComponentWidgetState
                                       .override(
                                         fontFamily: 'Geist Font Family',
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                   minLines: 1,
                                   validator: _model.textController3Validator
@@ -328,14 +318,12 @@ class _NonComplianceMoreInfoComponentWidgetState
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Geist Font Family',
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
@@ -375,7 +363,6 @@ class _NonComplianceMoreInfoComponentWidgetState
                                       .override(
                                         fontFamily: 'Geist Font Family',
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: false,
                                       ),
                                   minLines: 1,
                                   validator: _model.textController4Validator
@@ -411,7 +398,6 @@ class _NonComplianceMoreInfoComponentWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                         Row(
@@ -437,7 +423,6 @@ class _NonComplianceMoreInfoComponentWidgetState
                                                         fontFamily:
                                                             'Geist Font Family',
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ].divide(SizedBox(width: 8.0)),
@@ -464,7 +449,6 @@ class _NonComplianceMoreInfoComponentWidgetState
                                           fontFamily: 'Geist Font Family',
                                           color: Colors.white,
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: false,
                                         ),
                                     elevation: 0.0,
                                     borderRadius: BorderRadius.circular(8.0),

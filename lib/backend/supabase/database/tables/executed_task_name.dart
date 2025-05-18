@@ -69,4 +69,7 @@ class ExecutedTaskNameRow extends SupabaseDataRow {
   String? get refreshConTrigger => getField<String>('refresh_con_trigger');
   set refreshConTrigger(String? value) =>
       setField<String>('refresh_con_trigger', value);
+
+  String get clientVersion => getField<String>('client_version')!;
+  set clientVersion(String value) => setField<String>('client_version', value);
 }
