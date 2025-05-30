@@ -249,14 +249,14 @@ class _HomepageWidgetState extends State<HomepageWidget>
           VisibilityEffect(duration: 200.ms),
           FadeEffect(
             curve: Curves.easeInOut,
-            delay: 200.0.ms,
+            delay: 100.0.ms,
             duration: 600.0.ms,
             begin: 0.0,
             end: 1.0,
           ),
           MoveEffect(
             curve: Curves.easeInOut,
-            delay: 200.0.ms,
+            delay: 100.0.ms,
             duration: 600.0.ms,
             begin: Offset(0.0, 10.0),
             end: Offset(0.0, 0.0),
@@ -269,14 +269,14 @@ class _HomepageWidgetState extends State<HomepageWidget>
           VisibilityEffect(duration: 200.ms),
           FadeEffect(
             curve: Curves.easeInOut,
-            delay: 200.0.ms,
+            delay: 100.0.ms,
             duration: 600.0.ms,
             begin: 0.0,
             end: 1.0,
           ),
           MoveEffect(
             curve: Curves.easeInOut,
-            delay: 200.0.ms,
+            delay: 100.0.ms,
             duration: 600.0.ms,
             begin: Offset(0.0, 10.0),
             end: Offset(0.0, 0.0),
@@ -1495,26 +1495,17 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                       MainAxisSize.max,
                                                   children: [
                                                     Expanded(
-                                                      child: StreamBuilder<
+                                                      child: FutureBuilder<
                                                           List<UserRow>>(
-                                                        stream: _model
-                                                                .textSupabaseStream ??=
-                                                            SupaFlow.client
-                                                                .from("user")
-                                                                .stream(
-                                                                    primaryKey: [
-                                                                      'id'
-                                                                    ])
-                                                                .eqOrNull(
-                                                                  'user_id',
-                                                                  currentWeekReportTableItem
-                                                                      .userId,
-                                                                )
-                                                                .map((list) => list
-                                                                    .map((item) =>
-                                                                        UserRow(
-                                                                            item))
-                                                                    .toList()),
+                                                        future: UserTable()
+                                                            .querySingleRow(
+                                                          queryFn: (q) =>
+                                                              q.eqOrNull(
+                                                            'user_id',
+                                                            currentWeekReportTableItem
+                                                                .userId,
+                                                          ),
+                                                        ),
                                                         builder: (context,
                                                             snapshot) {
                                                           // Customize what your widget looks like when it's loading.

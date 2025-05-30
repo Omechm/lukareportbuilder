@@ -21,8 +21,8 @@ class InspectionTasksRow extends SupabaseDataRow {
   String? get clientId => getField<String>('client_id');
   set clientId(String? value) => setField<String>('client_id', value);
 
-  String? get taskName => getField<String>('task_name');
-  set taskName(String? value) => setField<String>('task_name', value);
+  String get taskName => getField<String>('task_name')!;
+  set taskName(String value) => setField<String>('task_name', value);
 
   DateTime? get createdDate => getField<DateTime>('created_date');
   set createdDate(DateTime? value) => setField<DateTime>('created_date', value);

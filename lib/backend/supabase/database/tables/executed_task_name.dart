@@ -21,8 +21,8 @@ class ExecutedTaskNameRow extends SupabaseDataRow {
   DateTime get createdAt => getField<DateTime>('created_at')!;
   set createdAt(DateTime value) => setField<DateTime>('created_at', value);
 
-  String? get taskName => getField<String>('task_name');
-  set taskName(String? value) => setField<String>('task_name', value);
+  String get taskName => getField<String>('task_name')!;
+  set taskName(String value) => setField<String>('task_name', value);
 
   String? get taskId => getField<String>('task_id');
   set taskId(String? value) => setField<String>('task_id', value);

@@ -136,8 +136,11 @@ class ReportSummaryModel extends FlutterFlowModel<ReportSummaryWidget> {
   set checkboxGroupValues(List<String>? v) =>
       checkboxGroupValueController?.value = v;
 
-  Completer<List<ExecutedTaskWithFieldsJsonRow>>? requestCompleter2;
-  Completer<List<ExecutedTaskWithFieldsJsonRow>>? requestCompleter3;
+  bool requestCompleted3 = false;
+  String? requestLastUniqueKey3;
+  bool requestCompleted2 = false;
+  String? requestLastUniqueKey2;
+  Completer<ApiCallResponse>? apiRequestCompleter;
   // State field(s) for Summary widget.
   TabController? summaryController;
   int get summaryCurrentIndex =>
@@ -159,12 +162,6 @@ class ReportSummaryModel extends FlutterFlowModel<ReportSummaryWidget> {
   String? outputCapturedDataDateSearched;
   // Stores action output result for [Backend Call - Query Rows] action in Image widget.
   List<UserRow>? outputUserDateSearched;
-  // Stores action output result for [Backend Call - Query Rows] action in Text widget.
-  List<FieldValuesRow>? outputExecutedReportForScan;
-  // Stores action output result for [Custom Action - extractImageDateMetadata] action in Text widget.
-  DateTime? outputExifDate;
-  // Stores action output result for [Backend Call - Query Rows] action in Text widget.
-  List<UserRow>? outputCSO;
   // Model for loadingComp component.
   late LoadingCompModel loadingCompModel1;
   // Model for loadingComp component.
@@ -212,21 +209,6 @@ class ReportSummaryModel extends FlutterFlowModel<ReportSummaryWidget> {
     }
   }
 
-  Future waitForRequestCompleted2({
-    double minWait = 0,
-    double maxWait = double.infinity,
-  }) async {
-    final stopwatch = Stopwatch()..start();
-    while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
-      final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter2?.isCompleted ?? false;
-      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
-        break;
-      }
-    }
-  }
-
   Future waitForRequestCompleted3({
     double minWait = 0,
     double maxWait = double.infinity,
@@ -235,7 +217,37 @@ class ReportSummaryModel extends FlutterFlowModel<ReportSummaryWidget> {
     while (true) {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter3?.isCompleted ?? false;
+      final requestComplete = requestCompleted3;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
+  }
+
+  Future waitForRequestCompleted2({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = requestCompleted2;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
+  }
+
+  Future waitForApiRequestCompleted({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = apiRequestCompleter?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }

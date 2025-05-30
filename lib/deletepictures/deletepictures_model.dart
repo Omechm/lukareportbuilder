@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 class DeletepicturesModel extends FlutterFlowModel<DeletepicturesWidget> {
   ///  Local state fields for this page.
 
-  int? pageIterator = 0;
+  int? pageIterator1 = 0;
+
+  int? pageiterator2;
 
   ///  State fields for stateful widgets in this page.
 

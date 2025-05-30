@@ -750,9 +750,7 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                         .update(
                                                                   data: {
                                                                     'task_name':
-                                                                        _model
-                                                                            .textFieldTitleTextController
-                                                                            .text,
+                                                                        '${_model.textFieldTitleTextController.text} Template',
                                                                   },
                                                                   matchingRows:
                                                                       (rows) =>
@@ -775,9 +773,7 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                     await InspectionTasksTable()
                                                                         .insert({
                                                                   'task_name':
-                                                                      _model
-                                                                          .textFieldTitleTextController
-                                                                          .text,
+                                                                      '${_model.textFieldTitleTextController.text} Template',
                                                                   'company_name':
                                                                       FFAppState()
                                                                           .appAuthUserCompanyName,
@@ -2111,8 +2107,6 @@ class _ReportbuilderWidgetState extends State<ReportbuilderWidget> {
                                                                 padding:
                                                                     EdgeInsets
                                                                         .zero,
-                                                                shrinkWrap:
-                                                                    true,
                                                                 scrollDirection:
                                                                     Axis.vertical,
                                                                 itemCount:

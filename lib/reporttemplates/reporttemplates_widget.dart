@@ -1,12 +1,15 @@
 import '/backend/supabase/supabase.dart';
+import '/components/comp_option_list_widget.dart';
 import '/components/no_data_widget.dart';
 import '/components/sidebarnav_copy_widget.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
+import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'reporttemplates_model.dart';
 export 'reporttemplates_model.dart';
 
@@ -304,6 +307,37 @@ class _ReporttemplatesWidgetState extends State<ReporttemplatesWidget>
                                                               CrossAxisAlignment
                                                                   .center,
                                                           children: [
+                                                            Container(
+                                                              width: 20.0,
+                                                              height: 20.0,
+                                                              decoration:
+                                                                  BoxDecoration(),
+                                                              child: Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  (listViewIndex +
+                                                                          1)
+                                                                      .toString(),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Geist Font Family',
+                                                                        fontSize:
+                                                                            10.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            ),
                                                             Expanded(
                                                               child: Align(
                                                                 alignment:
@@ -372,6 +406,9 @@ class _ReporttemplatesWidgetState extends State<ReporttemplatesWidget>
                                                                       mainAxisSize:
                                                                           MainAxisSize
                                                                               .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .spaceBetween,
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -391,115 +428,61 @@ class _ReporttemplatesWidgetState extends State<ReporttemplatesWidget>
                                                                                 ),
                                                                           ),
                                                                         ),
+                                                                        Builder(
+                                                                          builder: (context) =>
+                                                                              Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                10.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                await showAlignedDialog(
+                                                                                  context: context,
+                                                                                  isGlobal: false,
+                                                                                  avoidOverflow: false,
+                                                                                  targetAnchor: AlignmentDirectional(-1.0, 1.0).resolve(Directionality.of(context)),
+                                                                                  followerAnchor: AlignmentDirectional(1.0, -1.0).resolve(Directionality.of(context)),
+                                                                                  builder: (dialogContext) {
+                                                                                    return Material(
+                                                                                      color: Colors.transparent,
+                                                                                      child: WebViewAware(
+                                                                                        child: GestureDetector(
+                                                                                          onTap: () {
+                                                                                            FocusScope.of(dialogContext).unfocus();
+                                                                                            FocusManager.instance.primaryFocus?.unfocus();
+                                                                                          },
+                                                                                          child: Container(
+                                                                                            height: 350.0,
+                                                                                            width: 400.0,
+                                                                                            child: CompOptionListWidget(
+                                                                                              id: listViewInspectionTasksRow.taskId,
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    );
+                                                                                  },
+                                                                                );
+                                                                              },
+                                                                              child: Icon(
+                                                                                Icons.keyboard_control,
+                                                                                color: FlutterFlowTheme.of(context).primaryText,
+                                                                                size: 24.0,
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ),
                                                                       ],
                                                                     ),
                                                                   ),
                                                                 ),
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      _model.archivedTaskOutput =
-                                                                          await InspectionTasksTable()
-                                                                              .update(
-                                                                        data: {
-                                                                          'is_published':
-                                                                              false,
-                                                                        },
-                                                                        matchingRows:
-                                                                            (rows) =>
-                                                                                rows.eqOrNull(
-                                                                          'task_id',
-                                                                          listViewInspectionTasksRow
-                                                                              .taskId,
-                                                                        ),
-                                                                        returnRows:
-                                                                            true,
-                                                                      );
-                                                                      _model.archivedInspectionFieldOutput =
-                                                                          await InspectionFieldsTable()
-                                                                              .update(
-                                                                        data: {
-                                                                          'is_published':
-                                                                              false,
-                                                                        },
-                                                                        matchingRows:
-                                                                            (rows) =>
-                                                                                rows.eqOrNull(
-                                                                          'task_id',
-                                                                          _model
-                                                                              .archivedTaskOutput
-                                                                              ?.firstOrNull
-                                                                              ?.taskId,
-                                                                        ),
-                                                                        returnRows:
-                                                                            true,
-                                                                      );
-                                                                      _model.pageRebuild =
-                                                                          null;
-                                                                      safeSetState(
-                                                                          () {});
-
-                                                                      safeSetState(
-                                                                          () {});
-                                                                    },
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .archive_outlined,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      size:
-                                                                          24.0,
-                                                                    ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            10.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      'Archive',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Geist Font Family',
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                ],
                                                               ),
                                                             ),
                                                           ],

@@ -1094,8 +1094,9 @@ class _DetailspageWidgetState extends State<DetailspageWidget> {
                                                                 BoxShadow(
                                                                   blurRadius:
                                                                       1.0,
-                                                                  color: Color(
-                                                                      0x33000000),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
                                                                   offset:
                                                                       Offset(
                                                                     0.0,

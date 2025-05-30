@@ -269,6 +269,22 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                         val),
                                                 width: 300.0,
                                                 height: 40.0,
+                                                searchHintTextStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Geist Font Family',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                searchTextStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Geist Font Family',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -278,6 +294,7 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                 hintText: 'Filter by Client',
+                                                searchHintText: 'Search...',
                                                 icon: Icon(
                                                   Icons
                                                       .keyboard_arrow_down_rounded,
@@ -298,7 +315,7 @@ class _PlannedreporttaskWidgetState extends State<PlannedreporttaskWidget> {
                                                         12.0, 0.0, 12.0, 0.0),
                                                 hidesUnderline: true,
                                                 isOverButton: false,
-                                                isSearchable: false,
+                                                isSearchable: true,
                                                 isMultiSelect: false,
                                               ),
                                             ],

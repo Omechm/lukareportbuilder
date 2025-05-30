@@ -45,4 +45,7 @@ class UserClientAssignmentsRow extends SupabaseDataRow {
 
   String? get compKey => getField<String>('comp_key');
   set compKey(String? value) => setField<String>('comp_key', value);
+
+  String? get userRole => getField<String>('user_role');
+  set userRole(String? value) => setField<String>('user_role', value);
 }

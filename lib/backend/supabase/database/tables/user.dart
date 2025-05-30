@@ -78,4 +78,9 @@ class UserRow extends SupabaseDataRow {
   String? get supervisorName => getField<String>('supervisor_name');
   set supervisorName(String? value) =>
       setField<String>('supervisor_name', value);
+
+  bool get showClientUpdateNotice =>
+      getField<bool>('show_client_update_notice')!;
+  set showClientUpdateNotice(bool value) =>
+      setField<bool>('show_client_update_notice', value);
 }

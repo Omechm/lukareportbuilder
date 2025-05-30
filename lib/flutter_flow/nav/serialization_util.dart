@@ -262,6 +262,8 @@ dynamic deserializeParam<T>(
             return FieldTypesRow(data);
           case UserRolesRow:
             return UserRolesRow(data);
+          case ClientVersionRow:
+            return ClientVersionRow(data);
           case NonCompliantTaskExecutionRow:
             return NonCompliantTaskExecutionRow(data);
           case ExecutedTaskNameRow:
@@ -270,6 +272,8 @@ dynamic deserializeParam<T>(
             return ExecutedTaskWithFieldsJsonRow(data);
           case ImagesToDeleteRow:
             return ImagesToDeleteRow(data);
+          case UserAssignmentsViewRow:
+            return UserAssignmentsViewRow(data);
           case UserRow:
             return UserRow(data);
           case UserProgressRow:
@@ -278,6 +282,8 @@ dynamic deserializeParam<T>(
             return SessionsRow(data);
           case RolesRow:
             return RolesRow(data);
+          case AccountDeletionRequestRow:
+            return AccountDeletionRequestRow(data);
           case CoursesRow:
             return CoursesRow(data);
           case PsServiceOfferingsRow:

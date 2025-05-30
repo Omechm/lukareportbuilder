@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'flutter_flow/request_manager.dart';
 import '/backend/schema/structs/index.dart';
+import 'backend/supabase/supabase.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -490,6 +492,38 @@ class FFAppState extends ChangeNotifier {
   set selectedCountry(String value) {
     _selectedCountry = value;
   }
+
+  final _imagesQManager =
+      FutureRequestManager<List<ExecutedTaskWithFieldsJsonRow>>();
+  Future<List<ExecutedTaskWithFieldsJsonRow>> imagesQ({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<List<ExecutedTaskWithFieldsJsonRow>> Function() requestFn,
+  }) =>
+      _imagesQManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearImagesQCache() => _imagesQManager.clear();
+  void clearImagesQCacheKey(String? uniqueKey) =>
+      _imagesQManager.clearRequest(uniqueKey);
+
+  final _imagesPManager =
+      FutureRequestManager<List<ExecutedTaskWithFieldsJsonRow>>();
+  Future<List<ExecutedTaskWithFieldsJsonRow>> imagesP({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<List<ExecutedTaskWithFieldsJsonRow>> Function() requestFn,
+  }) =>
+      _imagesPManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearImagesPCache() => _imagesPManager.clear();
+  void clearImagesPCacheKey(String? uniqueKey) =>
+      _imagesPManager.clearRequest(uniqueKey);
 }
 
 void _safeInit(Function() initializeField) {

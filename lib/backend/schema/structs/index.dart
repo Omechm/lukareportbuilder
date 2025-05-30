@@ -5,6 +5,7 @@ export 'dt_reused_image_scan_struct.dart';
 export 'get_percentage_of_execution_struct.dart';
 export 'inspection_fields_dt_struct.dart';
 export 'non_compliant_location_count_struct.dart';
+export 'action_list_item_struct.dart';
 export 'app_field_names_struct.dart';
 export 'dt_string_struct.dart';
 export 'dt_vacancyreport_summary_struct.dart';

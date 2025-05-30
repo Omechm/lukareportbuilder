@@ -21,10 +21,6 @@ class ReporttemplatesModel extends FlutterFlowModel<ReporttemplatesWidget> {
   int get tabBarPreviousIndex =>
       tabBarController != null ? tabBarController!.previousIndex : 0;
 
-  // Stores action output result for [Backend Call - Update Row(s)] action in Icon widget.
-  List<InspectionTasksRow>? archivedTaskOutput;
-  // Stores action output result for [Backend Call - Update Row(s)] action in Icon widget.
-  List<InspectionFieldsRow>? archivedInspectionFieldOutput;
   // Stores action output result for [Backend Call - Update Row(s)] action in Text widget.
   List<InspectionTasksRow>? unArchivedTaskOutput;
   // Stores action output result for [Backend Call - Update Row(s)] action in Text widget.

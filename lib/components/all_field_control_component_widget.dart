@@ -93,11 +93,16 @@ class _AllFieldControlComponentWidgetState
         List<InspectionFieldsRow> listViewInspectionFieldsRowList =
             snapshot.data!;
 
-        return ListView.builder(
-          padding: EdgeInsets.zero,
-          shrinkWrap: true,
+        return ListView.separated(
+          padding: EdgeInsets.fromLTRB(
+            0,
+            5.0,
+            0,
+            5.0,
+          ),
           scrollDirection: Axis.vertical,
           itemCount: listViewInspectionFieldsRowList.length,
+          separatorBuilder: (_, __) => SizedBox(height: 3.0),
           itemBuilder: (context, listViewIndex) {
             final listViewInspectionFieldsRow =
                 listViewInspectionFieldsRowList[listViewIndex];
@@ -107,119 +112,209 @@ class _AllFieldControlComponentWidgetState
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      _model.updateIsVisibleListAtIndex(
-                        listViewIndex,
-                        (_) => _model.isVisibleList
-                                    .elementAtOrNull(listViewIndex) ==
-                                false
-                            ? true
-                            : false,
-                      );
-                      safeSetState(() {});
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 4.0,
-                            color: Color(0x33000000),
-                            offset: Offset(
-                              0.0,
-                              2.0,
-                            ),
-                          )
-                        ],
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          if (listViewInspectionFieldsRow.isRequired ?? true)
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                '*',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Geist Font Family',
-                                      color: Color(0xFFE10606),
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              valueOrDefault<String>(
-                                listViewInspectionFieldsRow.fieldName,
-                                'null',
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Geist Font Family',
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                          Flexible(
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Container(
-                                  width: 100.0,
-                                  height: 65.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                  ),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      await InspectionFieldsTable().delete(
-                                        matchingRows: (rows) => rows.eqOrNull(
-                                          'field_id',
-                                          listViewInspectionFieldsRow.fieldId,
-                                        ),
-                                      );
-                                      await ChoiceOptionsTable().delete(
-                                        matchingRows: (rows) => rows.eqOrNull(
-                                          'field_id',
-                                          listViewInspectionFieldsRow.fieldId,
-                                        ),
-                                      );
-                                      _model.pageRefreshed =
-                                          !(_model.pageRefreshed ?? true);
-                                      safeSetState(() {});
-                                    },
-                                    child: Icon(
-                                      Icons.delete_sweep_outlined,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      size: 24.0,
-                                    ),
-                                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Container(
+                        width: 20.0,
+                        height: 20.0,
+                        decoration: BoxDecoration(),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              10.0, 0.0, 10.0, 0.0),
+                          child: Text(
+                            (listViewIndex + 1).toString(),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Geist Font Family',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  fontSize: 10.0,
+                                  letterSpacing: 0.0,
                                 ),
-                              ],
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              5.0, 0.0, 5.0, 0.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              _model.updateIsVisibleListAtIndex(
+                                listViewIndex,
+                                (_) => _model.isVisibleList
+                                            .elementAtOrNull(listViewIndex) ==
+                                        false
+                                    ? true
+                                    : false,
+                              );
+                              safeSetState(() {});
+                            },
+                            child: Container(
+                              height: 40.0,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 4.0,
+                                    color: Color(0x33000000),
+                                    offset: Offset(
+                                      0.0,
+                                      2.0,
+                                    ),
+                                  )
+                                ],
+                                borderRadius: BorderRadius.circular(5.0),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  if (listViewInspectionFieldsRow.fieldType ==
+                                      'text')
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          5.0, 0.0, 0.0, 0.0),
+                                      child: Icon(
+                                        Icons.text_fields,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 24.0,
+                                      ),
+                                    ),
+                                  if (listViewInspectionFieldsRow.fieldType ==
+                                      'single-choice')
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          5.0, 0.0, 0.0, 0.0),
+                                      child: Icon(
+                                        Icons.checklist_rtl,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 24.0,
+                                      ),
+                                    ),
+                                  if (listViewInspectionFieldsRow.fieldType ==
+                                      'number')
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          5.0, 0.0, 0.0, 0.0),
+                                      child: Icon(
+                                        Icons.numbers_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 24.0,
+                                      ),
+                                    ),
+                                  if (listViewInspectionFieldsRow.fieldType ==
+                                      'picture')
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          5.0, 0.0, 0.0, 0.0),
+                                      child: Icon(
+                                        Icons.image,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 24.0,
+                                      ),
+                                    ),
+                                  if (listViewInspectionFieldsRow.isRequired ??
+                                      true)
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        '*',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Geist Font Family',
+                                              color: Color(0xFFE10606),
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        10.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      valueOrDefault<String>(
+                                        listViewInspectionFieldsRow.fieldName,
+                                        'null',
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Geist Font Family',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                  Flexible(
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        Container(
+                                          width: 100.0,
+                                          height: 65.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              await InspectionFieldsTable()
+                                                  .delete(
+                                                matchingRows: (rows) =>
+                                                    rows.eqOrNull(
+                                                  'field_id',
+                                                  listViewInspectionFieldsRow
+                                                      .fieldId,
+                                                ),
+                                              );
+                                              await ChoiceOptionsTable().delete(
+                                                matchingRows: (rows) =>
+                                                    rows.eqOrNull(
+                                                  'field_id',
+                                                  listViewInspectionFieldsRow
+                                                      .fieldId,
+                                                ),
+                                              );
+                                              _model.pageRefreshed =
+                                                  !(_model.pageRefreshed ??
+                                                      true);
+                                              safeSetState(() {});
+                                            },
+                                            child: Icon(
+                                              Icons.delete_sweep_outlined,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              size: 24.0,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                        ],
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                   wrapWithModel(
                     model: _model.compInspFieldUpdateModels.getModel(
