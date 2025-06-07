@@ -307,6 +307,7 @@ class ThemeTypography extends Typography {
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
+        fontStyle: FontStyle.italic,
       );
 }
 

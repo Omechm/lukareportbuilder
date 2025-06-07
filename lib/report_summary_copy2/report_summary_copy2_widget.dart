@@ -1685,13 +1685,14 @@ class _ReportSummaryCopy2WidgetState extends State<ReportSummaryCopy2Widget>
                                                                                                         '',
                                                                                                       );
                                                                                                     }
-                                                                                                    List<UserClientAssignmentsRow> columnUserClientAssignmentsRowList = snapshot.data!;
+                                                                                                    List<UserClientAssignmentsRow> listViewUserClientAssignmentsRowList = snapshot.data!;
 
-                                                                                                    final columnUserClientAssignmentsRow = columnUserClientAssignmentsRowList.isNotEmpty ? columnUserClientAssignmentsRowList.first : null;
+                                                                                                    final listViewUserClientAssignmentsRow = listViewUserClientAssignmentsRowList.isNotEmpty ? listViewUserClientAssignmentsRowList.first : null;
 
-                                                                                                    return Column(
-                                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                                    return ListView(
+                                                                                                      padding: EdgeInsets.zero,
+                                                                                                      shrinkWrap: true,
+                                                                                                      scrollDirection: Axis.vertical,
                                                                                                       children: [
                                                                                                         Builder(
                                                                                                           builder: (context) => FutureBuilder<List<UserRow>>(
@@ -1775,10 +1776,10 @@ class _ReportSummaryCopy2WidgetState extends State<ReportSummaryCopy2Widget>
                                                                                                                         listTileUserRow?.lastName,
                                                                                                                         'null',
                                                                                                                       )} Phone: ${listTileUserRow?.phone} Date : ${dateTimeFormat("yMMMd", listViewNonCompliantTaskExecutionRow.plannedExecutionDate)}  CSO : ${valueOrDefault<String>(
-                                                                                                                        columnUserClientAssignmentsRow?.firstName,
+                                                                                                                        listViewUserClientAssignmentsRow?.firstName,
                                                                                                                         'null',
                                                                                                                       )} ${valueOrDefault<String>(
-                                                                                                                        columnUserClientAssignmentsRow?.lastName,
+                                                                                                                        listViewUserClientAssignmentsRow?.lastName,
                                                                                                                         'null',
                                                                                                                       )}',
                                                                                                                       style: FlutterFlowTheme.of(context).labelMedium.override(

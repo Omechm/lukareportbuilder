@@ -47,21 +47,6 @@ class UserAssignmentsViewRow extends SupabaseDataRow {
   String? get userUsername => getField<String>('user_username');
   set userUsername(String? value) => setField<String>('user_username', value);
 
-  String? get clientId => getField<String>('client_id');
-  set clientId(String? value) => setField<String>('client_id', value);
-
-  String? get userRole => getField<String>('user_role');
-  set userRole(String? value) => setField<String>('user_role', value);
-
-  String? get clientName => getField<String>('client_name');
-  set clientName(String? value) => setField<String>('client_name', value);
-
-  String? get address => getField<String>('address');
-  set address(String? value) => setField<String>('address', value);
-
-  String? get city => getField<String>('city');
-  set city(String? value) => setField<String>('city', value);
-
-  String? get state => getField<String>('state');
-  set state(String? value) => setField<String>('state', value);
+  dynamic get assignments => getField<dynamic>('assignments');
+  set assignments(dynamic value) => setField<dynamic>('assignments', value);
 }

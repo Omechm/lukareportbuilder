@@ -21,12 +21,16 @@ export 'userroleassignment_model.dart';
 class UserroleassignmentWidget extends StatefulWidget {
   const UserroleassignmentWidget({
     super.key,
-    required this.user,
+    required this.userid,
     int? pageNumber,
+    required this.firstname,
+    required this.lastname,
   }) : this.pageNumber = pageNumber ?? 5;
 
-  final UserRow? user;
+  final String? userid;
   final int pageNumber;
+  final String? firstname;
+  final String? lastname;
 
   static String routeName = 'userroleassignment';
   static String routePath = '/userRoleAssignment';
@@ -57,7 +61,7 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
           await UserClientAssignmentsTable().queryRows(
         queryFn: (q) => q.eqOrNull(
           'user_id',
-          widget.user?.userId,
+          widget.userid,
         ),
       );
       _model.outputRoles = await RolesTable().queryRows(
@@ -148,18 +152,30 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                       child: Stack(
                         alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
-                          SingleChildScrollView(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 16.0, 16.0, 16.0),
-                                  child: Material(
-                                    color: Colors.transparent,
-                                    elevation: 2.0,
-                                    shape: RoundedRectangleBorder(
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 16.0, 16.0, 16.0),
+                                child: Material(
+                                  color: Colors.transparent,
+                                  elevation: 2.0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(16.0),
+                                      bottomRight: Radius.circular(16.0),
+                                      topLeft: Radius.circular(0.0),
+                                      topRight: Radius.circular(0.0),
+                                    ),
+                                  ),
+                                  child: Container(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 1.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
                                       borderRadius: BorderRadius.only(
                                         bottomLeft: Radius.circular(16.0),
                                         bottomRight: Radius.circular(16.0),
@@ -167,44 +183,72 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                         topRight: Radius.circular(0.0),
                                       ),
                                     ),
-                                    child: Container(
-                                      width: MediaQuery.sizeOf(context).width *
-                                          1.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(16.0),
-                                          bottomRight: Radius.circular(16.0),
-                                          topLeft: Radius.circular(0.0),
-                                          topRight: Radius.circular(0.0),
-                                        ),
+                                    child: Padding(
+                                      padding: EdgeInsets.all(16.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'User Role Assignment',
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineMedium
+                                                .override(
+                                                  fontFamily:
+                                                      'Geist Font Family',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  fontSize: 15.0,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                          Text(
+                                            'Manage users and their roles',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily:
+                                                      'Geist Font Family',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  fontSize: 8.0,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ].divide(SizedBox(height: 8.0)),
                                       ),
-                                      child: Padding(
-                                        padding: EdgeInsets.all(16.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              'User Role Assignment',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Geist Font Family',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        fontSize: 15.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                            Text(
-                                              'Manage users and their roles',
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 50.0, 0.0),
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.pushNamed(
+                                                  UsermanagementWidget
+                                                      .routeName);
+                                            },
+                                            child: Text(
+                                              'Back',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -212,64 +256,17 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                         fontFamily:
                                                             'Geist Font Family',
                                                         color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
-                                                        fontSize: 8.0,
+                                                            Color(0xFF033395),
+                                                        fontSize: 15.0,
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
-                                          ].divide(SizedBox(height: 8.0)),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 50.0, 0.0),
-                                            child: InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                    UsermanagementWidget
-                                                        .routeName);
-                                              },
-                                              child: Text(
-                                                'Back',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Geist Font Family',
-                                                          color:
-                                                              Color(0xFF033395),
-                                                          fontSize: 15.0,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
                                           ),
-                                        ],
-                                      ),
-                                      Column(
+                                        ),
+                                      ],
+                                    ),
+                                    Expanded(
+                                      child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Expanded(
@@ -339,6 +336,8 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                               'Geist Font Family',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
+                                                                          fontSize:
+                                                                              12.0,
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -356,9 +355,9 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                         'id'
                                                                       ])
                                                                   .eqOrNull(
-                                                                    'id',
-                                                                    widget.user
-                                                                        ?.id,
+                                                                    'user_id',
+                                                                    widget
+                                                                        .userid,
                                                                   )
                                                                   .map((list) => list
                                                                       .map((item) =>
@@ -485,6 +484,7 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                             style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                                   fontFamily: 'Geist Font Family',
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                  fontSize: 12.0,
                                                                                                   letterSpacing: 0.0,
                                                                                                 ),
                                                                                           ),
@@ -498,6 +498,7 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                               style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                                     fontFamily: 'Geist Font Family',
                                                                                                     color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                    fontSize: 12.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                   ),
                                                                                             ),
@@ -512,6 +513,7 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                               fontFamily: 'Geist Font Family',
                                                                                               color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                              fontSize: 10.0,
                                                                                               letterSpacing: 0.0,
                                                                                             ),
                                                                                       ),
@@ -536,6 +538,7 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                               'Role :',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                     fontFamily: 'Geist Font Family',
+                                                                                                    fontSize: 12.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                   ),
                                                                                             ),
@@ -570,6 +573,7 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                       fontFamily: 'Geist Font Family',
+                                                                                                      fontSize: 12.0,
                                                                                                       letterSpacing: 0.0,
                                                                                                     ),
                                                                                               ),
@@ -618,11 +622,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                         context)
                                                                     .width *
                                                                 1.0,
-                                                        height:
-                                                            MediaQuery.sizeOf(
-                                                                        context)
-                                                                    .height *
-                                                                0.7,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: Colors.white,
@@ -652,35 +651,6 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                 MainAxisSize
                                                                     .min,
                                                             children: [
-                                                              Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            25.0,
-                                                                            10.0,
-                                                                            0.0,
-                                                                            10.0),
-                                                                    child: Text(
-                                                                      'Edit user information below',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Geist Font Family',
-                                                                            fontSize:
-                                                                                15.0,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
                                                               Expanded(
                                                                 child: Row(
                                                                   mainAxisSize:
@@ -700,20 +670,12 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                             0.0),
                                                                         child:
                                                                             Container(
+                                                                          height:
+                                                                              double.infinity,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
                                                                                 Colors.white,
-                                                                            boxShadow: [
-                                                                              BoxShadow(
-                                                                                blurRadius: 4.0,
-                                                                                color: Color(0x33000000),
-                                                                                offset: Offset(
-                                                                                  0.0,
-                                                                                  2.0,
-                                                                                ),
-                                                                              )
-                                                                            ],
                                                                             borderRadius:
                                                                                 BorderRadius.circular(15.0),
                                                                           ),
@@ -741,140 +703,126 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                                 style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                                       fontFamily: 'Geist Font Family',
                                                                                                       color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                      fontSize: 12.0,
                                                                                                       letterSpacing: 0.0,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
                                                                                           ],
                                                                                         ),
-                                                                                        Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(12.0, 1.0, 12.0, 1.0),
-                                                                                          child: Container(
-                                                                                            width: MediaQuery.sizeOf(context).width * 1.0,
-                                                                                            decoration: BoxDecoration(
-                                                                                              color: Color(0xFFF5F5F5),
-                                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                                            ),
-                                                                                            child: Padding(
-                                                                                              padding: EdgeInsets.all(12.0),
-                                                                                              child: Row(
-                                                                                                mainAxisSize: MainAxisSize.min,
-                                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                                children: [
-                                                                                                  Row(
-                                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                                    mainAxisAlignment: MainAxisAlignment.start,
-                                                                                                    children: [
-                                                                                                      Row(
-                                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                                        children: [
-                                                                                                          Padding(
-                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
-                                                                                                            child: Row(
-                                                                                                              mainAxisSize: MainAxisSize.max,
-                                                                                                              children: [
-                                                                                                                FlutterFlowDropDown<String>(
-                                                                                                                  controller: _model.dropDownValueController ??= FormFieldController<String>(null),
-                                                                                                                  options: _model.pageRoles,
-                                                                                                                  onChanged: (val) => safeSetState(() => _model.dropDownValue = val),
-                                                                                                                  width: 369.0,
-                                                                                                                  height: 40.0,
-                                                                                                                  textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                        fontFamily: 'Geist Font Family',
-                                                                                                                        letterSpacing: 0.0,
-                                                                                                                      ),
-                                                                                                                  hintText: 'Select role',
-                                                                                                                  icon: Icon(
-                                                                                                                    Icons.keyboard_arrow_down_rounded,
-                                                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                                                    size: 24.0,
-                                                                                                                  ),
-                                                                                                                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                                  elevation: 2.0,
-                                                                                                                  borderColor: Colors.transparent,
-                                                                                                                  borderWidth: 0.0,
-                                                                                                                  borderRadius: 8.0,
-                                                                                                                  margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                                                                                                                  hidesUnderline: true,
-                                                                                                                  isOverButton: false,
-                                                                                                                  isSearchable: false,
-                                                                                                                  isMultiSelect: false,
-                                                                                                                ),
-                                                                                                              ],
-                                                                                                            ),
-                                                                                                          ),
-                                                                                                          if (_model.dropDownValue != null && _model.dropDownValue != '')
-                                                                                                            FFButtonWidget(
-                                                                                                              onPressed: () async {
-                                                                                                                if (_model.formKey.currentState == null || !_model.formKey.currentState!.validate()) {
-                                                                                                                  return;
-                                                                                                                }
-                                                                                                                await UserTable().update(
-                                                                                                                  data: {
-                                                                                                                    'user_role': _model.dropDownValue,
-                                                                                                                    'role_id': _model.outputRoles?.where((e) => e.roleName == _model.dropDownValue).toList().firstOrNull?.id,
-                                                                                                                  },
-                                                                                                                  matchingRows: (rows) => rows.eqOrNull(
-                                                                                                                    'user_id',
-                                                                                                                    valueOrDefault<String>(
-                                                                                                                      widget.user?.userId,
-                                                                                                                      'null',
-                                                                                                                    ),
-                                                                                                                  ),
-                                                                                                                );
-                                                                                                                _model.outputUserRole = await UserRolesTable().queryRows(
-                                                                                                                  queryFn: (q) => q.eqOrNull(
-                                                                                                                    'user_id',
-                                                                                                                    widget.user?.userId,
-                                                                                                                  ),
-                                                                                                                );
-                                                                                                                if (_model.outputUserRole?.firstOrNull?.userId == widget.user?.userId) {
-                                                                                                                  await UserRolesTable().update(
-                                                                                                                    data: {
-                                                                                                                      'role_id': _model.outputRoles?.where((e) => e.roleName == _model.dropDownValue).toList().firstOrNull?.id,
-                                                                                                                    },
-                                                                                                                    matchingRows: (rows) => rows.eqOrNull(
-                                                                                                                      'user_id',
-                                                                                                                      valueOrDefault<String>(
-                                                                                                                        widget.user?.userId,
-                                                                                                                        'null',
-                                                                                                                      ),
-                                                                                                                    ),
-                                                                                                                  );
-                                                                                                                } else {
-                                                                                                                  await UserRolesTable().insert({
-                                                                                                                    'user_id': widget.user?.userId,
-                                                                                                                    'role_id': _model.outputRoles?.where((e) => e.roleName == _model.dropDownValue).toList().firstOrNull?.id,
-                                                                                                                    'company_name': FFAppState().appAuthUserCompanyName,
-                                                                                                                  });
-                                                                                                                }
-
-                                                                                                                safeSetState(() {
-                                                                                                                  _model.dropDownValueController?.reset();
-                                                                                                                });
-
-                                                                                                                safeSetState(() {});
-                                                                                                              },
-                                                                                                              text: 'Add',
-                                                                                                              options: FFButtonOptions(
-                                                                                                                height: 40.0,
-                                                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                                color: Color(0xFF033395),
-                                                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                      fontFamily: 'Geist Font Family',
-                                                                                                                      color: Colors.white,
-                                                                                                                      letterSpacing: 0.0,
-                                                                                                                    ),
-                                                                                                                elevation: 0.0,
-                                                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                        Expanded(
+                                                                                          child: Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 1.0, 12.0, 1.0),
+                                                                                            child: Container(
+                                                                                              width: double.infinity,
+                                                                                              decoration: BoxDecoration(
+                                                                                                color: Color(0xFFF5F5F5),
+                                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                              ),
+                                                                                              child: Padding(
+                                                                                                padding: EdgeInsets.all(12.0),
+                                                                                                child: Row(
+                                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                                  children: [
+                                                                                                    Expanded(
+                                                                                                      child: Container(
+                                                                                                        width: 200.0,
+                                                                                                        child: FlutterFlowDropDown<String>(
+                                                                                                          controller: _model.dropDownValueController ??= FormFieldController<String>(null),
+                                                                                                          options: _model.pageRoles,
+                                                                                                          onChanged: (val) => safeSetState(() => _model.dropDownValue = val),
+                                                                                                          width: 369.0,
+                                                                                                          height: 40.0,
+                                                                                                          textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                fontFamily: 'Geist Font Family',
+                                                                                                                letterSpacing: 0.0,
                                                                                                               ),
-                                                                                                            ),
-                                                                                                        ],
+                                                                                                          hintText: 'Select role',
+                                                                                                          icon: Icon(
+                                                                                                            Icons.keyboard_arrow_down_rounded,
+                                                                                                            color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                            size: 24.0,
+                                                                                                          ),
+                                                                                                          fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                          elevation: 2.0,
+                                                                                                          borderColor: Colors.transparent,
+                                                                                                          borderWidth: 0.0,
+                                                                                                          borderRadius: 8.0,
+                                                                                                          margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                          hidesUnderline: true,
+                                                                                                          isOverButton: false,
+                                                                                                          isSearchable: false,
+                                                                                                          isMultiSelect: false,
+                                                                                                        ),
                                                                                                       ),
-                                                                                                    ],
-                                                                                                  ),
-                                                                                                ],
+                                                                                                    ),
+                                                                                                    if (_model.dropDownValue != null && _model.dropDownValue != '')
+                                                                                                      Padding(
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                                        child: FFButtonWidget(
+                                                                                                          onPressed: () async {
+                                                                                                            if (_model.formKey.currentState == null || !_model.formKey.currentState!.validate()) {
+                                                                                                              return;
+                                                                                                            }
+                                                                                                            await UserTable().update(
+                                                                                                              data: {
+                                                                                                                'user_role': _model.dropDownValue,
+                                                                                                                'role_id': _model.outputRoles?.where((e) => e.roleName == _model.dropDownValue).toList().firstOrNull?.id,
+                                                                                                              },
+                                                                                                              matchingRows: (rows) => rows.eqOrNull(
+                                                                                                                'user_id',
+                                                                                                                widget.userid,
+                                                                                                              ),
+                                                                                                            );
+                                                                                                            _model.outputUserRole = await UserRolesTable().queryRows(
+                                                                                                              queryFn: (q) => q.eqOrNull(
+                                                                                                                'user_id',
+                                                                                                                widget.userid,
+                                                                                                              ),
+                                                                                                            );
+                                                                                                            if (_model.outputUserRole?.firstOrNull?.userId == widget.userid) {
+                                                                                                              await UserRolesTable().update(
+                                                                                                                data: {
+                                                                                                                  'role_id': _model.outputRoles?.where((e) => e.roleName == _model.dropDownValue).toList().firstOrNull?.id,
+                                                                                                                },
+                                                                                                                matchingRows: (rows) => rows.eqOrNull(
+                                                                                                                  'user_id',
+                                                                                                                  widget.userid,
+                                                                                                                ),
+                                                                                                              );
+                                                                                                            } else {
+                                                                                                              await UserRolesTable().insert({
+                                                                                                                'user_id': widget.userid,
+                                                                                                                'role_id': _model.outputRoles?.where((e) => e.roleName == _model.dropDownValue).toList().firstOrNull?.id,
+                                                                                                                'company_name': FFAppState().appAuthUserCompanyName,
+                                                                                                              });
+                                                                                                            }
+
+                                                                                                            safeSetState(() {
+                                                                                                              _model.dropDownValueController?.reset();
+                                                                                                            });
+
+                                                                                                            safeSetState(() {});
+                                                                                                          },
+                                                                                                          text: 'Add',
+                                                                                                          options: FFButtonOptions(
+                                                                                                            height: 40.0,
+                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                            color: Color(0xFF033395),
+                                                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                                  fontFamily: 'Geist Font Family',
+                                                                                                                  color: Colors.white,
+                                                                                                                  letterSpacing: 0.0,
+                                                                                                                ),
+                                                                                                            elevation: 0.0,
+                                                                                                            borderRadius: BorderRadius.circular(8.0),
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                  ],
+                                                                                                ),
                                                                                               ),
                                                                                             ),
                                                                                           ),
@@ -883,155 +831,148 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                                     ),
                                                                                   ),
                                                                                 ),
-                                                                                Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.min,
-                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                    children: [
-                                                                                      Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                        children: [
-                                                                                          Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                                                                                            child: Text(
-                                                                                              'Assign Client Location',
-                                                                                              style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                                    fontFamily: 'Geist Font Family',
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(12.0, 1.0, 12.0, 1.0),
-                                                                                        child: Container(
-                                                                                          width: MediaQuery.sizeOf(context).width * 1.0,
-                                                                                          decoration: BoxDecoration(
-                                                                                            color: Color(0xFFF5F5F5),
-                                                                                            borderRadius: BorderRadius.circular(8.0),
-                                                                                          ),
-                                                                                          child: Column(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            children: [
-                                                                                              Row(
-                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                children: [
-                                                                                                  Padding(
-                                                                                                    padding: EdgeInsets.all(12.0),
-                                                                                                    child: Row(
-                                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                                      children: [
-                                                                                                        Expanded(
-                                                                                                          child: Row(
-                                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                                            mainAxisAlignment: MainAxisAlignment.start,
-                                                                                                            children: [
-                                                                                                              FlutterFlowDropDown<String>(
-                                                                                                                controller: _model.dropDownClientNameValueController ??= FormFieldController<String>(null),
-                                                                                                                options: _model.pageLocation.sortedList(keyOf: (e) => e, desc: false),
-                                                                                                                onChanged: (val) => safeSetState(() => _model.dropDownClientNameValue = val),
-                                                                                                                width: 369.0,
-                                                                                                                height: 40.0,
-                                                                                                                searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                                      fontFamily: 'Geist Font Family',
-                                                                                                                      letterSpacing: 0.0,
-                                                                                                                    ),
-                                                                                                                searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                      fontFamily: 'Geist Font Family',
-                                                                                                                      letterSpacing: 0.0,
-                                                                                                                    ),
-                                                                                                                textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                      fontFamily: 'Geist Font Family',
-                                                                                                                      letterSpacing: 0.0,
-                                                                                                                    ),
-                                                                                                                hintText: 'Select client name',
-                                                                                                                searchHintText: 'Search...',
-                                                                                                                icon: Icon(
-                                                                                                                  Icons.keyboard_arrow_down_rounded,
-                                                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                                                  size: 24.0,
-                                                                                                                ),
-                                                                                                                fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                                elevation: 2.0,
-                                                                                                                borderColor: Colors.transparent,
-                                                                                                                borderWidth: 0.0,
-                                                                                                                borderRadius: 8.0,
-                                                                                                                margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                                                                                                                hidesUnderline: true,
-                                                                                                                isOverButton: false,
-                                                                                                                isSearchable: true,
-                                                                                                                isMultiSelect: false,
-                                                                                                              ),
-                                                                                                            ],
-                                                                                                          ),
-                                                                                                        ),
-                                                                                                      ],
+                                                                                Expanded(
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                                                                                    child: Column(
+                                                                                      mainAxisSize: MainAxisSize.min,
+                                                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                      children: [
+                                                                                        Row(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                          children: [
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                              child: Text(
+                                                                                                'Assign Client Location',
+                                                                                                style: FlutterFlowTheme.of(context).titleLarge.override(
+                                                                                                      fontFamily: 'Geist Font Family',
+                                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                      fontSize: 12.0,
+                                                                                                      letterSpacing: 0.0,
                                                                                                     ),
-                                                                                                  ),
-                                                                                                  if (_model.dropDownClientNameValue != null && _model.dropDownClientNameValue != '')
-                                                                                                    FFButtonWidget(
-                                                                                                      onPressed: () async {
-                                                                                                        if ((_model.dropDownClientNameValue != null && _model.dropDownClientNameValue != '') && !(_model.pageClientForUserAssignmentEdit.where((e) => e.clientName == _model.dropDownClientNameValue).toList().isNotEmpty)) {
-                                                                                                          _model.outputPlannedTaskClientAddress = await ClientsTable().queryRows(
-                                                                                                            queryFn: (q) => q.eqOrNull(
-                                                                                                              'client_name',
-                                                                                                              _model.dropDownClientNameValue,
-                                                                                                            ),
-                                                                                                          );
-                                                                                                          unawaited(
-                                                                                                            () async {
-                                                                                                              await UserClientAssignmentsTable().insert({
-                                                                                                                'user_id': widget.user?.userId,
-                                                                                                                'first_name': widget.user?.firstName,
-                                                                                                                'client_name': _model.dropDownClientNameValue,
-                                                                                                                'client_address': valueOrDefault<String>(
-                                                                                                                  _model.outputPlannedTaskClientAddress?.firstOrNull?.address,
-                                                                                                                  'null',
-                                                                                                                ),
-                                                                                                                'company_name': _model.outputUsers?.where((e) => e.userId == currentUserUid).toList().firstOrNull?.companyName,
-                                                                                                                'last_name': widget.user?.lastName,
-                                                                                                                'client_id': valueOrDefault<String>(
-                                                                                                                  _model.outputPlannedTaskClientAddress?.firstOrNull?.clientId,
-                                                                                                                  'null',
-                                                                                                                ),
-                                                                                                              });
-                                                                                                            }(),
-                                                                                                          );
-                                                                                                          safeSetState(() {
-                                                                                                            _model.dropDownClientNameValueController?.reset();
-                                                                                                          });
-                                                                                                          await actions.plannedtasksupervisoruserid();
-                                                                                                        }
-
-                                                                                                        safeSetState(() {});
-                                                                                                      },
-                                                                                                      text: 'Add',
-                                                                                                      options: FFButtonOptions(
-                                                                                                        height: 40.0,
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                        color: Color(0xFF033395),
-                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                              fontFamily: 'Geist Font Family',
-                                                                                                              color: Colors.white,
-                                                                                                              letterSpacing: 0.0,
-                                                                                                            ),
-                                                                                                        elevation: 0.0,
-                                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                        Expanded(
+                                                                                          child: Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 1.0, 12.0, 1.0),
+                                                                                            child: Container(
+                                                                                              decoration: BoxDecoration(
+                                                                                                color: Color(0xFFF5F5F5),
+                                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                              ),
+                                                                                              child: Padding(
+                                                                                                padding: EdgeInsets.all(12.0),
+                                                                                                child: Row(
+                                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                                  children: [
+                                                                                                    Expanded(
+                                                                                                      child: Container(
+                                                                                                        decoration: BoxDecoration(),
+                                                                                                        child: FlutterFlowDropDown<String>(
+                                                                                                          controller: _model.dropDownClientNameValueController ??= FormFieldController<String>(null),
+                                                                                                          options: _model.pageLocation.sortedList(keyOf: (e) => e, desc: false),
+                                                                                                          onChanged: (val) => safeSetState(() => _model.dropDownClientNameValue = val),
+                                                                                                          width: 369.0,
+                                                                                                          height: 40.0,
+                                                                                                          searchHintTextStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                                                fontFamily: 'Geist Font Family',
+                                                                                                                letterSpacing: 0.0,
+                                                                                                              ),
+                                                                                                          searchTextStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                fontFamily: 'Geist Font Family',
+                                                                                                                letterSpacing: 0.0,
+                                                                                                              ),
+                                                                                                          textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                fontFamily: 'Geist Font Family',
+                                                                                                                letterSpacing: 0.0,
+                                                                                                              ),
+                                                                                                          hintText: 'Select client name',
+                                                                                                          searchHintText: 'Search...',
+                                                                                                          icon: Icon(
+                                                                                                            Icons.keyboard_arrow_down_rounded,
+                                                                                                            color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                            size: 24.0,
+                                                                                                          ),
+                                                                                                          fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                          elevation: 2.0,
+                                                                                                          borderColor: Colors.transparent,
+                                                                                                          borderWidth: 0.0,
+                                                                                                          borderRadius: 8.0,
+                                                                                                          margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                                          hidesUnderline: true,
+                                                                                                          isOverButton: false,
+                                                                                                          isSearchable: true,
+                                                                                                          isMultiSelect: false,
+                                                                                                        ),
                                                                                                       ),
                                                                                                     ),
-                                                                                                ],
+                                                                                                    if (_model.dropDownClientNameValue != null && _model.dropDownClientNameValue != '')
+                                                                                                      Padding(
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                                        child: FFButtonWidget(
+                                                                                                          onPressed: () async {
+                                                                                                            if ((_model.dropDownClientNameValue != null && _model.dropDownClientNameValue != '') && !(_model.pageClientForUserAssignmentEdit.where((e) => e.clientName == _model.dropDownClientNameValue).toList().isNotEmpty)) {
+                                                                                                              _model.outputPlannedTaskClientAddress = await ClientsTable().queryRows(
+                                                                                                                queryFn: (q) => q.eqOrNull(
+                                                                                                                  'client_name',
+                                                                                                                  _model.dropDownClientNameValue,
+                                                                                                                ),
+                                                                                                              );
+                                                                                                              unawaited(
+                                                                                                                () async {
+                                                                                                                  await UserClientAssignmentsTable().insert({
+                                                                                                                    'user_id': widget.userid,
+                                                                                                                    'first_name': widget.firstname,
+                                                                                                                    'client_name': _model.dropDownClientNameValue,
+                                                                                                                    'client_address': valueOrDefault<String>(
+                                                                                                                      _model.outputPlannedTaskClientAddress?.firstOrNull?.address,
+                                                                                                                      'null',
+                                                                                                                    ),
+                                                                                                                    'company_name': _model.outputUsers?.where((e) => e.userId == currentUserUid).toList().firstOrNull?.companyName,
+                                                                                                                    'last_name': widget.lastname,
+                                                                                                                    'client_id': valueOrDefault<String>(
+                                                                                                                      _model.outputPlannedTaskClientAddress?.firstOrNull?.clientId,
+                                                                                                                      'null',
+                                                                                                                    ),
+                                                                                                                  });
+                                                                                                                }(),
+                                                                                                              );
+                                                                                                              safeSetState(() {
+                                                                                                                _model.dropDownClientNameValueController?.reset();
+                                                                                                              });
+                                                                                                              await actions.plannedtasksupervisoruserid();
+                                                                                                            }
+
+                                                                                                            safeSetState(() {});
+                                                                                                          },
+                                                                                                          text: 'Add',
+                                                                                                          options: FFButtonOptions(
+                                                                                                            height: 40.0,
+                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                            color: Color(0xFF033395),
+                                                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                                  fontFamily: 'Geist Font Family',
+                                                                                                                  color: Colors.white,
+                                                                                                                  letterSpacing: 0.0,
+                                                                                                                ),
+                                                                                                            elevation: 0.0,
+                                                                                                            borderRadius: BorderRadius.circular(8.0),
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                  ],
+                                                                                                ),
                                                                                               ),
-                                                                                            ],
+                                                                                            ),
                                                                                           ),
                                                                                         ),
-                                                                                      ),
-                                                                                    ].divide(SizedBox(height: 16.0)),
+                                                                                      ].divide(SizedBox(height: 16.0)),
+                                                                                    ),
                                                                                   ),
                                                                                 ),
                                                                               ],
@@ -1040,222 +981,220 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                    SizedBox(
+                                                                      height:
+                                                                          10000.0,
+                                                                      child:
+                                                                          VerticalDivider(
+                                                                        thickness:
+                                                                            2.0,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .alternate,
+                                                                      ),
+                                                                    ),
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
+                                                                        padding:
+                                                                            EdgeInsets.all(10.0),
                                                                         child:
                                                                             Container(
-                                                                          height:
-                                                                              MediaQuery.sizeOf(context).height * 0.5,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
-                                                                                Colors.white,
-                                                                            boxShadow: [
-                                                                              BoxShadow(
-                                                                                blurRadius: 4.0,
-                                                                                color: Color(0x33000000),
-                                                                                offset: Offset(
-                                                                                  0.0,
-                                                                                  2.0,
-                                                                                ),
-                                                                              )
-                                                                            ],
+                                                                                Color(0x185A5C60),
                                                                             borderRadius:
                                                                                 BorderRadius.circular(15.0),
                                                                           ),
                                                                           child:
-                                                                              Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            crossAxisAlignment:
-                                                                                CrossAxisAlignment.start,
-                                                                            children: [
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Flexible(
-                                                                                    child: Container(
-                                                                                      width: 600.0,
-                                                                                      decoration: BoxDecoration(),
-                                                                                      child: Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                        children: [
-                                                                                          Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
-                                                                                            child: Text(
-                                                                                              'Chosen Client Location(s)',
-                                                                                              style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                                    fontFamily: 'Geist Font Family',
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                          Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 16.0, 0.0),
-                                                                                            child: InkWell(
-                                                                                              splashColor: Colors.transparent,
-                                                                                              focusColor: Colors.transparent,
-                                                                                              hoverColor: Colors.transparent,
-                                                                                              highlightColor: Colors.transparent,
-                                                                                              onTap: () async {},
-                                                                                              child: Icon(
-                                                                                                Icons.refresh_sharp,
-                                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                                size: 30.0,
+                                                                              Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                9.0),
+                                                                            child:
+                                                                                Column(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                                                              children: [
+                                                                                Row(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  children: [
+                                                                                    Expanded(
+                                                                                      child: Container(
+                                                                                        width: 600.0,
+                                                                                        decoration: BoxDecoration(),
+                                                                                        child: Row(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                          children: [
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
+                                                                                              child: Text(
+                                                                                                'Chosen Client Location(s)',
+                                                                                                style: FlutterFlowTheme.of(context).titleLarge.override(
+                                                                                                      fontFamily: 'Geist Font Family',
+                                                                                                      fontSize: 12.0,
+                                                                                                      letterSpacing: 0.0,
+                                                                                                    ),
                                                                                               ),
                                                                                             ),
-                                                                                          ),
-                                                                                        ],
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 16.0, 0.0),
+                                                                                              child: InkWell(
+                                                                                                splashColor: Colors.transparent,
+                                                                                                focusColor: Colors.transparent,
+                                                                                                hoverColor: Colors.transparent,
+                                                                                                highlightColor: Colors.transparent,
+                                                                                                onTap: () async {},
+                                                                                                child: Icon(
+                                                                                                  Icons.refresh_sharp,
+                                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                                  size: 17.0,
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
                                                                                       ),
                                                                                     ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                              Expanded(
-                                                                                child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
-                                                                                  child: StreamBuilder<List<UserClientAssignmentsRow>>(
-                                                                                    stream: _model.listViewUserClientSupabaseStream ??= SupaFlow.client
-                                                                                        .from("user_client_assignments")
-                                                                                        .stream(primaryKey: ['id'])
-                                                                                        .eqOrNull(
-                                                                                          'user_id',
-                                                                                          widget.user?.userId,
-                                                                                        )
-                                                                                        .map((list) => list.map((item) => UserClientAssignmentsRow(item)).toList()),
-                                                                                    builder: (context, snapshot) {
-                                                                                      // Customize what your widget looks like when it's loading.
-                                                                                      if (!snapshot.hasData) {
-                                                                                        return Center(
-                                                                                          child: SizedBox(
-                                                                                            width: 10.0,
-                                                                                            height: 10.0,
-                                                                                            child: CircularProgressIndicator(
-                                                                                              valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                                Color(0xFF7C8289),
+                                                                                  ],
+                                                                                ),
+                                                                                Expanded(
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                                                                                    child: StreamBuilder<List<UserClientAssignmentsRow>>(
+                                                                                      stream: _model.listViewUserClientSupabaseStream ??= SupaFlow.client
+                                                                                          .from("user_client_assignments")
+                                                                                          .stream(primaryKey: ['id'])
+                                                                                          .eqOrNull(
+                                                                                            'user_id',
+                                                                                            widget.userid,
+                                                                                          )
+                                                                                          .map((list) => list.map((item) => UserClientAssignmentsRow(item)).toList()),
+                                                                                      builder: (context, snapshot) {
+                                                                                        // Customize what your widget looks like when it's loading.
+                                                                                        if (!snapshot.hasData) {
+                                                                                          return Center(
+                                                                                            child: SizedBox(
+                                                                                              width: 10.0,
+                                                                                              height: 10.0,
+                                                                                              child: CircularProgressIndicator(
+                                                                                                valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                                  Color(0xFF7C8289),
+                                                                                                ),
                                                                                               ),
                                                                                             ),
-                                                                                          ),
-                                                                                        );
-                                                                                      }
-                                                                                      List<UserClientAssignmentsRow> listViewUserClientUserClientAssignmentsRowList = snapshot.data!;
-
-                                                                                      if (listViewUserClientUserClientAssignmentsRowList.isEmpty) {
-                                                                                        return Center(
-                                                                                          child: Container(
-                                                                                            width: MediaQuery.sizeOf(context).width * 1.0,
-                                                                                            height: MediaQuery.sizeOf(context).height * 1.0,
-                                                                                            child: NoDataWidget(),
-                                                                                          ),
-                                                                                        );
-                                                                                      }
-
-                                                                                      return ListView.builder(
-                                                                                        padding: EdgeInsets.zero,
-                                                                                        shrinkWrap: true,
-                                                                                        scrollDirection: Axis.vertical,
-                                                                                        itemCount: listViewUserClientUserClientAssignmentsRowList.length,
-                                                                                        itemBuilder: (context, listViewUserClientIndex) {
-                                                                                          final listViewUserClientUserClientAssignmentsRow = listViewUserClientUserClientAssignmentsRowList[listViewUserClientIndex];
-                                                                                          return Row(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            children: [
-                                                                                              Expanded(
-                                                                                                child: Container(
-                                                                                                  width: 400.0,
-                                                                                                  decoration: BoxDecoration(
-                                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                    boxShadow: [
-                                                                                                      BoxShadow(
-                                                                                                        blurRadius: 4.0,
-                                                                                                        color: Color(0x33000000),
-                                                                                                        offset: Offset(
-                                                                                                          0.0,
-                                                                                                          2.0,
-                                                                                                        ),
-                                                                                                      )
-                                                                                                    ],
-                                                                                                    borderRadius: BorderRadius.circular(0.0),
-                                                                                                  ),
-                                                                                                  child: Column(
-                                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                                    children: [
-                                                                                                      Align(
-                                                                                                        alignment: AlignmentDirectional(-1.0, 0.0),
-                                                                                                        child: Padding(
-                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
-                                                                                                          child: Text(
-                                                                                                            valueOrDefault<String>(
-                                                                                                              listViewUserClientUserClientAssignmentsRow.clientName,
-                                                                                                              'null',
-                                                                                                            ),
-                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Geist Font Family',
-                                                                                                                  letterSpacing: 0.0,
-                                                                                                                ),
-                                                                                                          ),
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                      Align(
-                                                                                                        alignment: AlignmentDirectional(-1.0, 0.0),
-                                                                                                        child: Padding(
-                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 5.0),
-                                                                                                          child: Text(
-                                                                                                            valueOrDefault<String>(
-                                                                                                              listViewUserClientUserClientAssignmentsRow.clientAddress,
-                                                                                                              'null',
-                                                                                                            ),
-                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Geist Font Family',
-                                                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                                                  fontSize: 10.0,
-                                                                                                                  letterSpacing: 0.0,
-                                                                                                                ),
-                                                                                                          ),
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    ],
-                                                                                                  ),
-                                                                                                ),
-                                                                                              ),
-                                                                                              Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                                                                                                child: FlutterFlowIconButton(
-                                                                                                  borderColor: Colors.transparent,
-                                                                                                  borderRadius: 8.0,
-                                                                                                  buttonSize: 30.0,
-                                                                                                  fillColor: Color(0xFFCF080C),
-                                                                                                  icon: Icon(
-                                                                                                    Icons.delete_forever,
-                                                                                                    color: FlutterFlowTheme.of(context).info,
-                                                                                                    size: 14.0,
-                                                                                                  ),
-                                                                                                  onPressed: () async {
-                                                                                                    await UserClientAssignmentsTable().delete(
-                                                                                                      matchingRows: (rows) => rows.eqOrNull(
-                                                                                                        'id',
-                                                                                                        listViewUserClientUserClientAssignmentsRow.id,
-                                                                                                      ),
-                                                                                                    );
-                                                                                                  },
-                                                                                                ),
-                                                                                              ),
-                                                                                            ],
                                                                                           );
-                                                                                        },
-                                                                                      );
-                                                                                    },
+                                                                                        }
+                                                                                        List<UserClientAssignmentsRow> listViewUserClientUserClientAssignmentsRowList = snapshot.data!;
+
+                                                                                        if (listViewUserClientUserClientAssignmentsRowList.isEmpty) {
+                                                                                          return Center(
+                                                                                            child: Container(
+                                                                                              width: MediaQuery.sizeOf(context).width * 1.0,
+                                                                                              height: MediaQuery.sizeOf(context).height * 1.0,
+                                                                                              child: NoDataWidget(),
+                                                                                            ),
+                                                                                          );
+                                                                                        }
+
+                                                                                        return ListView.builder(
+                                                                                          padding: EdgeInsets.zero,
+                                                                                          shrinkWrap: true,
+                                                                                          scrollDirection: Axis.vertical,
+                                                                                          itemCount: listViewUserClientUserClientAssignmentsRowList.length,
+                                                                                          itemBuilder: (context, listViewUserClientIndex) {
+                                                                                            final listViewUserClientUserClientAssignmentsRow = listViewUserClientUserClientAssignmentsRowList[listViewUserClientIndex];
+                                                                                            return Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                Expanded(
+                                                                                                  child: Container(
+                                                                                                    width: 400.0,
+                                                                                                    decoration: BoxDecoration(
+                                                                                                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                      borderRadius: BorderRadius.circular(0.0),
+                                                                                                    ),
+                                                                                                    child: Column(
+                                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                                      children: [
+                                                                                                        Align(
+                                                                                                          alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                                          child: Padding(
+                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
+                                                                                                            child: Text(
+                                                                                                              valueOrDefault<String>(
+                                                                                                                listViewUserClientUserClientAssignmentsRow.clientName,
+                                                                                                                'null',
+                                                                                                              ),
+                                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                    fontFamily: 'Geist Font Family',
+                                                                                                                    fontSize: 12.0,
+                                                                                                                    letterSpacing: 0.0,
+                                                                                                                  ),
+                                                                                                            ),
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                        Align(
+                                                                                                          alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                                          child: Padding(
+                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 5.0),
+                                                                                                            child: Text(
+                                                                                                              valueOrDefault<String>(
+                                                                                                                listViewUserClientUserClientAssignmentsRow.clientAddress,
+                                                                                                                'null',
+                                                                                                              ),
+                                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                    fontFamily: 'Geist Font Family',
+                                                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                                    fontSize: 10.0,
+                                                                                                                    letterSpacing: 0.0,
+                                                                                                                  ),
+                                                                                                            ),
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                        Divider(
+                                                                                                          thickness: 2.0,
+                                                                                                          color: FlutterFlowTheme.of(context).alternate,
+                                                                                                        ),
+                                                                                                      ],
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                                Padding(
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                                  child: FlutterFlowIconButton(
+                                                                                                    borderColor: Colors.transparent,
+                                                                                                    borderRadius: 8.0,
+                                                                                                    buttonSize: 30.0,
+                                                                                                    fillColor: Color(0xFFCF080C),
+                                                                                                    icon: Icon(
+                                                                                                      Icons.delete_forever,
+                                                                                                      color: FlutterFlowTheme.of(context).info,
+                                                                                                      size: 14.0,
+                                                                                                    ),
+                                                                                                    onPressed: () async {
+                                                                                                      await UserClientAssignmentsTable().delete(
+                                                                                                        matchingRows: (rows) => rows.eqOrNull(
+                                                                                                          'id',
+                                                                                                          listViewUserClientUserClientAssignmentsRow.id,
+                                                                                                        ),
+                                                                                                      );
+                                                                                                    },
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            );
+                                                                                          },
+                                                                                        );
+                                                                                      },
+                                                                                    ),
                                                                                   ),
                                                                                 ),
-                                                                              ),
-                                                                            ],
+                                                                              ],
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -1275,11 +1214,11 @@ class _UserroleassignmentWidgetState extends State<UserroleassignmentWidget> {
                                           ),
                                         ],
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                           if (FFAppState().appIsLoadingData)
                             Container(

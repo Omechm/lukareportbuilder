@@ -276,6 +276,174 @@ class GetClientsWithoutTaskCall {
   }
 }
 
+class SearchuserassignmentsCall {
+  static Future<ApiCallResponse> call({
+    String? supabaseKey = '',
+    String? jwt = '',
+    String? state = '',
+    String? city = '',
+    String? clientName = '',
+    String? userRole = '',
+    String? companyName = 'Sonafem',
+    String? userfullname = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "param_city": "${escapeStringForJson(city)}",
+  "param_client_name": "${escapeStringForJson(clientName)}",
+  "param_company_name": "${escapeStringForJson(companyName)}",
+  "param_state": "${escapeStringForJson(state)}",
+  "param_user_role": "${escapeStringForJson(userRole)}",
+  "param_userfullname": "${escapeStringForJson(userfullname)}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'searchuserassignments',
+      apiUrl:
+          'https://fvfoznhaepggbyykkoea.supabase.co/rest/v1/rpc/search_user_assignments',
+      callType: ApiCallType.POST,
+      headers: {
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ2Zm96bmhhZXBnZ2J5eWtrb2VhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjI1NzIyMDUsImV4cCI6MjAzODE0ODIwNX0.gTkzwmWjjrr3s5GxRBIiahlyaj2iqp3_Y0NOUsZceaA',
+        'Authorization':
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ2Zm96bmhhZXBnZ2J5eWtrb2VhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjI1NzIyMDUsImV4cCI6MjAzODE0ODIwNX0.gTkzwmWjjrr3s5GxRBIiahlyaj2iqp3_Y0NOUsZceaA',
+        'Content-Type': 'application/json',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: true,
+      cache: true,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<String>? client(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].assignments[:].client_name''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? userrole(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].assignments[:].user_role''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? address(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].assignments[:].address''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? city(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].assignments[:].city''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? companyname(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].company_name''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? lastseen(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].last_seen''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? phone(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].phone''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? lastname(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].last_name''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? firstname(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].first_name''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? userid(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].user_id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? state(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].assignments[:].state''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List? assignmnent(dynamic response) => getJsonField(
+        response,
+        r'''$[:].assignments''',
+        true,
+      ) as List?;
+  static List<String>? email(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].user_email''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? rolename(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].role_name''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

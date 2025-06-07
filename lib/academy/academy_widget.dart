@@ -808,7 +808,7 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                         child: Padding(
                           padding: EdgeInsets.all(16.0),
                           child: StreamBuilder<List<DocumentationRow>>(
-                            stream: _model.columnSupabaseStream ??= SupaFlow
+                            stream: _model.listViewSupabaseStream ??= SupaFlow
                                 .client
                                 .from("documentation")
                                 .stream(primaryKey: ['id']).map((list) => list
@@ -830,21 +830,22 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                 );
                               }
                               List<DocumentationRow>
-                                  columnDocumentationRowList = snapshot.data!;
+                                  listViewDocumentationRowList = snapshot.data!;
 
-                              return Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: List.generate(
-                                    columnDocumentationRowList.length,
-                                    (columnIndex) {
-                                  final columnDocumentationRow =
-                                      columnDocumentationRowList[columnIndex];
+                              return ListView.builder(
+                                padding: EdgeInsets.zero,
+                                shrinkWrap: true,
+                                scrollDirection: Axis.vertical,
+                                itemCount: listViewDocumentationRowList.length,
+                                itemBuilder: (context, listViewIndex) {
+                                  final listViewDocumentationRow =
+                                      listViewDocumentationRowList[
+                                          listViewIndex];
                                   return Material(
                                     color: Colors.transparent,
                                     child: ListTile(
                                       title: Text(
-                                        columnDocumentationRow.title,
+                                        listViewDocumentationRow.title,
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -857,7 +858,7 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                             ),
                                       ),
                                       subtitle: Text(
-                                        columnDocumentationRow.description!,
+                                        listViewDocumentationRow.description!,
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -870,7 +871,7 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                       dense: false,
                                     ),
                                   );
-                                }).divide(SizedBox(height: 0.0)),
+                                },
                               );
                             },
                           ),

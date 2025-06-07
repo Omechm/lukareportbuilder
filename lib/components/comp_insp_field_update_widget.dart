@@ -422,7 +422,6 @@ class _CompInspFieldUpdateWidgetState extends State<CompInspFieldUpdateWidget> {
 
                               return ListView.builder(
                                 padding: EdgeInsets.zero,
-                                shrinkWrap: true,
                                 scrollDirection: Axis.vertical,
                                 itemCount: listViewChoiceOptionsRowList.length,
                                 itemBuilder: (context, listViewIndex) {

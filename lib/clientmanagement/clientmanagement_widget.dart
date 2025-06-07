@@ -346,253 +346,252 @@ class _ClientmanagementWidgetState extends State<ClientmanagementWidget> {
                                               ],
                                             ),
                                             Expanded(
-                                              child: Builder(
-                                                builder: (context) {
-                                                  final clients = ((_model.textController
-                                                                          .text !=
-                                                                      '') &&
-                                                              (_model
-                                                                  .simpleSearchResults
-                                                                  .isNotEmpty)
-                                                          ? _model
-                                                              .filteredClientPageState
-                                                              .sortedList(
-                                                                  keyOf: (e) => e
-                                                                      .clientName,
-                                                                  desc: false)
-                                                          : _model
-                                                              .unfilteredClientPageState
-                                                              .sortedList(
-                                                                  keyOf: (e) =>
-                                                                      e.clientName,
-                                                                  desc: false))
-                                                      .toList();
+                                              child: Container(
+                                                height: 100.0,
+                                                decoration: BoxDecoration(),
+                                                child: Builder(
+                                                  builder: (context) {
+                                                    final clients = ((_model
+                                                                            .textController
+                                                                            .text !=
+                                                                        '') &&
+                                                                (_model
+                                                                    .simpleSearchResults
+                                                                    .isNotEmpty)
+                                                            ? _model
+                                                                .filteredClientPageState
+                                                                .sortedList(
+                                                                    keyOf: (e) => e
+                                                                        .clientName,
+                                                                    desc: false)
+                                                            : _model
+                                                                .unfilteredClientPageState
+                                                                .sortedList(
+                                                                    keyOf: (e) =>
+                                                                        e.clientName,
+                                                                    desc: false))
+                                                        .toList();
 
-                                                  return ListView.builder(
-                                                    padding: EdgeInsets.zero,
-                                                    shrinkWrap: true,
-                                                    scrollDirection:
-                                                        Axis.vertical,
-                                                    itemCount: clients.length,
-                                                    itemBuilder: (context,
-                                                        clientsIndex) {
-                                                      final clientsItem =
-                                                          clients[clientsIndex];
-                                                      return Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    12.0,
-                                                                    1.0,
-                                                                    12.0,
-                                                                    1.0),
-                                                        child: InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onTap: () async {
-                                                            context.pushNamed(
-                                                              ClientmanagementEditingWidget
-                                                                  .routeName,
-                                                              queryParameters: {
-                                                                'clientId':
-                                                                    serializeParam(
-                                                                  clientsItem
-                                                                      .clientId,
-                                                                  ParamType
-                                                                      .String,
-                                                                ),
-                                                                'client':
-                                                                    serializeParam(
-                                                                  clientsItem,
-                                                                  ParamType
-                                                                      .SupabaseRow,
-                                                                ),
-                                                                'editing':
-                                                                    serializeParam(
-                                                                  true,
-                                                                  ParamType
-                                                                      .bool,
-                                                                ),
-                                                                'address':
-                                                                    serializeParam(
-                                                                  clientsItem
-                                                                      .address,
-                                                                  ParamType
-                                                                      .String,
-                                                                ),
-                                                                'state':
-                                                                    serializeParam(
-                                                                  clientsItem
-                                                                      .state,
-                                                                  ParamType
-                                                                      .String,
-                                                                ),
-                                                                'city':
-                                                                    serializeParam(
-                                                                  clientsItem
-                                                                      .city,
-                                                                  ParamType
-                                                                      .String,
-                                                                ),
-                                                              }.withoutNulls,
-                                                            );
-                                                          },
-                                                          child: Container(
-                                                            width: MediaQuery
-                                                                        .sizeOf(
-                                                                            context)
-                                                                    .width *
-                                                                1.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: Color(
-                                                                  0xFFF5F5F5),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          8.0),
-                                                            ),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          12.0,
-                                                                          5.0,
-                                                                          12.0,
-                                                                          5.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceBetween,
-                                                                children: [
-                                                                  Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      Column(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.min,
-                                                                        crossAxisAlignment:
-                                                                            CrossAxisAlignment.start,
-                                                                        children: [
-                                                                          Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            children: [
-                                                                              Text(
-                                                                                valueOrDefault<String>(
-                                                                                  clientsItem.clientName,
-                                                                                  'null',
+                                                    return ListView.builder(
+                                                      padding: EdgeInsets.zero,
+                                                      scrollDirection:
+                                                          Axis.vertical,
+                                                      itemCount: clients.length,
+                                                      itemBuilder: (context,
+                                                          clientsIndex) {
+                                                        final clientsItem =
+                                                            clients[
+                                                                clientsIndex];
+                                                        return Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      12.0,
+                                                                      1.0,
+                                                                      12.0,
+                                                                      1.0),
+                                                          child: InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              context.pushNamed(
+                                                                ClientmanagementEditingWidget
+                                                                    .routeName,
+                                                                queryParameters:
+                                                                    {
+                                                                  'clientId':
+                                                                      serializeParam(
+                                                                    clientsItem
+                                                                        .clientId,
+                                                                    ParamType
+                                                                        .String,
+                                                                  ),
+                                                                  'client':
+                                                                      serializeParam(
+                                                                    clientsItem,
+                                                                    ParamType
+                                                                        .SupabaseRow,
+                                                                  ),
+                                                                  'editing':
+                                                                      serializeParam(
+                                                                    true,
+                                                                    ParamType
+                                                                        .bool,
+                                                                  ),
+                                                                  'address':
+                                                                      serializeParam(
+                                                                    clientsItem
+                                                                        .address,
+                                                                    ParamType
+                                                                        .String,
+                                                                  ),
+                                                                  'state':
+                                                                      serializeParam(
+                                                                    clientsItem
+                                                                        .state,
+                                                                    ParamType
+                                                                        .String,
+                                                                  ),
+                                                                  'city':
+                                                                      serializeParam(
+                                                                    clientsItem
+                                                                        .city,
+                                                                    ParamType
+                                                                        .String,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                              );
+                                                            },
+                                                            child: Container(
+                                                              width: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .width *
+                                                                  1.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: Color(
+                                                                    0xFFF5F5F5),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                              ),
+                                                              child: Padding(
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        12.0,
+                                                                        5.0,
+                                                                        12.0,
+                                                                        5.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceBetween,
+                                                                  children: [
+                                                                    Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      children:
+                                                                          [
+                                                                        Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.min,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.start,
+                                                                          children: [
+                                                                            Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              children: [
+                                                                                Text(
+                                                                                  valueOrDefault<String>(
+                                                                                    clientsItem.clientName,
+                                                                                    'null',
+                                                                                  ),
+                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                        fontFamily: 'Geist Font Family',
+                                                                                        color: FlutterFlowTheme.of(context).primaryText,
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
                                                                                 ),
-                                                                                style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                      fontFamily: 'Geist Font Family',
-                                                                                      color: FlutterFlowTheme.of(context).primaryText,
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
+                                                                              ],
+                                                                            ),
+                                                                            Text(
+                                                                              valueOrDefault<String>(
+                                                                                clientsItem.address,
+                                                                                'null',
                                                                               ),
-                                                                            ],
-                                                                          ),
-                                                                          Text(
-                                                                            valueOrDefault<String>(
-                                                                              clientsItem.address,
-                                                                              'null',
+                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                    fontFamily: 'Geist Font Family',
+                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                    letterSpacing: 0.0,
+                                                                                  ),
                                                                             ),
-                                                                            style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                  fontFamily: 'Geist Font Family',
-                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ].divide(SizedBox(
-                                                                        width:
-                                                                            16.0)),
-                                                                  ),
-                                                                  Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .end,
-                                                                    children: [
-                                                                      Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        children:
-                                                                            [
-                                                                          FlutterFlowIconButton(
-                                                                            borderColor:
-                                                                                Colors.transparent,
-                                                                            borderRadius:
-                                                                                20.0,
-                                                                            buttonSize:
-                                                                                40.0,
-                                                                            fillColor:
-                                                                                Color(0xFFEEFFEB),
-                                                                            icon:
-                                                                                Icon(
-                                                                              Icons.edit_rounded,
-                                                                              color: Color(0xFF09A541),
-                                                                              size: 20.0,
+                                                                          ],
+                                                                        ),
+                                                                      ].divide(SizedBox(
+                                                                              width: 16.0)),
+                                                                    ),
+                                                                    Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .end,
+                                                                      children: [
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children:
+                                                                              [
+                                                                            FlutterFlowIconButton(
+                                                                              borderColor: Colors.transparent,
+                                                                              borderRadius: 20.0,
+                                                                              buttonSize: 40.0,
+                                                                              fillColor: Color(0xFFEEFFEB),
+                                                                              icon: Icon(
+                                                                                Icons.edit_rounded,
+                                                                                color: Color(0xFF09A541),
+                                                                                size: 20.0,
+                                                                              ),
+                                                                              onPressed: () async {
+                                                                                context.pushNamed(
+                                                                                  ClientmanagementEditingWidget.routeName,
+                                                                                  queryParameters: {
+                                                                                    'clientId': serializeParam(
+                                                                                      clientsItem.clientId,
+                                                                                      ParamType.String,
+                                                                                    ),
+                                                                                    'client': serializeParam(
+                                                                                      clientsItem,
+                                                                                      ParamType.SupabaseRow,
+                                                                                    ),
+                                                                                    'editing': serializeParam(
+                                                                                      true,
+                                                                                      ParamType.bool,
+                                                                                    ),
+                                                                                    'address': serializeParam(
+                                                                                      clientsItem.address,
+                                                                                      ParamType.String,
+                                                                                    ),
+                                                                                    'state': serializeParam(
+                                                                                      clientsItem.state,
+                                                                                      ParamType.String,
+                                                                                    ),
+                                                                                    'city': serializeParam(
+                                                                                      clientsItem.city,
+                                                                                      ParamType.String,
+                                                                                    ),
+                                                                                  }.withoutNulls,
+                                                                                );
+                                                                              },
                                                                             ),
-                                                                            onPressed:
-                                                                                () async {
-                                                                              context.pushNamed(
-                                                                                ClientmanagementEditingWidget.routeName,
-                                                                                queryParameters: {
-                                                                                  'clientId': serializeParam(
-                                                                                    clientsItem.clientId,
-                                                                                    ParamType.String,
-                                                                                  ),
-                                                                                  'client': serializeParam(
-                                                                                    clientsItem,
-                                                                                    ParamType.SupabaseRow,
-                                                                                  ),
-                                                                                  'editing': serializeParam(
-                                                                                    true,
-                                                                                    ParamType.bool,
-                                                                                  ),
-                                                                                  'address': serializeParam(
-                                                                                    clientsItem.address,
-                                                                                    ParamType.String,
-                                                                                  ),
-                                                                                  'state': serializeParam(
-                                                                                    clientsItem.state,
-                                                                                    ParamType.String,
-                                                                                  ),
-                                                                                  'city': serializeParam(
-                                                                                    clientsItem.city,
-                                                                                    ParamType.String,
-                                                                                  ),
-                                                                                }.withoutNulls,
-                                                                              );
-                                                                            },
-                                                                          ),
-                                                                        ].divide(SizedBox(width: 8.0)),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ],
+                                                                          ].divide(SizedBox(width: 8.0)),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  ],
+                                                                ),
                                                               ),
                                                             ),
                                                           ),
-                                                        ),
-                                                      );
-                                                    },
-                                                  );
-                                                },
+                                                        );
+                                                      },
+                                                    );
+                                                  },
+                                                ),
                                               ),
                                             ),
                                             Row(

@@ -17,24 +17,21 @@ final supabase = SupabaseClient('https://fvfoznhaepggbyykkoea.supabase.co',
 Future<void> deleteImageFromBucket(String? imageUrl) async {
   if (imageUrl == null) {
     print('URL de imagen no proporcionada');
-    return; // Salir de la función si la URL de la imagen es nula
+    return;
   }
   try {
-    // Extraer el nombre del archivo de la URL
     final List<String> urlParts = imageUrl.split('/');
     final String imageName = urlParts.last;
 
-    final response = await supabase.storage.from('reportpictures').remove(
-        ['pics/$imageName']); // Especificar la ruta completa de la imagen
+    final response = await supabase.storage
+        .from('reportpictures')
+        .remove(['pics/$imageName']);
     if (response.isEmpty) {
       print('Imagen borrada con éxito');
-      // Realizar cualquier otra acción después de eliminar la imagen
     } else {
       print('Error al borrar imagen');
-      // Manejar el error según sea necesario
     }
   } catch (e) {
     print('Error: $e');
-    // Manejar el error según sea necesario
   }
 }

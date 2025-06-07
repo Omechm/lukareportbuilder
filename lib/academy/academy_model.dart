@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class AcademyModel extends FlutterFlowModel<AcademyWidget> {
   ///  State fields for stateful widgets in this page.
 
-  Stream<List<DocumentationRow>>? columnSupabaseStream;
+  Stream<List<DocumentationRow>>? listViewSupabaseStream;
 
   @override
   void initState(BuildContext context) {}

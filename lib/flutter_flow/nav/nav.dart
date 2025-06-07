@@ -173,13 +173,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: UserroleassignmentWidget.routePath,
           requireAuth: true,
           builder: (context, params) => UserroleassignmentWidget(
-            user: params.getParam<UserRow>(
-              'user',
-              ParamType.SupabaseRow,
+            userid: params.getParam(
+              'userid',
+              ParamType.String,
             ),
             pageNumber: params.getParam(
               'pageNumber',
               ParamType.int,
+            ),
+            firstname: params.getParam(
+              'firstname',
+              ParamType.String,
+            ),
+            lastname: params.getParam(
+              'lastname',
+              ParamType.String,
             ),
           ),
         ),

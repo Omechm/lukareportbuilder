@@ -165,602 +165,558 @@ class _ReporttemplatesWidgetState extends State<ReporttemplatesWidget>
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment(0.0, 0),
-                                    child: FlutterFlowButtonTabBar(
-                                      useToggleButtonStyle: true,
-                                      labelStyle: FlutterFlowTheme.of(context)
-                                          .titleMedium
-                                          .override(
-                                            fontFamily: 'Geist Font Family',
-                                            letterSpacing: 0.0,
+                              child: FutureBuilder<List<InspectionTasksRow>>(
+                                future: InspectionTasksTable().queryRows(
+                                  queryFn: (q) => q,
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 10.0,
+                                        height: 10.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            Color(0xFF7C8289),
                                           ),
-                                      unselectedLabelStyle: TextStyle(),
-                                      labelColor: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      unselectedLabelColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                      backgroundColor: Color(0xFF033395),
-                                      unselectedBackgroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .alternate,
-                                      unselectedBorderColor:
-                                          FlutterFlowTheme.of(context)
-                                              .alternate,
-                                      borderWidth: 2.0,
-                                      borderRadius: 16.0,
-                                      elevation: 0.0,
-                                      buttonMargin:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              8.0, 0.0, 8.0, 0.0),
-                                      padding: EdgeInsets.all(4.0),
-                                      tabs: [
-                                        Tab(
-                                          text: 'Published',
                                         ),
-                                        Tab(
-                                          text: 'Archived',
-                                        ),
-                                      ],
-                                      controller: _model.tabBarController,
-                                      onTap: (i) async {
-                                        [() async {}, () async {}][i]();
-                                      },
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: TabBarView(
-                                      controller: _model.tabBarController,
-                                      children: [
-                                        KeepAliveWidgetWrapper(
-                                          builder: (context) => Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 10.0, 0.0, 0.0),
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    blurRadius: 4.0,
-                                                    color: Color(0x33000000),
-                                                    offset: Offset(
-                                                      0.0,
-                                                      2.0,
-                                                    ),
-                                                  )
-                                                ],
-                                                borderRadius:
-                                                    BorderRadius.circular(16.0),
-                                              ),
-                                              child: Padding(
-                                                padding: EdgeInsets.all(10.0),
-                                                child: FutureBuilder<
-                                                    List<InspectionTasksRow>>(
-                                                  future: InspectionTasksTable()
-                                                      .queryRows(
-                                                    queryFn: (q) => q.eqOrNull(
-                                                      'is_published',
-                                                      true,
-                                                    ),
+                                      ),
+                                    );
+                                  }
+                                  List<InspectionTasksRow>
+                                      tabBarInspectionTasksRowList =
+                                      snapshot.data!;
+
+                                  return Column(
+                                    children: [
+                                      Align(
+                                        alignment: Alignment(0.0, 0),
+                                        child: FlutterFlowButtonTabBar(
+                                          useToggleButtonStyle: true,
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMedium
+                                                  .override(
+                                                    fontFamily:
+                                                        'Geist Font Family',
+                                                    letterSpacing: 0.0,
                                                   ),
-                                                  builder: (context, snapshot) {
-                                                    // Customize what your widget looks like when it's loading.
-                                                    if (!snapshot.hasData) {
-                                                      return Center(
-                                                        child: SizedBox(
-                                                          width: 10.0,
-                                                          height: 10.0,
-                                                          child:
-                                                              CircularProgressIndicator(
-                                                            valueColor:
-                                                                AlwaysStoppedAnimation<
-                                                                    Color>(
-                                                              Color(0xFF7C8289),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      );
-                                                    }
-                                                    List<InspectionTasksRow>
-                                                        listViewInspectionTasksRowList =
-                                                        snapshot.data!;
-
-                                                    if (listViewInspectionTasksRowList
-                                                        .isEmpty) {
-                                                      return Center(
-                                                        child: NoDataWidget(),
-                                                      );
-                                                    }
-
-                                                    return ListView.separated(
-                                                      padding:
-                                                          EdgeInsets.fromLTRB(
-                                                        0,
-                                                        5.0,
-                                                        0,
-                                                        5.0,
-                                                      ),
-                                                      primary: false,
-                                                      scrollDirection:
-                                                          Axis.vertical,
-                                                      itemCount:
-                                                          listViewInspectionTasksRowList
-                                                              .length,
-                                                      separatorBuilder: (_,
-                                                              __) =>
-                                                          SizedBox(height: 5.0),
-                                                      itemBuilder: (context,
-                                                          listViewIndex) {
-                                                        final listViewInspectionTasksRow =
-                                                            listViewInspectionTasksRowList[
-                                                                listViewIndex];
-                                                        return Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.min,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Container(
-                                                              width: 20.0,
-                                                              height: 20.0,
-                                                              decoration:
-                                                                  BoxDecoration(),
-                                                              child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  (listViewIndex +
-                                                                          1)
-                                                                      .toString(),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Geist Font Family',
-                                                                        fontSize:
-                                                                            10.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Expanded(
-                                                              child: Align(
-                                                                alignment:
-                                                                    AlignmentDirectional(
-                                                                        -1.0,
-                                                                        0.0),
-                                                                child: InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    context
-                                                                        .pushNamed(
-                                                                      ReporttemplatesfieldseditingWidget
-                                                                          .routeName,
-                                                                      queryParameters:
-                                                                          {
-                                                                        'templateID':
-                                                                            serializeParam(
-                                                                          listViewInspectionTasksRow
-                                                                              .taskId,
-                                                                          ParamType
-                                                                              .String,
-                                                                        ),
-                                                                      }.withoutNulls,
-                                                                    );
-                                                                  },
-                                                                  child:
-                                                                      Container(
-                                                                    height:
-                                                                        30.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: Color(
-                                                                          0xFFFFFCFC),
-                                                                      boxShadow: [
-                                                                        BoxShadow(
-                                                                          blurRadius:
-                                                                              4.0,
-                                                                          color:
-                                                                              Color(0x33000000),
-                                                                          offset:
-                                                                              Offset(
-                                                                            0.0,
-                                                                            2.0,
-                                                                          ),
-                                                                        )
-                                                                      ],
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              5.0),
-                                                                    ),
-                                                                    alignment:
-                                                                        AlignmentDirectional(
-                                                                            -1.0,
-                                                                            0.0),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .spaceBetween,
-                                                                      children: [
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              10.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            valueOrDefault<String>(
-                                                                              listViewInspectionTasksRow.taskName,
-                                                                              'Task name',
-                                                                            ),
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Geist Font Family',
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                        Builder(
-                                                                          builder: (context) =>
-                                                                              Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                10.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                InkWell(
-                                                                              splashColor: Colors.transparent,
-                                                                              focusColor: Colors.transparent,
-                                                                              hoverColor: Colors.transparent,
-                                                                              highlightColor: Colors.transparent,
-                                                                              onTap: () async {
-                                                                                await showAlignedDialog(
-                                                                                  context: context,
-                                                                                  isGlobal: false,
-                                                                                  avoidOverflow: false,
-                                                                                  targetAnchor: AlignmentDirectional(-1.0, 1.0).resolve(Directionality.of(context)),
-                                                                                  followerAnchor: AlignmentDirectional(1.0, -1.0).resolve(Directionality.of(context)),
-                                                                                  builder: (dialogContext) {
-                                                                                    return Material(
-                                                                                      color: Colors.transparent,
-                                                                                      child: WebViewAware(
-                                                                                        child: GestureDetector(
-                                                                                          onTap: () {
-                                                                                            FocusScope.of(dialogContext).unfocus();
-                                                                                            FocusManager.instance.primaryFocus?.unfocus();
-                                                                                          },
-                                                                                          child: Container(
-                                                                                            height: 350.0,
-                                                                                            width: 400.0,
-                                                                                            child: CompOptionListWidget(
-                                                                                              id: listViewInspectionTasksRow.taskId,
-                                                                                            ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    );
-                                                                                  },
-                                                                                );
-                                                                              },
-                                                                              child: Icon(
-                                                                                Icons.keyboard_control,
-                                                                                color: FlutterFlowTheme.of(context).primaryText,
-                                                                                size: 24.0,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        );
-                                                      },
-                                                    );
-                                                  },
-                                                ),
-                                              ),
+                                          unselectedLabelStyle: TextStyle(),
+                                          labelColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                          unselectedLabelColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryText,
+                                          backgroundColor: Color(0xFF033395),
+                                          unselectedBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .alternate,
+                                          unselectedBorderColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .alternate,
+                                          borderWidth: 2.0,
+                                          borderRadius: 16.0,
+                                          elevation: 0.0,
+                                          buttonMargin:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  8.0, 0.0, 8.0, 0.0),
+                                          padding: EdgeInsets.all(4.0),
+                                          tabs: [
+                                            Tab(
+                                              text: 'Published',
                                             ),
-                                          ),
+                                            Tab(
+                                              text: 'Archived',
+                                            ),
+                                          ],
+                                          controller: _model.tabBarController,
+                                          onTap: (i) async {
+                                            [() async {}, () async {}][i]();
+                                          },
                                         ),
-                                        KeepAliveWidgetWrapper(
-                                          builder: (context) => Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 10.0, 0.0, 0.0),
-                                            child: Container(
-                                              height: MediaQuery.sizeOf(context)
-                                                      .height *
-                                                  0.77,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
+                                      ),
+                                      Expanded(
+                                        child: TabBarView(
+                                          controller: _model.tabBarController,
+                                          children: [
+                                            KeepAliveWidgetWrapper(
+                                              builder: (context) => Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 10.0, 0.0, 0.0),
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
                                                         .secondaryBackground,
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    blurRadius: 4.0,
-                                                    color: Color(0x33000000),
-                                                    offset: Offset(
-                                                      0.0,
-                                                      2.0,
-                                                    ),
-                                                  )
-                                                ],
-                                                borderRadius:
-                                                    BorderRadius.circular(10.0),
-                                              ),
-                                              child: Padding(
-                                                padding: EdgeInsets.all(10.0),
-                                                child: FutureBuilder<
-                                                    List<InspectionTasksRow>>(
-                                                  future: InspectionTasksTable()
-                                                      .queryRows(
-                                                    queryFn: (q) => q.eqOrNull(
-                                                      'is_published',
-                                                      false,
-                                                    ),
+                                                    boxShadow: [
+                                                      BoxShadow(
+                                                        blurRadius: 4.0,
+                                                        color:
+                                                            Color(0x33000000),
+                                                        offset: Offset(
+                                                          0.0,
+                                                          2.0,
+                                                        ),
+                                                      )
+                                                    ],
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            16.0),
                                                   ),
-                                                  builder: (context, snapshot) {
-                                                    // Customize what your widget looks like when it's loading.
-                                                    if (!snapshot.hasData) {
-                                                      return Center(
-                                                        child: SizedBox(
-                                                          width: 10.0,
-                                                          height: 10.0,
-                                                          child:
-                                                              CircularProgressIndicator(
-                                                            valueColor:
-                                                                AlwaysStoppedAnimation<
-                                                                    Color>(
-                                                              Color(0xFF7C8289),
-                                                            ),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsets.all(10.0),
+                                                    child: Builder(
+                                                      builder: (context) {
+                                                        final tabBarVar =
+                                                            tabBarInspectionTasksRowList
+                                                                .where((e) =>
+                                                                    e.isPublished ==
+                                                                    true)
+                                                                .toList();
+                                                        if (tabBarVar.isEmpty) {
+                                                          return Center(
+                                                            child:
+                                                                NoDataWidget(),
+                                                          );
+                                                        }
+
+                                                        return ListView
+                                                            .separated(
+                                                          padding: EdgeInsets
+                                                              .fromLTRB(
+                                                            0,
+                                                            5.0,
+                                                            0,
+                                                            5.0,
                                                           ),
-                                                        ),
-                                                      );
-                                                    }
-                                                    List<InspectionTasksRow>
-                                                        listViewInspectionTasksRowList =
-                                                        snapshot.data!;
-
-                                                    if (listViewInspectionTasksRowList
-                                                        .isEmpty) {
-                                                      return Center(
-                                                        child: Container(
-                                                          height:
-                                                              MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .height *
-                                                                  0.77,
-                                                          child: NoDataWidget(),
-                                                        ),
-                                                      );
-                                                    }
-
-                                                    return ListView.separated(
-                                                      padding:
-                                                          EdgeInsets.fromLTRB(
-                                                        0,
-                                                        5.0,
-                                                        0,
-                                                        0,
-                                                      ),
-                                                      scrollDirection:
-                                                          Axis.vertical,
-                                                      itemCount:
-                                                          listViewInspectionTasksRowList
-                                                              .length,
-                                                      separatorBuilder: (_,
-                                                              __) =>
-                                                          SizedBox(height: 5.0),
-                                                      itemBuilder: (context,
-                                                          listViewIndex) {
-                                                        final listViewInspectionTasksRow =
-                                                            listViewInspectionTasksRowList[
-                                                                listViewIndex];
-                                                        return Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.min,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Expanded(
-                                                              child: Align(
-                                                                alignment:
-                                                                    AlignmentDirectional(
-                                                                        -1.0,
-                                                                        0.0),
-                                                                child:
-                                                                    Container(
-                                                                  height: 30.0,
+                                                          primary: false,
+                                                          scrollDirection:
+                                                              Axis.vertical,
+                                                          itemCount:
+                                                              tabBarVar.length,
+                                                          separatorBuilder: (_,
+                                                                  __) =>
+                                                              SizedBox(
+                                                                  height: 5.0),
+                                                          itemBuilder: (context,
+                                                              tabBarVarIndex) {
+                                                            final tabBarVarItem =
+                                                                tabBarVar[
+                                                                    tabBarVarIndex];
+                                                            return Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .min,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .center,
+                                                              children: [
+                                                                Container(
+                                                                  width: 20.0,
+                                                                  height: 20.0,
                                                                   decoration:
-                                                                      BoxDecoration(
-                                                                    color: Color(
-                                                                        0xFFFFFCFC),
-                                                                    boxShadow: [
-                                                                      BoxShadow(
-                                                                        blurRadius:
-                                                                            4.0,
-                                                                        color: Color(
-                                                                            0x33000000),
-                                                                        offset:
-                                                                            Offset(
-                                                                          0.0,
-                                                                          2.0,
-                                                                        ),
-                                                                      )
-                                                                    ],
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
-                                                                  ),
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          -1.0,
-                                                                          0.0),
+                                                                      BoxDecoration(),
                                                                   child:
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
                                                                             10.0,
-                                                                            0.0,
-                                                                            0.0,
                                                                             0.0),
                                                                     child: Text(
-                                                                      valueOrDefault<
-                                                                          String>(
-                                                                        listViewInspectionTasksRow
-                                                                            .taskName,
-                                                                        'Task name',
-                                                                      ),
+                                                                      (tabBarVarIndex +
+                                                                              1)
+                                                                          .toString(),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
                                                                                 'Geist Font Family',
+                                                                            fontSize:
+                                                                                10.0,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
                                                                     ),
                                                                   ),
                                                                 ),
-                                                              ),
-                                                            ),
-                                                            Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      _model.unArchivedTaskOutput =
-                                                                          await InspectionTasksTable()
-                                                                              .update(
-                                                                        data: {
-                                                                          'is_published':
-                                                                              true,
-                                                                        },
-                                                                        matchingRows:
-                                                                            (rows) =>
-                                                                                rows.eqOrNull(
-                                                                          'task_id',
-                                                                          listViewInspectionTasksRow
-                                                                              .taskId,
-                                                                        ),
-                                                                        returnRows:
-                                                                            true,
-                                                                      );
-                                                                      _model.unArchivedInspectionFieldOutput =
-                                                                          await InspectionFieldsTable()
-                                                                              .update(
-                                                                        data: {
-                                                                          'is_published':
-                                                                              true,
-                                                                        },
-                                                                        matchingRows:
-                                                                            (rows) =>
-                                                                                rows.eqOrNull(
-                                                                          'task_id',
-                                                                          _model
-                                                                              .unArchivedTaskOutput
-                                                                              ?.firstOrNull
-                                                                              ?.taskId,
-                                                                        ),
-                                                                        returnRows:
-                                                                            true,
-                                                                      );
-                                                                      _model.pageRebuild =
-                                                                          null;
-                                                                      safeSetState(
-                                                                          () {});
-
-                                                                      safeSetState(
-                                                                          () {});
-                                                                    },
-                                                                    child: Text(
-                                                                      'unarchive',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Geist Font Family',
-                                                                            letterSpacing:
+                                                                Expanded(
+                                                                  child: Align(
+                                                                    alignment:
+                                                                        AlignmentDirectional(
+                                                                            -1.0,
+                                                                            0.0),
+                                                                    child:
+                                                                        InkWell(
+                                                                      splashColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      focusColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      hoverColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      highlightColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      onTap:
+                                                                          () async {
+                                                                        context
+                                                                            .pushNamed(
+                                                                          ReporttemplatesfieldseditingWidget
+                                                                              .routeName,
+                                                                          queryParameters:
+                                                                              {
+                                                                            'templateID':
+                                                                                serializeParam(
+                                                                              tabBarVarItem.taskId,
+                                                                              ParamType.String,
+                                                                            ),
+                                                                          }.withoutNulls,
+                                                                        );
+                                                                      },
+                                                                      child:
+                                                                          Container(
+                                                                        height:
+                                                                            30.0,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              Color(0xFFFFFCFC),
+                                                                          boxShadow: [
+                                                                            BoxShadow(
+                                                                              blurRadius: 4.0,
+                                                                              color: Color(0x33000000),
+                                                                              offset: Offset(
                                                                                 0.0,
-                                                                          ),
+                                                                                2.0,
+                                                                              ),
+                                                                            )
+                                                                          ],
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                        alignment: AlignmentDirectional(
+                                                                            -1.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.spaceBetween,
+                                                                          children: [
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                              child: Text(
+                                                                                valueOrDefault<String>(
+                                                                                  tabBarVarItem.taskName,
+                                                                                  'Task name',
+                                                                                ),
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Geist Font Family',
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
+                                                                              ),
+                                                                            ),
+                                                                            Builder(
+                                                                              builder: (context) => Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                                                                                child: InkWell(
+                                                                                  splashColor: Colors.transparent,
+                                                                                  focusColor: Colors.transparent,
+                                                                                  hoverColor: Colors.transparent,
+                                                                                  highlightColor: Colors.transparent,
+                                                                                  onTap: () async {
+                                                                                    await showAlignedDialog(
+                                                                                      context: context,
+                                                                                      isGlobal: false,
+                                                                                      avoidOverflow: false,
+                                                                                      targetAnchor: AlignmentDirectional(-1.0, 1.0).resolve(Directionality.of(context)),
+                                                                                      followerAnchor: AlignmentDirectional(1.0, -1.0).resolve(Directionality.of(context)),
+                                                                                      builder: (dialogContext) {
+                                                                                        return Material(
+                                                                                          color: Colors.transparent,
+                                                                                          child: WebViewAware(
+                                                                                            child: GestureDetector(
+                                                                                              onTap: () {
+                                                                                                FocusScope.of(dialogContext).unfocus();
+                                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                                              },
+                                                                                              child: Container(
+                                                                                                height: 350.0,
+                                                                                                width: 400.0,
+                                                                                                child: CompOptionListWidget(
+                                                                                                  id: tabBarVarItem.taskId,
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        );
+                                                                                      },
+                                                                                    );
+                                                                                  },
+                                                                                  child: Icon(
+                                                                                    Icons.keyboard_control,
+                                                                                    color: FlutterFlowTheme.of(context).primaryText,
+                                                                                    size: 24.0,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 ),
                                                               ],
-                                                            ),
-                                                          ],
+                                                            );
+                                                          },
                                                         );
                                                       },
-                                                    );
-                                                  },
+                                                    ),
+                                                  ),
                                                 ),
                                               ),
                                             ),
-                                          ),
+                                            KeepAliveWidgetWrapper(
+                                              builder: (context) => Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 10.0, 0.0, 0.0),
+                                                child: Container(
+                                                  height:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height *
+                                                          0.77,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    boxShadow: [
+                                                      BoxShadow(
+                                                        blurRadius: 4.0,
+                                                        color:
+                                                            Color(0x33000000),
+                                                        offset: Offset(
+                                                          0.0,
+                                                          2.0,
+                                                        ),
+                                                      )
+                                                    ],
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10.0),
+                                                  ),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsets.all(10.0),
+                                                    child: Builder(
+                                                      builder: (context) {
+                                                        final inspectionlist =
+                                                            tabBarInspectionTasksRowList
+                                                                .where((e) =>
+                                                                    e.isPublished ==
+                                                                    false)
+                                                                .toList();
+                                                        if (inspectionlist
+                                                            .isEmpty) {
+                                                          return Center(
+                                                            child: Container(
+                                                              height: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .height *
+                                                                  0.77,
+                                                              child:
+                                                                  NoDataWidget(),
+                                                            ),
+                                                          );
+                                                        }
+
+                                                        return ListView
+                                                            .separated(
+                                                          padding: EdgeInsets
+                                                              .fromLTRB(
+                                                            0,
+                                                            5.0,
+                                                            0,
+                                                            0,
+                                                          ),
+                                                          scrollDirection:
+                                                              Axis.vertical,
+                                                          itemCount:
+                                                              inspectionlist
+                                                                  .length,
+                                                          separatorBuilder: (_,
+                                                                  __) =>
+                                                              SizedBox(
+                                                                  height: 5.0),
+                                                          itemBuilder: (context,
+                                                              inspectionlistIndex) {
+                                                            final inspectionlistItem =
+                                                                inspectionlist[
+                                                                    inspectionlistIndex];
+                                                            return Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .min,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .center,
+                                                              children: [
+                                                                Expanded(
+                                                                  child: Align(
+                                                                    alignment:
+                                                                        AlignmentDirectional(
+                                                                            -1.0,
+                                                                            0.0),
+                                                                    child:
+                                                                        Container(
+                                                                      height:
+                                                                          30.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: Color(
+                                                                            0xFFFFFCFC),
+                                                                        boxShadow: [
+                                                                          BoxShadow(
+                                                                            blurRadius:
+                                                                                4.0,
+                                                                            color:
+                                                                                Color(0x33000000),
+                                                                            offset:
+                                                                                Offset(
+                                                                              0.0,
+                                                                              2.0,
+                                                                            ),
+                                                                          )
+                                                                        ],
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      ),
+                                                                      alignment:
+                                                                          AlignmentDirectional(
+                                                                              -1.0,
+                                                                              0.0),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          inspectionlistItem
+                                                                              .taskName,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Geist Font Family',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          InkWell(
+                                                                        splashColor:
+                                                                            Colors.transparent,
+                                                                        focusColor:
+                                                                            Colors.transparent,
+                                                                        hoverColor:
+                                                                            Colors.transparent,
+                                                                        highlightColor:
+                                                                            Colors.transparent,
+                                                                        onTap:
+                                                                            () async {
+                                                                          _model.unArchivedTaskOutput =
+                                                                              await InspectionTasksTable().update(
+                                                                            data: {
+                                                                              'is_published': true,
+                                                                            },
+                                                                            matchingRows: (rows) =>
+                                                                                rows.eqOrNull(
+                                                                              'task_id',
+                                                                              inspectionlistItem.taskId,
+                                                                            ),
+                                                                            returnRows:
+                                                                                true,
+                                                                          );
+                                                                          _model.unArchivedInspectionFieldOutput =
+                                                                              await InspectionFieldsTable().update(
+                                                                            data: {
+                                                                              'is_published': true,
+                                                                            },
+                                                                            matchingRows: (rows) =>
+                                                                                rows.eqOrNull(
+                                                                              'task_id',
+                                                                              _model.unArchivedTaskOutput?.firstOrNull?.taskId,
+                                                                            ),
+                                                                            returnRows:
+                                                                                true,
+                                                                          );
+                                                                          _model.pageRebuild =
+                                                                              null;
+                                                                          safeSetState(
+                                                                              () {});
+
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        },
+                                                                        child:
+                                                                            Text(
+                                                                          'unarchive',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Geist Font Family',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ],
+                                                            );
+                                                          },
+                                                        );
+                                                      },
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
+                                      ),
+                                    ],
+                                  );
+                                },
                               ),
                             ),
                           ),

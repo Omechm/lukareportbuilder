@@ -81,116 +81,98 @@ class _DeletepicturesWidgetState extends State<DeletepicturesWidget> {
                               60.0, 80.0, 60.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              await Future.wait([
-                                Future(() async {
-                                  _model.output2weeksOldReports =
-                                      await Reportpictures2weeksoldTable()
-                                          .queryRows(
-                                    queryFn: (q) => q,
-                                  );
-                                  _model.pageIterator1 = 0;
-                                  safeSetState(() {});
-                                  while (_model.pageIterator1 !=
-                                      _model.output2weeksOldReports?.length) {
-                                    await actions.deleteImageFromBucket(
-                                      _model.output2weeksOldReports
-                                          ?.elementAtOrNull(
-                                              _model.pageIterator1!)
-                                          ?.url,
-                                    );
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          _model.pageIterator1!.toString(),
-                                          style: TextStyle(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                          ),
-                                        ),
-                                        duration: Duration(milliseconds: 10),
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .secondary,
-                                      ),
-                                    );
-                                    _model.pageIterator1 =
-                                        _model.pageIterator1! + 1;
-                                    safeSetState(() {});
-                                  }
-                                  _model.pageIterator1 = 0;
-                                  safeSetState(() {});
-                                  ScaffoldMessenger.of(context)
-                                      .clearSnackBars();
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text(
-                                        'Success',
-                                        style: TextStyle(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                        ),
-                                      ),
-                                      duration: Duration(milliseconds: 650),
-                                      backgroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondary,
+                              _model.output2weeksOldReports =
+                                  await Reportpictures2weeksoldTable()
+                                      .queryRows(
+                                queryFn: (q) => q,
+                              );
+                              for (int loop1Index = 0;
+                                  loop1Index <
+                                      _model.output2weeksOldReports!.length;
+                                  loop1Index++) {
+                                final currentLoop1Item =
+                                    _model.output2weeksOldReports![loop1Index];
+                                await actions.deleteImageFromBucket(
+                                  currentLoop1Item.url,
+                                );
+                              }
+                              ScaffoldMessenger.of(context).clearSnackBars();
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    'Success',
+                                    style: TextStyle(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
                                     ),
-                                  );
-                                  _model.outputUnMatchedImages =
-                                      await ReportpicturesUnmatchedTable()
-                                          .queryRows(
-                                    queryFn: (q) => q,
-                                  );
-                                  _model.pageiterator2 = null;
-                                  safeSetState(() {});
-                                  while (_model.pageiterator2 !=
-                                      _model.outputUnMatchedImages?.length) {
-                                    await actions.deleteImageFromBucket(
-                                      _model.outputUnMatchedImages
-                                          ?.elementAtOrNull(
-                                              _model.pageiterator2!)
-                                          ?.url,
-                                    );
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          _model.pageiterator2!.toString(),
-                                          style: TextStyle(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                          ),
-                                        ),
-                                        duration: Duration(milliseconds: 10),
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .secondary,
-                                      ),
-                                    );
-                                    _model.pageiterator2 =
-                                        _model.pageiterator2! + 1;
-                                    safeSetState(() {});
-                                  }
-                                  _model.pageiterator2 = null;
-                                  safeSetState(() {});
-                                  ScaffoldMessenger.of(context)
-                                      .clearSnackBars();
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text(
-                                        'Success',
-                                        style: TextStyle(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                        ),
-                                      ),
-                                      duration: Duration(milliseconds: 650),
-                                      backgroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondary,
+                                  ),
+                                  duration: Duration(milliseconds: 650),
+                                  backgroundColor:
+                                      FlutterFlowTheme.of(context).secondary,
+                                ),
+                              );
+
+                              safeSetState(() {});
+                            },
+                            text: 'delete',
+                            options: FFButtonOptions(
+                              height: 40.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Geist Font Family',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                  ),
+                              elevation: 0.0,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              60.0, 80.0, 60.0, 0.0),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              _model.outputUnMatchedImages =
+                                  await ReportpicturesUnmatchedTable()
+                                      .queryRows(
+                                queryFn: (q) => q.ltOrNull(
+                                  'created_at',
+                                  supaSerialize<DateTime>(getCurrentTimestamp),
+                                ),
+                              );
+                              for (int loop1Index = 0;
+                                  loop1Index <= 1000;
+                                  loop1Index++) {
+                                final currentLoop1Item =
+                                    _model.outputUnMatchedImages![loop1Index];
+                                await actions.deleteImageFromBucket(
+                                  currentLoop1Item.url,
+                                );
+                              }
+                              ScaffoldMessenger.of(context).clearSnackBars();
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    'Success',
+                                    style: TextStyle(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
                                     ),
-                                  );
-                                }),
-                              ]);
+                                  ),
+                                  duration: Duration(milliseconds: 650),
+                                  backgroundColor:
+                                      FlutterFlowTheme.of(context).secondary,
+                                ),
+                              );
 
                               safeSetState(() {});
                             },

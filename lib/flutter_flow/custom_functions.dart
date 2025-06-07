@@ -127,3 +127,32 @@ String? convertYouTubeShortUrl(String url) {
 
   return url;
 }
+
+int? jSONLenght(dynamic jsonResponseBody) {
+  // Create a function to get the number of objects return from a json body
+  if (jsonResponseBody is List) {
+    return jsonResponseBody.length; // Return length if it's a list
+  } else if (jsonResponseBody is Map) {
+    return jsonResponseBody.length; // Return length if it's a map
+  }
+  return null; // Return null for other types
+}
+
+String convertToCustomFormat(String timestamp) {
+  try {
+    // Parse the timestamp string to a DateTime object
+    DateTime parsedDate = DateTime.parse(timestamp);
+
+    // Format as dd-MM-yyyy HH:mm:ss
+    String formattedDate = '${parsedDate.day.toString().padLeft(2, '0')}-'
+        '${parsedDate.month.toString().padLeft(2, '0')}-'
+        '${parsedDate.year} '
+        '${parsedDate.hour.toString().padLeft(2, '0')}:'
+        '${parsedDate.minute.toString().padLeft(2, '0')}:'
+        '${parsedDate.second.toString().padLeft(2, '0')}';
+
+    return formattedDate;
+  } catch (e) {
+    return 'Invalid date';
+  }
+}

@@ -24,7 +24,7 @@ class ImageViewerWidget extends StatefulWidget {
   const ImageViewerWidget({super.key});
 
   static String routeName = 'ImageViewer';
-  static String routePath = '/imageViewer';
+  static String routePath = '/imageView';
 
   @override
   State<ImageViewerWidget> createState() => _ImageViewerWidgetState();
